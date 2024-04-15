@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Barlow;
+    src: url(Barlow-ExtraBold.ttf);
+}
+body{
+    font-family:Barlow;
+    padding:0;
+    margin:0;
+}
+div.principal{
+    background-color: #560B2C;
+}
+nav{
+	background-color:#37071D;
+	width:100%;
+}
+ul{
+	padding:0;
+	margin:0;
+	display:flex;
+	list-style-type:none;
+}
+a.menu {
+    font-size:1em;
+	display: block;
+	padding: 2em;
+	text-decoration: none;
+	color:white;
+}
+a.menu:hover {
+	color: white;
+}
+h1{
+    margin-left:50px;
+    font-size:50px;
+    margin-top: 50px;
+}
+section.articulos{
+    margin-left:50px;
+}
+section.articulo{
+    display:flex;
+}
+h2{
+    font-size: 40px;
+}
+a.titulo{
+    font-size:20px;
+    margin-top:50px;
+    color:white;
+    text-decoration: none;
+}
+section.descripcion{
+    margin-left:40px;
+    width:800px;
+}
+section.caracteristicas{
+    display:block;
+}

@@ -1,0 +1,45 @@
+<?php
+session_start();
+require "modelo.php";
+
+if (isset($_SESSION["usuario"])) {
+
+} else {
+    header("Location: index.php");
+}
+
+
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Modificar productos</title>
+    <style>
+        @import url('estilo2.css');
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1 class='h1Anadir'>Modificar productos</h1>
+    </section>
+    <section class="englobarMenu">
+        <a class="flechaVolver" href="sesion.php">
+            < Volver</a>
+    </section>
+    <section class="cuerpo">
+        <form class="dos" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post"
+            enctype="multipart/form-data">
+            <label>LISTA DE PRODUCTOS </label>
+            <?php $articulos = listar_articulos();
+            foreach ($articulos as $articulo) { ?>
+                <a href="modificarArticulo.php?id=<?php echo $articulo["id"] ?>"> <?php echo $articulo["nombre"] . "<br/>";
+            }
+            ?>
+        </form>
+
+    </section>
+</body>
+
+</html>

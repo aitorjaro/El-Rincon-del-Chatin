@@ -1,0 +1,263 @@
+@font-face {
+    font-family: Barlow;
+    src: url("fuentes/Barlow-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: SourceSans;
+    src: url("fuentes/SourceSansPro-Light.ttf");
+}
+
+@font-face {
+    font-family: SourceSansRegular;
+    src: url("fuentes/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: SourceSansBold;
+    src: url("fuentes/SourceSansPro-Semibold.ttf");
+}
+
+body {
+    font-family: Barlow;
+    padding: 0;
+    margin: 0;
+}
+
+section.negro {
+    background: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h1.titulo {
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+}
+
+section.imagenCarro {
+    display: flex;
+    align-items: center;
+}
+
+img.imagenCarrito {
+    width: 20px;
+}
+
+img.imagenCarroFija {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    width: 60px;
+}
+
+nav {}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0px 20px;
+}
+
+a.menu {
+    font-family: SourceSansRegular;
+    font-size: 1em;
+    display: block;
+    text-decoration: none;
+    color: #000000;
+}
+
+a.menu:hover {
+    color: #686868;
+}
+
+div.englobarTodo {
+    display: flex;
+    justify-content: center;
+}
+
+div.englobarArticulos {
+    width: 90%;
+}
+
+div.englobarCesta {
+    display: flex;
+    justify-content: center;
+}
+
+section.cesta {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    background-image: url("imagenes/cesta.jpg");
+    background-size: 100%;
+    transition: background-size 0.5s ease;
+    color: white;
+    cursor: pointer;
+}
+
+section.cesta:hover {
+    background-size: 110%;
+}
+
+div.filtrar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1.parrafos {
+    font-size: 40px;
+}
+
+button.botonCategorias {
+    font-family: SourceSans;
+    font-size: 20px;
+    color: white;
+    padding: 20px 80px;
+    border-radius: 20px;
+    background: #4b4b4b;
+    cursor: pointer;
+    border: none;
+    margin-right: 10px;
+}
+
+section.articulos {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: SourceSans;
+}
+
+section.articulo {
+    width: 200px;
+    margin-right: 50px;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 3px 5px 10px #888888;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+button.carrito{
+    background-color: #cfb377;
+    font-family: SourceSans;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px #999;
+    transition: all 0.3s;
+}
+button.carrito:hover{
+    background-color: #cfb988;
+    box-shadow: 0 6px #666;
+    transform: translateY(-2px);
+}
+button.carrito:active{
+    background-color: #cfb988;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+section.englobarImagenArticulo {
+    overflow: hidden;
+}
+
+img.imagenArticulo {
+    width: 100%;
+    height: 50%;
+    transition: transform 0.5s ease-out;
+}
+
+img.imagenArticulo:hover {
+    transform: scale(1.2);
+}
+
+section.englobarTextoArticulo {
+    display: flex;
+    justify-content: center;
+}
+
+section.englobarTextoArticulo2 {
+    width: 90%;
+}
+
+a.titulo {
+    font-size: 20px;
+    margin-top: 50px;
+    color: black;
+    text-decoration: none;
+}
+
+/*----------------- DESCRIPCION ARTÍCULOS------------------*/
+
+section.englobarDescripcion {
+    margin-top: 50px;
+    font-family: SourceSans;
+}
+
+section.articuloDescripcion {
+    display: flex;
+}
+
+section.descripcionDentro {
+    margin-left: 50px;
+}
+
+h1.descripcionArticulo {
+    font-size: 40px;
+    font-family: Barlow;
+    margin: 0px;
+}
+
+h2.precioDescripcion {
+    text-align: center;
+}
+
+p.descripcionArticulo {
+    font-size: 20px;
+}
+
+footer {
+    margin-top: 100px;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+div.footer {
+    width: 80%;
+}
+
+p.footer {
+    font-family: SourceSans;
+}

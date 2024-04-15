@@ -1,0 +1,41 @@
+<?php
+session_start();
+require "modelo.php";
+
+if (isset($_SESSION["usuario"])) {
+    
+} else {
+    header("Location: index.php");
+}
+//Método GET
+$nombreCategoria = $_GET['id'];
+$categoria = cargar_categoria_id($nombreCategoria);
+
+$consulta = "DELETE FROM categorias WHERE categoria='$nombreCategoria'";
+
+$resultado = mysqli_query(conexion(), $consulta);
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Categoría borrada</title>
+    <style>
+        @import url('estilo2.css');
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1 class='h1Anadir'>Categoría borrada</h1>
+    </section>
+    <section class="englobarMenu">
+        <a class="flechaVolver" href="sesion.php">
+            < Volver</a>
+    </section>
+    <section class="cuerpo">
+    <h2>La categoría ha sido borrada</h2>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+modelo.php he hecho la conexión con la base de datos
+añadir producto explicar como lo he hecho con la codificacion en binario etc
+mostrar productos lo he hecho con el data encode base64
+
+carpetas: entrar, fuentes e imagenes

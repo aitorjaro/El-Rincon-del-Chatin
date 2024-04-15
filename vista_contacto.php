@@ -1,0 +1,81 @@
+<?php if (!defined("CON_CONTROLADOR")) {
+    die("<h2>No se puede llamar a este fichero directamente</h2>");
+}
+?>
+<?php include 'plantilla.php' ?>
+<?php startblock('titulo'); ?>
+<title>
+    Contacto - El Rincón del Chatín (Hervás)
+</title>
+<?php endblock() ?>
+<?php startblock('estilo'); ?>
+<style>
+    @import url("../estilo.css");
+</style>
+<?php endblock() ?>
+<?php startblock('contenido') ?>
+
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $nombre = $_POST['nombreYApellidos'];
+    $email = $_POST['email'];
+    $mensaje = $_POST['mensaje'];
+    
+    $para = 'aitorjaro11@hotmail.com';
+    $asunto = 'Nuevo mensaje de '. $nombre;
+    $cuerpo = "Nombre: $nombre\nEmail: $email\nMensaje: $mensaje";
+    
+    // Usar la función mail() de PHP para enviar el correo
+    if(mail($para, $asunto, $cuerpo)){
+        echo "Mensaje enviado con éxito";
+    } else {
+        echo "Error al enviar el mensaje";
+    }
+}
+?>
+
+<section class="englobandoContacto">
+
+    <!-- Mostramos una lista de los artículos -->
+
+    <section class="centrarContacto">
+
+        <h1 class="contacto">
+            CONTACTO
+        </h1>
+        <section class="englobarContacto">
+            <div class="formularioContacto">
+                <h2 class="formularioContacto">FORMULARIO DE CONTACTO</h2>
+                <form class="formularioContacto" action="" method="post">
+                    <div class="divEnglobarDatos">
+                        <input name="nombreYApellidos" placeholder="Nombre y Apellidos" />
+                        <input type="mail" name="email" placeholder="Correo electrónico" />
+                    </div>
+                    <div class="divEnglobarDatos">
+                        <input type="tel" name="telefono" placeholder="Nº de teléfono" />
+                        <input type="number" name="numeroPedido" placeholder="Nº de pedido (opcional)" />
+                    </div>
+                    <div class="divEnglobarDatos">
+                        <textarea class="formularioContacto" name="mensaje" cols="100" rows="20" placeholder="Escribe aquí tu mensaje..."></textarea>
+                    </div>
+                    <div class="divEnglobarDatos">
+                        <button type="submit" class="carrito">Enviar mensaje</button>
+                    </div>
+                </form>
+            </div>
+            <div class="formularioContacto">
+            <h2 class="formularioContacto">INFORMACIÓN DE CONTACTO</h2>
+            <h3 class="h3Contacto">Dirección</h3>
+            <p>C. Braulio Navas, 41 </p>
+            <p>10700 Hervás (Cáceres).</p>
+            <h3 class="h3Contacto">Teléfono</h3>
+            <a class="aTelefono" href="tel:+34647481626"><p>(+34) 647 48 16 26 </p></a>
+            <h3 class="h3Contacto">Correo electrónico</h3>
+            <p> </p>
+            </div>
+        </section>
+
+    </section>
+
+</section>
+<?php endblock() ?>

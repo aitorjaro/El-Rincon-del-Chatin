@@ -1,0 +1,678 @@
+@font-face {
+    font-family: Barlow;
+    src: url("fuentes/Barlow-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: SourceSans;
+    src: url("fuentes/SourceSansPro-Light.ttf");
+}
+
+@font-face {
+    font-family: SourceSansRegular;
+    src: url("fuentes/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: SourceSansBold;
+    src: url("fuentes/SourceSansPro-Semibold.ttf");
+}
+
+body {
+    font-family: Barlow;
+    padding: 0;
+    margin: 0;
+    background: #cfb377;
+    overflow-x: hidden;
+}
+
+section.negro {
+    background: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h1.titulo {
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+section.imagenCarro {
+    display: flex;
+    align-items: center;
+}
+
+img.imagenCarrito {
+    width: 20px;
+}
+
+img.imagenCarroFija {
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 40px;
+    width: 60px;
+}
+
+img.imagenCarroFija:hover {
+    animation: agrandar 0.5s forwards;
+}
+
+@keyframes agrandar {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+span.cantidadCarrito {
+    z-index: 2;
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+    background: white;
+    color: black;
+    font-family: SourceSans;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px 15px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0px 20px;
+}
+
+a.menu {
+    font-family: SourceSansRegular;
+    font-size: 1em;
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+a.menu:hover {
+    color: black;
+}
+
+section.logoPrincipal {
+    margin-top: 20px;
+    width: 800px;
+}
+
+img.imagenlogoPrincipal {
+    width: 100%;
+}
+
+div.englobarTodo {
+    display: flex;
+    justify-content: center;
+}
+
+div.englobarArticulos {
+    width: 90%;
+}
+
+div.englobarCesta {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.englobarCesta img {
+    width: 40%;
+    height: auto;
+    z-index: 1;
+    margin-top: 40px;
+}
+
+.englobarCesta h2 {
+    position: absolute;
+    font-size: 60px;
+    color: #cfb377;
+    background: white;
+    padding: 35px 50px;
+}
+
+
+section.cesta {
+    width: 90%;
+    height: 500px;
+    border-radius: 8px;
+    background-image: url("imagenes/cestaproductos.png");
+    background-size: 100%;
+    transition: background-size 0.5s ease;
+    color: white;
+    cursor: pointer;
+}
+
+section.cesta:hover {
+    background-size: 110%;
+}
+
+div.englobarProductos {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.centrarProductos {
+    width: 90%;
+    margin-bottom: 100px;
+}
+
+div.filtrar {
+    display: flex;
+    flex-direction: column;
+
+}
+
+h1.parrafos {
+    font-size: 70px;
+}
+
+button.botonCategorias {
+    font-family: SourceSans;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 20px 80px;
+    background: #cfb377;
+    cursor: pointer;
+    border: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+button.botonCategorias:hover {
+    background: #d8b86c;
+}
+
+section.articulos {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: SourceSans;
+}
+
+section.articulo {
+    width: 250px;
+    height: 450px;
+    padding: 5px;
+    background: white;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+button.carrito {
+    background-color: #cfb377;
+    font-family: SourceSans;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+button.carrito:hover {
+    background-color: #cfb988;
+}
+
+button.carrito:active {
+    background-color: #cfb988;
+    transform: translateY(4px);
+}
+
+/*
+button.carrito.added {
+    animation: addedToCart 1s ease;
+}
+
+@keyframes addedToCart {
+    0% {
+        transform: scale(1);
+        background-color: #cfb377;
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: #e2d0a2;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #cfb377;
+    }
+}*/
+@keyframes moveToCart {
+    0% {
+        transform: scale(2);
+        /* Posición inicial */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Posición final */
+
+    }
+}
+
+section.englobarImagenArticulo {
+    overflow: hidden;
+    display: flex;
+    /* Establece el contenedor como un flex container */
+    align-items: center;
+    /* Centra verticalmente el contenido */
+    justify-content: center;
+    /* Centra horizontalmente el contenido, si también lo necesitas */
+    margin: auto;
+    height: 200px;
+}
+
+img.imagenArticulo {
+    height: 100%;
+    transition: transform 0.5s ease-out;
+}
+
+img.imagenArticulo:hover {
+    transform: scale(1.2);
+}
+
+section.englobarTextoArticulo {
+    display: flex;
+    justify-content: center;
+}
+
+section.englobarTextoArticulo2 {
+    width: 90%;
+}
+section.seccionCentrarTextoLista{
+    text-align: center;
+}
+a.titulo {
+    font-size: 20px;
+    margin-top: 50px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+p.precio {
+    font-size: 20px;
+    position: relative;
+}
+
+span.iva {
+    bottom: 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+/*----------------- DESCRIPCION ARTÍCULOS------------------*/
+
+section.englobarDescripcion {
+    margin-top: 50px;
+    font-family: SourceSans;
+    display: flex;
+    justify-content: center;
+}
+
+section.articuloDescripcion {
+    display: flex;
+    background: white;
+    width: 90%;
+}
+
+.seccionImagenDetalle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 600px;
+}
+
+.imagenDetalle {
+    max-width: 100%;
+    max-height: 621px;
+    object-fit: contain;
+    /* la imagen se ajusta sin perder la relación de aspecto */
+}
+
+section.descripcionDentro {
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+h1.descripcionArticulo {
+    font-size: 40px;
+    font-family: Barlow;
+    margin: 0px;
+}
+
+h2.precioDescripcion {
+    font-weight: lighter;
+}
+
+p.descripcionArticulo {
+    font-size: 20px;
+}
+
+input.inputCantidadDetalle {
+    font-size: 16px;
+    text-align: center;
+    width: 100px;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease-in-out;
+}
+
+
+
+
+/*----------------- CARRITO------------------*/
+section.englobandoCarrito {
+    margin-top: 50px;
+    width: 100%;
+    font-family: SourceSans;
+    display: flex;
+    justify-content: center;
+}
+
+section.centrarCarrito {
+    background: white;
+    width: 90%;
+    padding-bottom: 50px;
+}
+
+h1.carrito {
+    font-size: 60px;
+    font-family: Barlow;
+    text-align: center;
+}
+
+section.englobarArticulosCarrito {
+    display: flex;
+    justify-content: center;
+}
+
+section.centrarArticulosCarrito {
+    width: 90%;
+}
+
+section.nombreYPrecioCarrito {
+    margin-left: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+p.nombreArticulosCarrito {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+p.articuloYPrecioCarrito {
+    font-family: Barlow;
+    width: 150px;
+    font-size: 30px;
+}
+
+table {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    font-family: Barlow;
+    font-size: 30px;
+    padding-bottom: 40px;
+}
+
+tr {
+    border-bottom: 1px #9A9A9A solid;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    padding: 30px 0px;
+}
+
+td.tdImagen {
+    width: 430px;
+}
+
+td.tdCantidad {
+    width: 200px;
+}
+
+td.tdNombre {
+    width: 500px;
+}
+
+td.tdBorrar {
+    width: 300px;
+}
+
+/*section.englobarArticulosDentroCarrito {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}*/
+
+section.englobarImagenArticuloCarrito {
+    width: 230px;
+    height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input.inputCantidadCarrito {
+    font-size: 16px;
+    text-align: center;
+    width: 100px;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease-in-out;
+}
+
+img.imagenArticuloCarrito {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+section.pieDeCarrito {
+    display: flex;
+    justify-content: right;
+}
+
+p.totalProductosCarrito {
+    font-size: 30px;
+    margin-right: 150px;
+}
+
+p.totalPrecioCarrito {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 150px;
+}
+
+a.vaciarCarrito {
+    background-color: grey;
+    font-family: SourceSans;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+a.vaciarCarrito:hover {
+    background-color: #363636;
+}
+
+a.vaciarCarrito:active {
+    background-color: #a5a5a5;
+    transform: translateY(4px);
+}
+
+p.carritoVacio {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Datos envío */
+
+h1.datosEnvio{
+    font-family: Barlow;
+    font-size:40px;
+    text-align: center;
+}
+div.divEnglobarDatos{
+    display:flex;
+    justify-content: center;
+    margin-bottom:60px;
+    flex-wrap: wrap;
+}
+.formDatosEnvio .divEnglobarDatos div label {
+    font-size:20px;
+    margin-right:10px;
+}
+.formDatosEnvio .divEnglobarDatos div input {
+    width:300px;
+    height:50px;
+    font-family: SourceSans;
+    font-size: 20px;
+    margin-right:50px;
+}
+textarea.formularioContacto{
+    font-family: SourceSans;
+    font-size:18px;
+}
+
+/*----------------- CONTACTO------------------*/
+section.englobandoContacto {
+    margin-top: 50px;
+    width: 100%;
+    font-family: SourceSans;
+    display: flex;
+    justify-content: center;
+}
+
+section.centrarContacto {
+    background: white;
+    padding-bottom:100px;
+    width: 90%;
+}
+section.englobarContacto{
+    display:flex;
+    justify-content: center;
+    gap:100px;
+    flex-wrap: wrap;
+}
+
+h1.contacto {
+    font-size: 80px;
+    font-family: Barlow;
+    text-align: center;
+}
+div.formularioContacto{
+    
+}
+h2.formularioContacto{
+    margin-top: 0px;
+    margin-bottom:50px;
+    font-family:Barlow;
+    font-size:40px;
+    text-align: center;
+}
+.formularioContacto input{
+    width:300px;
+    height:50px;
+    font-family: SourceSans;
+    font-size: 20px;
+    margin-right:50px;
+}
+h3.h3Contacto{
+    font-size:30px;
+}
+.aTelefono{
+    color:black;
+}
+
+/*----------------- FOOTER------------------*/
+footer {
+    margin-top: 100px;
+    padding:50px 0px;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+div.footer {
+    width: 80%;
+}
+
+h1.tituloFooter {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+.pFooter{
+    text-align: center;
+}
+.pFooterSans{
+    font-family: SourceSans;
+    text-align: center;
+}
