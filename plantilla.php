@@ -16,7 +16,7 @@ if (isset($_SESSION["carrito"])) {
 <html>
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php startblock('titulo'); ?>
     <?php endblock() ?>
     <?php startblock('estilo'); ?>
@@ -37,7 +37,7 @@ if (isset($_SESSION["carrito"])) {
         <!--¡<section class="logoPrincipal">
         <img class="imagenlogoPrincipal" src="/imagenes/logo.png"/>
 </section>-->
-    <h1 class="tituloOculto">EL RINCÓN DEL CHATÍN</h1>
+        <h1 class="tituloOculto">EL RINCÓN DEL CHATÍN</h1>
         <nav>
             <ul>
                 <li><a class="menu" href="/registro">Hervás</a></li>
@@ -50,7 +50,12 @@ if (isset($_SESSION["carrito"])) {
             </ul>
         </nav>
 
-
+        <!-- Menu desplegable para móviles -->
+        <div class="bars__menu">
+            <span class="line1__bars-menu"></span>
+            <span class="line2__bars-menu"></span>
+            <span class="line3__bars-menu"></span>
+        </div>
     </header>
 
 
