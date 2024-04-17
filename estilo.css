@@ -712,23 +712,29 @@ h1.tituloFooter {
     body,html{
         overflow-x: hidden;
     }
+    h1.tituloOculto{
+        font-size:50px;
+    }
     h1.titulo {
+        font-size:50px;
         position: absolute; /* Posicionamiento absoluto */
         top: 0%; /* Centra verticalmente */
         left: 0%; /* Centra horizontalmente */
         transform: translate(-0%, -0%);
-        margin:40px 0px;
-        text-align: center;
+        margin:40px 30px;
+        width:300px;
+        font-weight: lighter;
     }
     nav{
         display: none;
     }
     .bars__menu {
-        margin-left: 50%;
+        top:50%;
+        margin-left: 80%;
         display: block;
         width: 30px;
         height: 30px;
-        position: relative;
+        position: absolute;
         transform: scale(1.2);
         cursor: pointer;
         z-index: 1;

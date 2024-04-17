@@ -4,7 +4,7 @@
 ?>
 <?php include 'plantilla.php' ?>
 <?php startblock('titulo'); ?>
-<title>El Rincón del Chatín (Hervás) - Productos típicos de Extremadura</title>
+<title>El Rincón del Chatín - Productos típicos de Extremadura  (Hervás)</title>
 <?php endblock() ?>
 <?php startblock('estilo'); ?>
 <style>

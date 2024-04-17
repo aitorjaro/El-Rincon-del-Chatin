@@ -22,7 +22,7 @@ if (isset($_SESSION["carrito"])) {
     <?php startblock('estilo'); ?>
     <?php endblock() ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -51,15 +51,15 @@ if (isset($_SESSION["carrito"])) {
             </ul>
         </nav>
 
-        
-    </header>
-    <!-- Menu desplegable para móviles -->
-    <div class="bars__menu">
+        <!-- Menu desplegable para móviles -->
+        <div class="bars__menu">
             <span class="line1__bars-menu"></span>
             <span class="line2__bars-menu"></span>
             <span class="line3__bars-menu"></span>
         </div>
         <script src="/script.js"></script>
+    </header>
+
 
 
     <a href="/index.php/cesta"><img class="imagenCarroFija" src="/imagenes/carro-de-la-compra.png" /></a>
