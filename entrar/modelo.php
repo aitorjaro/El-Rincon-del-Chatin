@@ -14,7 +14,7 @@
 function conexion()
 {
     $servidor = "localhost";
-    $bbdd = "productosprueba";
+    $bbdd = "rinconchatin";
     $usuario = "root";
     $contrasena = ""; {
         try {

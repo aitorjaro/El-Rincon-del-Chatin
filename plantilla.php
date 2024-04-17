@@ -37,7 +37,7 @@ if (isset($_SESSION["carrito"])) {
         <!--¡<section class="logoPrincipal">
         <img class="imagenlogoPrincipal" src="/imagenes/logo.png"/>
 </section>-->
-
+    <h1 class="tituloOculto">EL RINCÓN DEL CHATÍN</h1>
         <nav>
             <ul>
                 <li><a class="menu" href="/registro">Hervás</a></li>

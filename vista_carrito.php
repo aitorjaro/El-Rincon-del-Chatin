@@ -120,7 +120,7 @@
                                         <input name="actualizar" type="hidden" value="" />
                                         <input name="cantidad" type="number" class="inputCantidadCarrito"
                                             value="<?php echo $carrito_mio[$i]["cantidad"] ?>" size="10" min="1" />
-                                        <input type="image" src="/imagenes/refresh.png" />
+                                        <input type="image" class="imgRefresh" src="/imagenes/refresh.png" />
                                     </form>
                                 </td>
                                 <td class="tdNombre">

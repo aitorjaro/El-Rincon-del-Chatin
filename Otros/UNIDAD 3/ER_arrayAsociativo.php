@@ -13,7 +13,7 @@
         "sabado" => 6,
         "domingo" => 7
     );
-    foreach($dias as $k =>$)
+    foreach($dias as $k ){}
     ?>
 </body>
 </html>

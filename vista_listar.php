@@ -22,7 +22,7 @@
             <section>
                 <h1 class="parrafos">PRODUCTOS</h1>
             </section>
-            <section>
+            <section class="sctCategorias">
                 <?php foreach ($categorias as $categoria) { ?>
                     <button class="botonCategorias" data-categoria="<?php echo $categoria['categoria'] ?>">
                         <?php echo $categoria["categoria"] ?>
