@@ -75,7 +75,4 @@
 </div>
 
 
-<script src="/script.js"></script>
-
-
 <?php endblock() ?>

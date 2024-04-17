@@ -58,5 +58,4 @@
 </section>
 
 </section>
-<script src="/script.js"></script>
 <?php endblock() ?>

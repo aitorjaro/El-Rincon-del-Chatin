@@ -1,4 +1,5 @@
 //Animaciones categorías
+$(document).ready(function () {
 document.querySelectorAll('.botonCategorias').forEach(btn => {
     btn.addEventListener('click', function() {
       let categoria = this.getAttribute('data-categoria');
@@ -14,7 +15,7 @@ document.querySelectorAll('.botonCategorias').forEach(btn => {
       });
     });
   });
-
+});
 //Carrito con Ajax
   $(document).ready(function () {
     $('.formularioProducto').submit(function (e) {
@@ -53,6 +54,7 @@ document.querySelectorAll('.botonCategorias').forEach(btn => {
 });
 
 //Menú desplegable
+document.querySelector(".bars__menu").addEventListener("click", mostrarMenu);
 var line1__bars = document.querySelector(".line1__bars-menu");
 var line2__bars = document.querySelector(".line2__bars-menu");
 var line3__bars = document.querySelector(".line3__bars-menu");

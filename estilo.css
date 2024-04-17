@@ -709,15 +709,27 @@ h1.tituloFooter {
 }
 
 @media (min-device-width: 320px) and (max-device-width: 736px) {
+    body,html{
+        overflow-x: hidden;
+    }
+    h1.titulo {
+        position: absolute; /* Posicionamiento absoluto */
+        top: 0%; /* Centra verticalmente */
+        left: 0%; /* Centra horizontalmente */
+        transform: translate(-0%, -0%);
+        margin:40px 0px;
+        text-align: center;
+    }
+    nav{
+        display: none;
+    }
     .bars__menu {
-        margin-top: 0px;
-        margin-left: 90%;
-        margin-right: 10%;
+        margin-left: 50%;
         display: block;
         width: 30px;
         height: 30px;
-        position: absolute;
-        transform: scale(1.5);
+        position: relative;
+        transform: scale(1.2);
         cursor: pointer;
         z-index: 1;
     }
