@@ -13,7 +13,7 @@ if (isset($_SESSION["carrito"])) {
 }
 ?>
 <?php require_once 'ti.php' ?>
-<html>
+<html lang="es">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

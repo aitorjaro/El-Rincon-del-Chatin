@@ -3,7 +3,7 @@ session_start();
 require "modelo.php";
 
 if (isset($_SESSION["usuario"])) {
-    
+
 } else {
     header("Location: index.php");
 }
@@ -15,6 +15,7 @@ $articulo = detalle_articulos($idArticulo);
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borrar productos</title>
     <style>
         @import url('estilo2.css');
@@ -35,16 +36,16 @@ $articulo = detalle_articulos($idArticulo);
         echo "<center>$mensaje</center></br></br>";
     } ?>
     <section class="cuerpo">
-        <form class="dos" action="articuloBorrado.php?id=<?php echo $idArticulo; ?>"
-            method="post" enctype="multipart/form-data">
-            <label>¿Seguro que quieres borrar el producto <?php echo $articulo["nombre"]?>? </label>
-            
+        <form class="dos" action="articuloBorrado.php?id=<?php echo $idArticulo; ?>" method="post"
+            enctype="multipart/form-data">
+            <label>¿Seguro que quieres borrar el producto <?php echo $articulo["nombre"] ?>? </label>
+
             <input type="submit" class="inptAnadirProductos" value="Borrar producto" />
-           
-            
+
+
         </form>
-        
-        
+
+
     </section>
 </body>
 

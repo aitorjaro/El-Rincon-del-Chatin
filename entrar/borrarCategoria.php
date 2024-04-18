@@ -3,7 +3,7 @@ session_start();
 require "modelo.php";
 
 if (isset($_SESSION["usuario"])) {
-    
+
 } else {
     header("Location: index.php");
 }
@@ -15,6 +15,7 @@ $categoria = cargar_categoria_id($nombreCategoria);
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borrar categoría</title>
     <style>
         @import url('estilo2.css');
@@ -35,17 +36,17 @@ $categoria = cargar_categoria_id($nombreCategoria);
         echo "<center>$mensaje</center></br></br>";
     } ?>
     <section class="cuerpo">
-        <form class="dos" action="categoriaBorrada.php?id=<?php echo $nombreCategoria; ?>"
-            method="post" enctype="multipart/form-data">
-            <label>¿Seguro que quieres borrar la categoría <?php echo $categoria["categoria"]?>?</label>
+        <form class="dos" action="categoriaBorrada.php?id=<?php echo $nombreCategoria; ?>" method="post"
+            enctype="multipart/form-data">
+            <label>¿Seguro que quieres borrar la categoría <?php echo $categoria["categoria"] ?>?</label>
             <p> Esto conlleva que se borren todos los productos que pertenecen a esta categoría. </p>
-            
+
             <input type="submit" class="inptAnadirProductos" value="Borrar categoría" />
-           
-            
+
+
         </form>
-        
-        
+
+
     </section>
 </body>
 

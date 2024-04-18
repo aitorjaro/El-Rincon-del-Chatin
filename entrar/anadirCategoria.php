@@ -32,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Añadir categoría</title>
     <style>
         @import url('estilo2.css');
@@ -52,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             enctype="multipart/form-data">
             <label>Nombre de la categoría </label>
             <input name="nombre" type="text" required />
-            
+
             <input type="submit" class="inptAnadirProductos" value="Añadir categoría" />
         </form>
     </section>

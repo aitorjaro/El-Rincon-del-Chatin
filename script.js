@@ -66,7 +66,7 @@ function mostrarMenu(){
     line1__bars.classList.toggle("activeline1__bars-menu");
     line2__bars.classList.toggle("activeline2__bars-menu");
     line3__bars.classList.toggle("activeline3__bars-menu");
-    menuEntero.classList.toggle("menu");
+    menuEntero.classList.toggle("navMenu");
     menuEntero.classList.toggle("mostrarMenu");
     
 
@@ -76,7 +76,7 @@ for (var i = 0; i < links.length; i++) {
       line1__bars.classList.toggle("activeline1__bars-menu");
     line2__bars.classList.toggle("activeline2__bars-menu");
     line3__bars.classList.toggle("activeline3__bars-menu");
-      menuEntero.classList.toggle("menu");
+      menuEntero.classList.toggle("navMenu");
       menuEntero.classList.toggle("mostrarMenu");
     });
   }

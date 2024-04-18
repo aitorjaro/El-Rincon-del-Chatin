@@ -3,7 +3,7 @@ session_start();
 require "modelo.php";
 
 if (isset($_SESSION["usuario"])) {
-    
+
 } else {
     header("Location: index.php");
 }
@@ -72,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar productos</title>
     <style>
         @import url('estilo2.css');
@@ -119,10 +120,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input name="imagen" type="file" id="imagen" />
             <input type="submit" class="inptAnadirProductos" value="Modificar producto" />
             <a class="aBorrarProductos" href="borrarArticulo.php?id=<?php echo $articulo["id"] ?>">Borrar Producto</a>
-            
+
         </form>
-        
-        
+
+
     </section>
 </body>
 

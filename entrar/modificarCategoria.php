@@ -3,7 +3,7 @@ session_start();
 require "modelo.php";
 
 if (isset($_SESSION["usuario"])) {
-    
+
 } else {
     header("Location: index.php");
 }
@@ -19,21 +19,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombreCategoria = $_POST["nombre"];
     $conexion = conexion();
 
-    
+
     $consulta = "UPDATE categorias SET categoria = '{$nombreCategoria}' WHERE categoria = '{$categoria['categoria']}'";
 
-        $resultado = mysqli_query($conexion, $consulta);
+    $resultado = mysqli_query($conexion, $consulta);
 
-        if ($resultado) {
-            $mensajeCodificado = urlencode("Categoría modificada correctamente.");
-            header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $nombreCategoria . "&mensaje=" . $mensajeCodificado);
-            exit;
-        } else {
-            $mensajeCodificado = urlencode('"<center>Error al modificar la categoría: " . mysqli_error($conexion) . "</center></br> </br>"');
-            header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $nombreCategoria . "&mensaje=" . $mensajeCodificado);
-            exit;
-        }
-    
+    if ($resultado) {
+        $mensajeCodificado = urlencode("Categoría modificada correctamente.");
+        header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $nombreCategoria . "&mensaje=" . $mensajeCodificado);
+        exit;
+    } else {
+        $mensajeCodificado = urlencode('"<center>Error al modificar la categoría: " . mysqli_error($conexion) . "</center></br> </br>"');
+        header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $nombreCategoria . "&mensaje=" . $mensajeCodificado);
+        exit;
+    }
+
 }
 
 ?>
@@ -41,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar categoría</title>
     <style>
         @import url('estilo2.css');
@@ -65,13 +66,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             method="post" enctype="multipart/form-data">
             <label>Nombre de la categoría </label>
             <input name="nombre" type="text" value="<?php echo $categoria["categoria"] ?>" required />
-            
+
             <input type="submit" class="inptAnadirProductos" value="Modificar categoría" />
-            <a class="aBorrarProductos" href="borrarCategoria.php?id=<?php echo $categoria["categoria"] ?>">Borrar Categoría</a>
-            
+            <a class="aBorrarProductos" href="borrarCategoria.php?id=<?php echo $categoria["categoria"] ?>">Borrar
+                Categoría</a>
+
         </form>
-        
-        
+
+
     </section>
 </body>
 

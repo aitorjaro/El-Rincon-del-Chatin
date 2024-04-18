@@ -20,6 +20,7 @@ if (isset($_POST["usuario"])) {
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de control</title>
     <style>
         @import url('estilo2.css');

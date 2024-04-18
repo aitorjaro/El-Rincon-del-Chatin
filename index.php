@@ -11,17 +11,17 @@
     } elseif ($uri == '/') {
         
         lista_articulos();
-    } elseif ($uri == dirname($_SERVER['PHP_SELF']).'/articulo' && isset($_GET['id'])) {
+    } elseif ($uri == '/index.php/articulo' && isset($_GET['id'])) {
         
         detalle_articulo($_GET['id']);
-    } elseif ($uri == dirname($_SERVER['PHP_SELF']).'/cesta') {
+    } elseif ($uri == '/index.php/cesta') {
         
         cesta();
-    } elseif ($uri == dirname($_SERVER['PHP_SELF']).'/carrito') {
+    } elseif ($uri == '/index.php/carrito') {
         
         carrito();
     }
-    elseif ($uri == dirname($_SERVER['PHP_SELF']).'/contacto') {
+    elseif ($uri == '/index.php/contacto') {
         
         contacto();
     }

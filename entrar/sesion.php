@@ -14,6 +14,7 @@ if (isset($_SESSION["usuario"])) {
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenid@
         <?php echo $_SESSION["usuario"] ?>
     </title>

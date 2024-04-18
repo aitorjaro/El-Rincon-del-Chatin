@@ -725,8 +725,36 @@ h1.tituloFooter {
         width:300px;
         font-weight: lighter;
     }
-    nav{
+    .navMenu{
         display: none;
+    }
+    .mostrarMenu {
+        position: absolute;
+        background: white;
+        width: 100%;
+        height: 1000px;
+        animation: 1s deslizar;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+    @keyframes deslizar {
+        from {
+            margin-right: -200%;
+        }
+
+        to {
+            margin-right: 0%;
+        }
+    }
+    #menuPrincipal ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    a.menu {
+        color: black;
     }
     .bars__menu {
         top:50%;
@@ -737,7 +765,7 @@ h1.tituloFooter {
         position: absolute;
         transform: scale(1.2);
         cursor: pointer;
-        z-index: 1;
+        z-index: 3;
     }
 
     .bars__menu span {
