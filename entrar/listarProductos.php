@@ -28,6 +28,8 @@ if (isset($_SESSION["usuario"])) {
     <section class="englobarMenu">
         <a class="flechaVolver" href="sesion.php">
             < Volver</a>
+            <a class="flechaVolver" href="salir.php">
+           <img src="/imagenes/logout.png"/></a>
     </section>
     <section class="cuerpo">
         <form class="dos" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post"

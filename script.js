@@ -66,8 +66,9 @@ function mostrarMenu(){
     line1__bars.classList.toggle("activeline1__bars-menu");
     line2__bars.classList.toggle("activeline2__bars-menu");
     line3__bars.classList.toggle("activeline3__bars-menu");
-    menuEntero.classList.toggle("navMenu");
+    menuEntero.classList.toggle("navMoviles");
     menuEntero.classList.toggle("mostrarMenu");
+    document.body.classList.toggle('body-no-scroll');
     
 
 for (var i = 0; i < links.length; i++) {
@@ -76,7 +77,7 @@ for (var i = 0; i < links.length; i++) {
       line1__bars.classList.toggle("activeline1__bars-menu");
     line2__bars.classList.toggle("activeline2__bars-menu");
     line3__bars.classList.toggle("activeline3__bars-menu");
-      menuEntero.classList.toggle("navMenu");
+      menuEntero.classList.toggle("navMoviles");
       menuEntero.classList.toggle("mostrarMenu");
     });
   }

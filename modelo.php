@@ -32,25 +32,36 @@ $contrasena = "";
 }
 function cargar_articulos()
 {
-
     $articulos = array();
-    $busqueda = mysqli_query(conexion(), "SELECT * from productos");
-    while ($articulo = mysqli_fetch_assoc($busqueda)) {
-        $articulos[] = $articulo;
+    $con = conexion(); 
+    if ($con) {
+        $busqueda = mysqli_query($con, "SELECT * from productos");
+        while ($articulo = mysqli_fetch_assoc($busqueda)) {
+            $articulos[] = $articulo;
+        }
+        $con->close(); 
     }
     return $articulos;
 }
 function cargar_articulo_id($id){
     $articulos = array();
-    $busqueda = mysqli_query(conexion(), "SELECT * from productos WHERE id = $id");
-    $articulos = mysqli_fetch_assoc($busqueda);
+    $con = conexion();
+    if ($con) {
+        $busqueda = mysqli_query($con, "SELECT * from productos WHERE id = $id");
+        $articulos = mysqli_fetch_assoc($busqueda);
+        $con->close(); 
+    }
     return $articulos;
 }
 function cargar_categorias(){
     $categorias = array();
-    $busqueda = mysqli_query(conexion(), "SELECT * from categorias");
-    while ($categoria = mysqli_fetch_assoc($busqueda)) {
-        $categorias[] = $categoria;
+    $con = conexion(); 
+    if ($con) {
+        $busqueda = mysqli_query($con, "SELECT * from categorias");
+        while ($categoria = mysqli_fetch_assoc($busqueda)) {
+            $categorias[] = $categoria;
+        }
+        $con->close(); 
     }
     return $categorias;
 }

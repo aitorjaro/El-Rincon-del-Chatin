@@ -38,7 +38,12 @@ header {
     align-items: center;
 }
 
+/* Menú para móviles */
 .bars__menu {
+    display: none;
+}
+
+.navMoviles{
     display: none;
 }
 
@@ -729,6 +734,7 @@ h1.tituloFooter {
         display: none;
     }
     .mostrarMenu {
+        top:0%;
         position: absolute;
         background: white;
         width: 100%;
@@ -748,13 +754,16 @@ h1.tituloFooter {
             margin-right: 0%;
         }
     }
-    #menuPrincipal ul{
+    nav ul{
+        
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
     a.menu {
         color: black;
+        font-size:40px;
     }
     .bars__menu {
         top:50%;
@@ -791,5 +800,10 @@ h1.tituloFooter {
     .activeline3__bars-menu {
         background: black !important;
         transform: rotate(-45deg) translate(-4px, 2px);
+    }
+    .body-no-scroll {
+        overflow: hidden;
+        position: fixed; /* Opcional: para dispositivos iOS */
+        width: 100%;
     }
  }

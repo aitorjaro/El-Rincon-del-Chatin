@@ -55,6 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section class="englobarMenu">
         <a class="flechaVolver" href="sesion.php">
             < Volver</a>
+            <a class="flechaVolver" href="salir.php">
+           <img src="/imagenes/logout.png"/></a>
     </section>
     <?php
     if (isset($_GET['mensaje'])) {

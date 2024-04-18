@@ -24,6 +24,10 @@ if (isset($_SESSION["usuario"])) {
 </head>
 
 <body>
+    <section class="englobarMenu">
+        <a class="flechaVolver" href="salir.php">
+            <img src="/imagenes/logout.png" /></a>
+    </section>
     <section class="cuerpo">
         <section class="cuerpoSesion">
             <h2 class="h2SeleccionPrincipal">PRODUCTOS</h2>

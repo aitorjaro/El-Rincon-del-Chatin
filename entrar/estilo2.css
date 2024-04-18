@@ -34,7 +34,6 @@ article.articleLogin{
 }
 section.cuerpoSesion{
     background: white;
-    margin-top:50px;
     padding-bottom:50px;
     width:700px;
     display:flex;
@@ -74,6 +73,11 @@ section.englobarMenu{
     justify-content: center;
     margin-bottom:20px;
     margin-top:20px;
+}
+.divLogout{
+    margin-left:10px;
+    display:flex;
+    align-items: center;
 }
 form.uno{
     text-transform:uppercase;
@@ -140,6 +144,9 @@ form.dos{
 a.flechaVolver{
     background:white;
     padding:20px 50px;
+    margin-right:10px;
+    display:flex;
+    align-items: center;
 }
 a.aBorrarProductos{
     font-size:20px;
