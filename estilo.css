@@ -738,12 +738,12 @@ h1.tituloFooter {
         position: absolute;
         background: white;
         width: 100%;
-        height: 1000px;
+        height: 100vh;
         animation: 1s deslizar;
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 2;
+        z-index: 3;
     }
     @keyframes deslizar {
         from {
@@ -755,7 +755,6 @@ h1.tituloFooter {
         }
     }
     nav ul{
-        
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -774,7 +773,7 @@ h1.tituloFooter {
         position: absolute;
         transform: scale(1.2);
         cursor: pointer;
-        z-index: 3;
+        z-index: 4;
     }
 
     .bars__menu span {
