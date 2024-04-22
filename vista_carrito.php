@@ -6,7 +6,14 @@
 <?php
 if (isset($_POST['submitPayment'])) {
     
-    $amount = $_SESSION["totalConEnvio"]; 
+    $amount = $_SESSION["totalConEnvio"];
+    $_SESSION["nombre"] = $_POST["nombre"];
+    $_SESSION["apellidos"] = $_POST["apellidos"];
+    $_SESSION["email"] = $_POST["email"];
+    $_SESSION["telefono"] = $_POST["telefono"];
+    $_SESSION["direccion"] = $_POST["direccion"];
+    $_SESSION["localidad"] = $_POST["localidad"];
+    $_SESSION["codigopostal"] = $_POST["codigopostal"];
     
     include "redsysHMAC256_API_PHP_7.0.0/apiRedsys.php";  
     $miObj = new RedsysAPI;
@@ -14,18 +21,18 @@ if (isset($_POST['submitPayment'])) {
     //$url_tpv = 'https://sis.redsys.es/sis/realizarPago';
     $url_tpv = 'https://sis-t.redsys.es:25443/sis/realizarPago';
     $version = "HMAC_SHA256_V1"; 
-    $clave = 'sq7HjrUOBfKmC576ILgskD5srU870gJ7'; //poner la clave SHA-256
-    $name = 'EL RINCON DEL CHATIN ESPJ'; //cambiar este dato
-    $code = '340620889'; //cambiar este dato
+    $clave = 'sq7HjrUOBfKmC576ILgskD5srU870gJ7'; 
+    $name = 'EL RINCON DEL CHATIN ESPJ'; 
+    $code = '340620889'; 
     $terminal = '1';
     $order = date('ymdHis');
     $amount = $amount * 100;
     $currency = '978';
     $consumerlng = '001';
     $transactionType = '0';
-    $urlMerchant = 'https://www.elrincondelchatin.com/'; //cambiar este dato
-    $urlweb_ok = 'https://www.elrincondelchatin.com/tpv_ok.php'; //cambiar este dato
-    $urlweb_ko = 'https://www.elrincondelchatin.com/tpv_ko.php'; //cambiar este dato
+    $urlMerchant = 'https://www.elrincondelchatin.com/'; 
+    $urlweb_ok = 'https://www.elrincondelchatin.com/index.php/tpv_ok'; 
+    $urlweb_ko = 'https://www.elrincondelchatin.com/tpv_ko.php'; 
 
     $miObj->setParameter("DS_MERCHANT_AMOUNT", $amount);
     $miObj->setParameter("DS_MERCHANT_CURRENCY", $currency);
@@ -57,7 +64,7 @@ if (isset($_POST['submitPayment'])) {
 ?>
 
 
-?>
+
 <?php startblock('titulo'); ?>
 <title>
     Carrito - El Rincón del Chatín (Hervás)
@@ -76,7 +83,7 @@ if (isset($_POST['submitPayment'])) {
 
     <section class="centrarCarrito">
 
-        <h1 class="carrito">
+        <h1 class="h1carrito">
             CARRITO DE LA COMPRA
         </h1>
 
@@ -225,30 +232,31 @@ if (isset($_POST['submitPayment'])) {
                     <form class="formDatosEnvio" action="" method="post">
                         <div class="divEnglobarDatos">
                             <div>
-                               <input name="nombre" placeholder="Nombre"/>
+                               <input name="nombre" placeholder="Nombre" required/>
                             </div>
                             <div>
-                                <input name="apellidos" placeholder="Apellidos"/>
+                                <input name="apellidos" placeholder="Apellidos" required/>
                             </div>
                             <div>
-                                <input name="email" type="mail" placeholder="Correo electrónico"/>
+                                <input name="email" type="mail" placeholder="Correo electrónico" required/>
                             </div>
                         </div>
                         <div class="divEnglobarDatos">
                             
                             <div>
-                                <input name="telefono" type="tel" placeholder="Teléfono"/>
+                                <input name="telefono" type="tel" placeholder="Teléfono" required/>
                             </div>
                             <div>
-                                <input name="direccion" type="mail" placeholder="Dirección"/>
+                                <input name="direccion" type="text" placeholder="Dirección" required/>
                             </div>
                             <div>
-                               <input name="piso" type="text" placeholder="Piso"/>
+                                <input name="localidad" type="text" placeholder="Localidad" required/>
                             </div>
                         </div>
                         <div class="divEnglobarDatos">
+                        
                             <div>
-                                <input name="codigopostal" type="number" placeholder="Código Postal"/>
+                                <input name="codigopostal" type="number" placeholder="Código Postal" required/>
                             </div>
                         </div>
                         <div class="divEnglobarDatos">
