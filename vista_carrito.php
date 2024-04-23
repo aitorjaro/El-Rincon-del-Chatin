@@ -203,7 +203,8 @@ if (isset($_POST['submitPayment'])) {
                                 </td>
                             </tr>
 
-                            <?php $total = $total + ($carrito_mio[$i]["precio"] * $carrito_mio[$i]["cantidad"]); ?>
+                            <?php $total = $total + ($carrito_mio[$i]["precio"] * $carrito_mio[$i]["cantidad"]);
+                                    $_SESSION["totalSinEnvio"] = $total; ?>
                         <?php } ?>
                     </table>
                     <section class="pieDeCarrito">
@@ -260,7 +261,7 @@ if (isset($_POST['submitPayment'])) {
                             </div>
                         </div>
                         <div class="divEnglobarDatos">
-                            <button type="submit" name="submitPayment" class="carrito">Ir al pago</button>
+                            <button type="submit" name="submitPayment" class="botonPago">Ir al pago</button>
                         </div>
 
                     </form>

@@ -31,7 +31,7 @@ section.negro {
 }
 
 header {
-    width:100%;
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: space-evenly;
@@ -43,20 +43,25 @@ header {
     display: none;
 }
 
-.navMoviles{
+.navMoviles {
     display: none;
 }
 
 h1.titulo {
     font-size: 60px;
     color: white;
-    position: absolute; /* Posicionamiento absoluto */
-    top: 50%; /* Centra verticalmente */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta la posición exacta del centro */
-    margin:0px;
+    position: absolute;
+    /* Posicionamiento absoluto */
+    top: 50%;
+    /* Centra verticalmente */
+    left: 50%;
+    /* Centra horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Ajusta la posición exacta del centro */
+    margin: 0px;
 }
-h1.tituloOculto{
+
+h1.tituloOculto {
     font-size: 60px;
     color: #CFB377;
 }
@@ -156,6 +161,7 @@ div.englobarCesta {
 
 .englobarCesta img {
     width: 40%;
+    height: 100%;
     /*position: relative;
     height: auto;*/
     z-index: 1;
@@ -209,11 +215,12 @@ h1.parrafos {
     text-align: center;
 }
 
-.sctCategorias{
+.sctCategorias {
     display: flex;
     justify-content: center;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
+
 button.botonCategorias {
     font-family: SourceSans;
     font-size: 20px;
@@ -343,9 +350,11 @@ section.englobarTextoArticulo {
 section.englobarTextoArticulo2 {
     width: 90%;
 }
-section.seccionCentrarTextoLista{
+
+section.seccionCentrarTextoLista {
     text-align: center;
 }
+
 a.titulo {
     font-size: 20px;
     margin-top: 50px;
@@ -422,7 +431,7 @@ input.inputCantidadDetalle {
     width: 100px;
     padding: 5px 10px;
     margin: 5px;
-    margin-right:20px;
+    margin-right: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -514,7 +523,7 @@ td.tdCantidad {
 
 td.tdNombre {
     width: 500px;
-    padding:0px 50px;
+    padding: 0px 50px;
 }
 
 td.tdBorrar {
@@ -534,13 +543,15 @@ section.englobarImagenArticuloCarrito {
     margin-left: auto;
     margin-right: auto;
 }
-.formularioCantidad{
-    display:flex;
+
+.formularioCantidad {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-.imgRefresh{
-    margin-left:10px;
+
+.imgRefresh {
+    margin-left: 10px;
 }
 
 input.inputCantidadCarrito {
@@ -609,31 +620,59 @@ p.carritoVacio {
 
 /* Datos envío */
 
-h1.datosEnvio{
+h1.datosEnvio {
     font-family: Barlow;
-    font-size:40px;
+    font-size: 40px;
     text-align: center;
 }
-div.divEnglobarDatos{
-    display:flex;
+
+div.divEnglobarDatos {
+    display: flex;
     justify-content: center;
-    margin-bottom:60px;
+    margin-bottom: 60px;
     flex-wrap: wrap;
 }
+
 .formDatosEnvio .divEnglobarDatos div label {
-    font-size:20px;
-    margin-right:10px;
+    font-size: 20px;
+    margin-right: 10px;
 }
+
 .formDatosEnvio .divEnglobarDatos div input {
-    width:300px;
-    height:50px;
+    width: 300px;
+    height: 50px;
     font-family: SourceSans;
     font-size: 20px;
-    margin-right:50px;
+    margin-right: 50px;
 }
-textarea.formularioContacto{
+
+textarea.formularioContacto {
     font-family: SourceSans;
-    font-size:18px;
+    font-size: 18px;
+}
+
+.botonPago {
+    background-color: #cfb377;
+    font-family: SourceSans;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.botonPago:hover {
+    background-color: #cfb988;
+}
+
+.botonPago:active {
+    background-color: #cfb988;
+    transform: translateY(4px);
 }
 
 /*----------------- CONTACTO------------------*/
@@ -647,13 +686,14 @@ section.englobandoContacto {
 
 section.centrarContacto {
     background: white;
-    padding-bottom:100px;
+    padding-bottom: 100px;
     width: 90%;
 }
-section.englobarContacto{
-    display:flex;
+
+section.englobarContacto {
+    display: flex;
     justify-content: center;
-    gap:100px;
+    gap: 100px;
     flex-wrap: wrap;
 }
 
@@ -662,34 +702,37 @@ h1.contacto {
     font-family: Barlow;
     text-align: center;
 }
-div.formularioContacto{
-    
-}
-h2.formularioContacto{
+
+div.formularioContacto {}
+
+h2.formularioContacto {
     margin-top: 0px;
-    margin-bottom:50px;
-    font-family:Barlow;
-    font-size:40px;
+    margin-bottom: 50px;
+    font-family: Barlow;
+    font-size: 40px;
     text-align: center;
 }
-.formularioContacto input{
-    width:300px;
-    height:50px;
+
+.formularioContacto input {
+    width: 300px;
+    height: 50px;
     font-family: SourceSans;
     font-size: 20px;
-    margin-right:50px;
+    margin-right: 50px;
 }
-h3.h3Contacto{
-    font-size:30px;
+
+h3.h3Contacto {
+    font-size: 30px;
 }
-.aTelefono{
-    color:black;
+
+.aTelefono {
+    color: black;
 }
 
 /*----------------- FOOTER------------------*/
 footer {
     margin-top: 100px;
-    padding:50px 0px;
+    padding: 50px 0px;
     background: black;
     color: white;
     display: flex;
@@ -705,36 +748,47 @@ h1.tituloFooter {
     color: white;
     text-align: center;
 }
-.pFooter{
+
+.pFooter {
     text-align: center;
 }
-.pFooterSans{
+
+.pFooterSans {
     font-family: SourceSans;
     text-align: center;
 }
 
 @media (min-device-width: 320px) and (max-device-width: 736px) {
-    body,html{
+
+    body,
+    html {
         overflow-x: hidden;
     }
-    h1.tituloOculto{
-        font-size:50px;
+
+    h1.tituloOculto {
+        font-size: 50px;
     }
+
     h1.titulo {
-        font-size:50px;
-        position: absolute; /* Posicionamiento absoluto */
-        top: 0%; /* Centra verticalmente */
-        left: 0%; /* Centra horizontalmente */
+        font-size: 50px;
+        position: absolute;
+        /* Posicionamiento absoluto */
+        top: 0%;
+        /* Centra verticalmente */
+        left: 0%;
+        /* Centra horizontalmente */
         transform: translate(-0%, -0%);
-        margin:40px 30px;
-        width:300px;
+        margin: 40px 30px;
+        width: 300px;
         font-weight: lighter;
     }
-    .navMenu{
+
+    .navMenu {
         display: none;
     }
+
     .mostrarMenu {
-        top:0%;
+        top: 0%;
         position: absolute;
         background: white;
         width: 100%;
@@ -745,6 +799,7 @@ h1.tituloFooter {
         align-items: center;
         z-index: 3;
     }
+
     @keyframes deslizar {
         from {
             margin-right: -200%;
@@ -754,18 +809,21 @@ h1.tituloFooter {
             margin-right: 0%;
         }
     }
-    nav ul{
+
+    nav ul {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
     a.menu {
         color: black;
-        font-size:40px;
+        font-size: 40px;
     }
+
     .bars__menu {
-        top:50%;
+        top: 50%;
         margin-left: 80%;
         display: block;
         width: 30px;
@@ -785,6 +843,7 @@ h1.tituloFooter {
         transform-origin: 0px 100%;
         transition: all 300ms;
     }
+
     .activeline1__bars-menu {
         background: black !important;
         transform: rotate(45deg) translate(-2px, 1px);
@@ -800,9 +859,119 @@ h1.tituloFooter {
         background: black !important;
         transform: rotate(-45deg) translate(-4px, 2px);
     }
+
     .body-no-scroll {
         overflow: hidden;
-        position: fixed; /* Opcional: para dispositivos iOS */
+        position: fixed;
+        /* Opcional: para dispositivos iOS */
         width: 100%;
     }
- }
+
+    .englobarCesta h2 {
+        position: absolute;
+        font-size: 40px;
+        color: #cfb377;
+        background: white;
+        padding: 25px 20px;
+        font-weight: lighter;
+        text-align: center;
+    }
+
+    .englobarCesta img {
+        width: 60%;
+        height: 100%;
+        /*position: relative;
+        height: auto;*/
+        z-index: 1;
+        margin-top: 80px;
+    }
+
+    h1.parrafos {
+        font-size: 60px;
+        font-weight: lighter;
+    }
+    /*.sctCategorias {
+        display: flex;
+        justify-content:flex-start;
+        flex-wrap:nowrap;
+        overflow-x: scroll;
+    }*/
+    button.botonCategorias {
+        font-family: SourceSans;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        padding: 20px 40px;
+        background: #cfb377;
+        cursor: pointer;
+        border: none;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-weight:normal;
+    }
+    section.articulos {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        font-family: SourceSans;
+        justify-content: center;
+        gap:20px;
+    }
+    section.articulo {
+        width: 150px;
+        height: auto;
+        padding: 5px;
+        background: white;
+    }
+    a.titulo {
+        font-family:SourceSansRegular;
+        font-weight: lighter;
+    }
+    button.carrito {
+        font-weight: lighter;
+    }
+
+    /*DESCRIPCION ARTICULOS */
+    section.articuloDescripcion {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        width: 90%;
+    }
+    .seccionImagenDetalle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        width: auto;
+    }
+    .imagenDetalle {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        /* la imagen se ajusta sin perder la relación de aspecto */
+    }
+    section.descripcionDentro {
+        width: 80%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 0px;
+        margin:auto;
+        text-align: center;
+    }
+    h1.descripcionArticulo {
+        font-size: 30px;
+        font-weight: lighter;
+        margin: 0px;
+        margin-top:30px;
+    }
+
+    /* FOOTER */
+    h1.tituloFooter {
+        font-weight: lighter;
+    }
+    .pFooter{
+        text-decoration: none;
+    }
+
+}

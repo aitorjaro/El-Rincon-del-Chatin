@@ -66,7 +66,7 @@ function cargar_categorias(){
     return $categorias;
 }
 function insertar_pedido(){
-
+    
 }
 /**
  * Función listar_articulos

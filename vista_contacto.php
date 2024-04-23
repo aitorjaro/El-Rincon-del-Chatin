@@ -22,14 +22,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $mensaje = $_POST['mensaje'];
     
     $para = 'aitorjaro11@hotmail.com';
-    $asunto = 'Nuevo mensaje de '. $nombre;
-    $cuerpo = "Nombre: $nombre\nEmail: $email\nMensaje: $mensaje";
+    $asunto = 'ElRinconDelChatin.com - Nuevo mensaje de '. $nombre;
+    $cuerpo = "Tienes un nuevo mensaje del formulario de contacto de tu página web. \n\nNombre: $nombre\nEmail: $email\nMensaje:\n $mensaje";
     
     // Usar la función mail() de PHP para enviar el correo
     if(mail($para, $asunto, $cuerpo)){
-        echo "Mensaje enviado con éxito";
+        $mensajeEnviado = "Mensaje enviado con éxito";
     } else {
-        echo "Error al enviar el mensaje";
+        $mensajeEnviado= "Error al enviar el mensaje";
     }
 }
 ?>
@@ -43,23 +43,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h1 class="contacto">
             CONTACTO
         </h1>
+        <h2 class="formularioContacto"><?php if(isset($mensajeEnviado)) echo $mensajeEnviado; ?></h2>
         <section class="englobarContacto">
             <div class="formularioContacto">
+                
                 <h2 class="formularioContacto">FORMULARIO DE CONTACTO</h2>
                 <form class="formularioContacto" action="" method="post">
                     <div class="divEnglobarDatos">
-                        <input name="nombreYApellidos" placeholder="Nombre y Apellidos" />
-                        <input type="mail" name="email" placeholder="Correo electrónico" />
+                        <input name="nombreYApellidos" placeholder="Nombre y Apellidos" required />
+                        <input type="mail" name="email" placeholder="Correo electrónico" required/>
                     </div>
                     <div class="divEnglobarDatos">
-                        <input type="tel" name="telefono" placeholder="Nº de teléfono" />
+                        <input type="tel" name="telefono" placeholder="Nº de teléfono" required/>
                         <input type="number" name="numeroPedido" placeholder="Nº de pedido (opcional)" />
                     </div>
                     <div class="divEnglobarDatos">
-                        <textarea class="formularioContacto" name="mensaje" cols="100" rows="20" placeholder="Escribe aquí tu mensaje..."></textarea>
+                        <textarea class="formularioContacto" name="mensaje" cols="100" rows="20" placeholder="Escribe aquí tu mensaje..." required></textarea>
                     </div>
                     <div class="divEnglobarDatos">
-                        <button type="submit" class="carrito">Enviar mensaje</button>
+                        <button type="submit" class="botonPago">Enviar mensaje</button>
                     </div>
                 </form>
             </div>
