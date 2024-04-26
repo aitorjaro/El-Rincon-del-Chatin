@@ -185,7 +185,7 @@ if (isset($_POST['submitPayment'])) {
                                         <?php echo $carrito_mio[$i]["nombre"]; ?>
                                     </p>
                                 </td>
-                                <td>
+                                <td class="tdPrecio">
                                     <p class="nombreArticulosCarrito">
                                         <?php
                                         $precioArticulo = $carrito_mio[$i]["precio"] * $carrito_mio[$i]["cantidad"];
@@ -198,7 +198,7 @@ if (isset($_POST['submitPayment'])) {
                                     <form class="formularioCantidad" action="/index.php/carrito" method="post">
                                         <input name="id2" type="hidden" value="<?php echo $carrito_mio[$i]['id'] ?>" />
                                         <input name="borrar" type="hidden" value="" />
-                                        <input type="image" src="/imagenes/papelera.png" />
+                                        <input type="image" class="imgDelete" src="/imagenes/papelera.png" />
                                     </form>
                                 </td>
                             </tr>

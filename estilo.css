@@ -46,6 +46,7 @@ header {
 .navMoviles {
     display: none;
 }
+/* */
 
 h1.titulo {
     font-size: 60px;
@@ -728,6 +729,14 @@ h3.h3Contacto {
 .aTelefono {
     color: black;
 }
+/*PEDIDO CONFIRMADO*/
+.sctDatosEnvio{
+    margin-bottom:100px;
+}
+.pDatosEnvio{
+    text-align: center;
+    font-size:18px;
+}
 
 /*----------------- FOOTER------------------*/
 footer {
@@ -936,7 +945,8 @@ h1.tituloFooter {
         display: flex;
         flex-direction: column;
         background: white;
-        width: 90%;
+        width: 100%;
+        padding:40px 0px;
     }
     .seccionImagenDetalle {
         display: flex;
@@ -964,6 +974,160 @@ h1.tituloFooter {
         font-weight: lighter;
         margin: 0px;
         margin-top:30px;
+    }
+
+    /* CARRITO */
+    section.centrarCarrito {
+        width:100%;
+    }
+    .h1carrito {
+        font-size:45px;
+        font-weight: lighter;
+        margin-bottom:0px;
+    }
+    p.carritoVacio {
+        font-weight: lighter;
+    }
+
+    table {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    th {
+        font-family: Barlow;
+        font-size:15px;
+        padding-bottom: 40px;
+        display:none;
+    }
+    
+    tr {
+        border-bottom: 1px #9A9A9A solid;
+        text-align: center;
+    }
+    
+    td {
+        text-align: center;
+        padding: 30px 0px;
+    }
+    
+    td.tdImagen {
+        width: 100px;
+    }
+    
+    td.tdCantidad {
+        width:200px;
+        padding-left: 10px;
+    }
+    
+    td.tdNombre {
+        width: 500px;
+        padding: 20px 15px;
+    }
+    .tdPrecio{
+        padding: 0px 10px;
+    }
+    .tdBorrar{
+        width:200px;
+    }
+
+    p.nombreArticulosCarrito {
+        font-family: SourceSansRegular;
+        font-weight: lighter;
+        font-size: 20px;
+        text-align: center;
+    }
+    section.englobarImagenArticuloCarrito {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .formularioCantidad {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    
+    .imgRefresh {
+        margin-left: 10px;
+        width:20px;
+    }
+    .imgDelete{
+        width:15px;
+    }
+    
+    input.inputCantidadCarrito {
+        font-size: 13px;
+        text-align: center;
+        width: 30px;
+        padding: 5px 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease-in-out;
+    }
+    
+    img.imagenArticuloCarrito {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    section.pieDeCarrito {
+        margin-top:40px;
+        justify-content: center;
+    }
+    section.pieDeCarritoDentro {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    p.totalProductosCarrito {
+        font-size: 23px;
+        margin-right: 0px;
+        margin:0px;
+    }
+    p.totalPrecioCarrito {
+        font-family: SourceSansRegular;
+        font-size: 23px;
+        font-weight: lighter;
+        margin-right: 0px;
+    }
+    h1.datosEnvio {
+        font-weight: lighter;
+        margin-bottom:40px;
+    }
+    div.divEnglobarDatos {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0px;
+        flex-wrap: wrap;
+    }
+    .formDatosEnvio .divEnglobarDatos div label {
+        font-size: 20px;
+        margin-right: 0px;
+    }
+    
+    .formDatosEnvio .divEnglobarDatos div input {
+        width: 300px;
+        height: 50px;
+        font-family: SourceSans;
+        font-size: 20px;
+        margin-right: 0px;
+        margin: 5px 0px;
+    }
+    .botonPago {
+        margin-top:40px;
+        font-weight: lighter;
     }
 
     /* FOOTER */
