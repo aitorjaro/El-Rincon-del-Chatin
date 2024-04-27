@@ -896,7 +896,7 @@ h1.tituloFooter {
     }
 
     h1.parrafos {
-        font-size: 60px;
+        font-size: 55px;
         font-weight: lighter;
     }
     /*.sctCategorias {
@@ -1128,6 +1128,37 @@ h1.tituloFooter {
     .botonPago {
         margin-top:40px;
         font-weight: lighter;
+    }
+
+    /*CONTACTO */
+    section.englobandoContacto {
+        background: white;
+    }
+
+    h1.contacto {
+        font-size: 45px;
+        font-weight: lighter;
+    }
+    h2.formularioContacto {
+        font-size:25px;
+        font-weight: lighter;
+    }
+    .divEnglobarDatos{
+        flex-direction: column;
+        align-items: center;
+    }
+    .formularioContacto input {
+        margin-right: 0px;
+        margin-top:5px;
+    }
+    .divEnglobarDatos textarea{
+        margin-top:30px;
+        width:100%;
+        height:200px;
+    }
+    .h3contacto{
+        font-weight: lighter;
+        font-size:25px;
     }
 
     /* FOOTER */

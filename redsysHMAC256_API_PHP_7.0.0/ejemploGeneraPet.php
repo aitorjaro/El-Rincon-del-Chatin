@@ -11,7 +11,7 @@
 	$moneda="978";
 	$trans="0";
 	$url="";
-	$urlOKKO="http://localhost/ApiPhpRedsys/ApiRedireccion/redsysHMAC256_API_PHP_7.0.0/ejemploRecepcionaPet.php";
+	$urlOKKO="http://localhost/redsysHMAC256_API_PHP_7.0.0/ejemploRecepcionaPet.php";
 	$id=time();
 	$amount="145";	
 	

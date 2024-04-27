@@ -17,39 +17,36 @@ if (isset($_POST['submitPayment'])) {
     
     include "redsysHMAC256_API_PHP_7.0.0/apiRedsys.php";  
     $miObj = new RedsysAPI;
+    $code="340620889";
+	$terminal="1";
+	$moneda="978";
+	$trans="0";
+	$url="https://www.elrincondelchatin.com/";
+	$urlOK="https://www.elrincondelchatin.com/tpv_ok.php";
+    $urlKO="https://www.elrincondelchatin.com/tpv_ko.php";
+	$id=time();
+	$amount=$amount * 100;	
+	
+	// Se Rellenan los campos
+	$miObj->setParameter("DS_MERCHANT_AMOUNT",$amount);
+	$miObj->setParameter("DS_MERCHANT_ORDER",$id);
+	$miObj->setParameter("DS_MERCHANT_MERCHANTCODE",$code);
+	$miObj->setParameter("DS_MERCHANT_CURRENCY",$moneda);
+	$miObj->setParameter("DS_MERCHANT_TRANSACTIONTYPE",$trans);
+	$miObj->setParameter("DS_MERCHANT_TERMINAL",$terminal);
+	$miObj->setParameter("DS_MERCHANT_MERCHANTURL",$url);
+	$miObj->setParameter("DS_MERCHANT_URLOK",$urlOK);
+	$miObj->setParameter("DS_MERCHANT_URLKO",$urlKO);
 
-    //$url_tpv = 'https://sis.redsys.es/sis/realizarPago';
-    $url_tpv = 'https://sis-t.redsys.es:25443/sis/realizarPago';
-    $version = "HMAC_SHA256_V1"; 
-    $clave = 'sq7HjrUOBfKmC576ILgskD5srU870gJ7'; 
-    $name = 'EL RINCON DEL CHATIN ESPJ'; 
-    $code = '340620889'; 
-    $terminal = '1';
-    $order = date('ymdHis');
-    $amount = $amount * 100;
-    $currency = '978';
-    $consumerlng = '001';
-    $transactionType = '0';
-    $urlMerchant = 'https://www.elrincondelchatin.com/'; 
-    $urlweb_ok = 'https://www.elrincondelchatin.com/index.php/tpv_ok'; 
-    $urlweb_ko = 'https://www.elrincondelchatin.com/tpv_ko.php'; 
-
-    $miObj->setParameter("DS_MERCHANT_AMOUNT", $amount);
-    $miObj->setParameter("DS_MERCHANT_CURRENCY", $currency);
-    $miObj->setParameter("DS_MERCHANT_ORDER", $order);
-    $miObj->setParameter("DS_MERCHANT_MERCHANTCODE", $code);
-    $miObj->setParameter("DS_MERCHANT_TERMINAL", $terminal);
-    $miObj->setParameter("DS_MERCHANT_TRANSACTIONTYPE", $transactionType);
-    $miObj->setParameter("DS_MERCHANT_MERCHANTURL", $urlMerchant);
-    $miObj->setParameter("DS_MERCHANT_URLOK", $urlweb_ok);      
-    $miObj->setParameter("DS_MERCHANT_URLKO", $urlweb_ko);
-    $miObj->setParameter("DS_MERCHANT_MERCHANTNAME", $name); 
-    $miObj->setParameter("DS_MERCHANT_CONSUMERLANGUAGE", $consumerlng);    
-
-    $params = $miObj->createMerchantParameters();
-    $signature = $miObj->createMerchantSignature($clave);
+	//Datos de configuración
+	$version="HMAC_SHA256_V1";
+	$kc = 'sq7HjrUOBfKmC576ILgskD5srU870gJ7';//Clave recuperada de CANALES
+	// Se generan los parámetros de la petición
+	$request = "";
+	$params = $miObj->createMerchantParameters();
+	$signature = $miObj->createMerchantSignature($kc);
     ?>
-    <form id="realizarPago" action="<?php echo $url_tpv; ?>" method="post">
+    <form id="realizarPago" action="https://sis-t.redsys.es:25443/sis/realizarPago" method="post">
         <input type='hidden' name='Ds_SignatureVersion' value='<?php echo $version; ?>'> 
         <input type='hidden' name='Ds_MerchantParameters' value='<?php echo $params; ?>'> 
         <input type='hidden' name='Ds_Signature' value='<?php echo $signature; ?>'> 
