@@ -29,6 +29,10 @@
         
         tpv_ok();
     }
+    elseif ($uri == '/index.php/busqueda') {
+        
+        busqueda();
+    }
     else {
         header("HTTP/1.0 404 Not Found");
         echo '<html><body><h1>Página no encontrada</h1></body></html>';

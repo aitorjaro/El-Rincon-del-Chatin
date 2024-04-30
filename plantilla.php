@@ -33,15 +33,22 @@ if (isset($_SESSION["carrito"])) {
 
         <nav class="navMenu">
             <ul>
+            
                 <li><a class="menu" href="/index.php">Inicio</a></li>
                 <li><a class="menu" href="/sugerencias">Regalos</a></li>
+                <li>
+                    <section class="imagenCarro">
+                        <img class="imagenCarrito" src="/imagenes/lupa.svg" />
+                    </section>
+                </li>
             </ul>
         </nav>
-        <h1 class="titulo">EL RINCÓN DEL CHATÍN</h1>
-        <!--¡<section class="logoPrincipal">
-        <img class="imagenlogoPrincipal" src="/imagenes/logo.png"/>
-</section>-->
-        <h1 class="tituloOculto">EL RINCÓN DEL CHATÍN</h1>
+        <section class="logoPrincipal">
+            <img class="imagenlogoPrincipal" src="/imagenes/logo.png" />
+        </section>
+        <!--<h1 class="titulo">EL RINCÓN DEL CHATÍN</h1>
+        
+        <h1 class="tituloOculto">EL RINCÓN DEL CHATÍN</h1>-->
         <nav class="navMenu">
             <ul>
                 <li><a class="menu" href="/registro">Hervás</a></li>
@@ -55,10 +62,15 @@ if (isset($_SESSION["carrito"])) {
         </nav>
 
         <!-- Menu desplegable para móviles -->
-        <div class="bars__menu">
-            <span class="line1__bars-menu"></span>
-            <span class="line2__bars-menu"></span>
-            <span class="line3__bars-menu"></span>
+        <div class="englobaMenuYLupa">
+            <div class="bars__menu">
+                <span class="line1__bars-menu"></span>
+                <span class="line2__bars-menu"></span>
+                <span class="line3__bars-menu"></span>
+            </div>
+            <div class="divLupa">
+                <img src="/imagenes/lupa.svg" />
+            </div>
         </div>
         <nav class="navMoviles" id="menuPrincipal">
             <ul>
@@ -73,6 +85,14 @@ if (isset($_SESSION["carrito"])) {
                 </li>
             </ul>
         </nav>
+        <div class="menuBuscar" id="menuLupa">
+            
+            <img class="imgX" src="/imagenes/x.png"/>
+            <form action="/index.php/busqueda" method="get">
+                <input class="inptBuscar" type="text" name="termino_busqueda" placeholder="Buscar..." />
+            </form>
+        </div>
+
         <script src="/script.js"></script>
     </header>
 

@@ -46,6 +46,14 @@ header {
 .navMoviles {
     display: none;
 }
+
+.englobaMenuYLupa{
+    display:none;
+}
+
+.menuBuscar{
+    display:none;
+}
 /* */
 
 h1.titulo {
@@ -767,11 +775,24 @@ h1.tituloFooter {
     text-align: center;
 }
 
+.divEspacio{
+    margin-bottom:60px;
+}
+
 @media (min-device-width: 320px) and (max-device-width: 736px) {
 
     body,
     html {
         overflow-x: hidden;
+    }
+
+    header {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        flex-direction: column;
     }
 
     h1.tituloOculto {
@@ -790,6 +811,22 @@ h1.tituloFooter {
         margin: 40px 30px;
         width: 300px;
         font-weight: lighter;
+    }
+    section.logoPrincipal {
+        margin-top: 20px;
+        width: 100%;
+    }
+    
+    img.imagenlogoPrincipal {
+        width: 100%;
+    }
+    div.englobaMenuYLupa{
+        margin-top:15px;
+        width:100%;
+        display:flex;
+        justify-content: center;
+        gap:30px;
+        align-items: center;
     }
     span.cantidadCarrito {
         font-family: SourceSansRegular;
@@ -815,13 +852,14 @@ h1.tituloFooter {
 
     @keyframes deslizar {
         from {
-            margin-right: -200%;
+            margin-left: -100%;
         }
 
         to {
-            margin-right: 0%;
+            margin-left: 0%;
         }
     }
+
 
     nav ul {
         display: flex;
@@ -836,12 +874,11 @@ h1.tituloFooter {
     }
 
     .bars__menu {
-        top: 50%;
-        margin-left: 80%;
+        
         display: block;
         width: 30px;
         height: 30px;
-        position: absolute;
+        
         transform: scale(1.2);
         cursor: pointer;
         z-index: 4;
@@ -879,6 +916,66 @@ h1.tituloFooter {
         /* Opcional: para dispositivos iOS */
         width: 100%;
     }
+
+    .mostrarBuscar {
+        top: 0%;
+        position: absolute;
+        background: white;
+        width: 100%;
+        height: 100vh;
+        animation: 1s deslizarDerecha;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+    }
+
+    @keyframes deslizarDerecha {
+        from {
+            right: -100%;
+        }
+
+        to {
+            right: 0%;
+        }
+    }
+    .quitarBuscar {
+        top: 0%;
+        position: absolute;
+        background: white;
+        width: 100%;
+        height: 100vh;
+        animation: 1s quitarDerecha forwards;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+    }
+
+    @keyframes quitarDerecha {
+        from {
+            right: 0%;
+        }
+
+        to {
+            right: -100%;
+        }
+    }
+    .imgX{
+        position:absolute;
+        left:50%;
+        top:15%;
+        transform: translate(-50%, -50%);
+    }
+
+     input.inptBuscar{
+        font-family:SourceSans;
+        font-size:25px;
+        
+        border:0px;
+        border-bottom:1px solid;
+    }
+
 
     .englobarCesta h2 {
         position: absolute;
@@ -1186,6 +1283,9 @@ h1.tituloFooter {
     .pFooter a[href^="tel"] {
         color: white;        /* Establece el color del texto a blanco */
         text-decoration: none;  /* Elimina el subrayado del enlace */
+    }
+    .divEspacio{
+        margin-bottom:20px;
     }
 
 }

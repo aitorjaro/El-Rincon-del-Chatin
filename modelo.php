@@ -68,6 +68,20 @@ function cargar_categorias(){
 function insertar_pedido(){
     
 }
+function busqueda_articulos($termino){
+    $articulos = array();
+    $con = conexion(); 
+    $termino = $con->real_escape_string($termino);
+    $query = "SELECT * FROM productos WHERE nombre LIKE '%$termino%'";
+    $resultado = $con->query($query);
+    if ($resultado->num_rows > 0) {
+        while($articulo = $resultado->fetch_assoc()) {
+          $articulos[] = $articulo;
+        }
+      } 
+      $con->close();
+      return $articulos;
+}
 /**
  * Función listar_articulos
  * Devuelve el array de artículos cargado

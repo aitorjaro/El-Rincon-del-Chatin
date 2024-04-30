@@ -45,5 +45,9 @@
     function tpv_ok(){
         require 'vista_tpv_ok.php';
     }
+    function busqueda(){
+        $articulos = busqueda_articulos($_GET["termino_busqueda"]);
+        require 'vista_busqueda.php';
+    }
 
 ?>
