@@ -1,6 +1,10 @@
 @font-face {
     font-family: Barlow;
-    src: url(Barlow-ExtraBold.ttf);
+    src: url(/fuentes/Barlow-ExtraBold.ttf);
+}
+@font-face {
+    font-family: SourceSansRegular;
+    src: url(/fuentes/SourceSansPro-Regular.ttf);
 }
 body{
     font-family:Barlow;
@@ -154,4 +158,13 @@ a.aBorrarProductos{
     background:rgb(212, 212, 212);
     padding:20px 30px;
     border-radius:10px;
+}
+
+/*PEDIDOS*/
+.aPedido{
+    color:blue;
+}
+.pPedidos{
+    font-family: SourceSansRegular;
+    font-size:20px;
 }

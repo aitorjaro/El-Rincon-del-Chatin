@@ -900,7 +900,7 @@ h1.tituloFooter {
     }
 
     h1.parrafos {
-        font-size: 50px;
+        font-size: 55px;
         font-weight: lighter;
     }
     /*.sctCategorias {
@@ -979,10 +979,6 @@ h1.tituloFooter {
         margin: 0px;
         margin-top:30px;
     }
-    h2.descripcion{
-        font-family: SourceSansRegular;
-        font-weight: lighter;
-    }
     .formularioProducto{
         display:flex;
         flex-direction: column;
@@ -1001,7 +997,6 @@ h1.tituloFooter {
     }
     p.carritoVacio {
         font-weight: lighter;
-        font-size:25px;
     }
 
     table {
@@ -1021,33 +1016,36 @@ h1.tituloFooter {
     }
     
     tr {
-        border-top: 1px #9A9A9A solid;
+        border-bottom: 1px #9A9A9A solid;
         text-align: center;
     }
     
     td {
-        text-align: center;
-        padding: 30px 0px;
+        display:block;
+        width:100%;
+        padding:10px 0px;
     }
     
     td.tdImagen {
-        width: 100px;
+        width: 100%;
+        padding-top:20px;
     }
     
     td.tdCantidad {
-        width:200px;
-        padding-left: 10px;
+        width:100%;
+        padding-left: 0px;
     }
     
     td.tdNombre {
-        width: 500px;
-        padding: 20px 15px;
+        width: 100%;
+        padding: 0px 0px;
     }
     .tdPrecio{
-        padding: 0px 10px;
+        padding: 0px 0px;
     }
     .tdBorrar{
-        width:200px;
+        width:100%;
+        margin-bottom:20px;
     }
 
     p.nombreArticulosCarrito {
@@ -1066,9 +1064,9 @@ h1.tituloFooter {
     
     .formularioCantidad {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
+        margin-block-end: 0;
     }
     
     .imgRefresh {

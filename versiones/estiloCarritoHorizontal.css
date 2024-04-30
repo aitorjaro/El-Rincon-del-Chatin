@@ -900,7 +900,7 @@ h1.tituloFooter {
     }
 
     h1.parrafos {
-        font-size: 50px;
+        font-size: 55px;
         font-weight: lighter;
     }
     /*.sctCategorias {
@@ -979,10 +979,6 @@ h1.tituloFooter {
         margin: 0px;
         margin-top:30px;
     }
-    h2.descripcion{
-        font-family: SourceSansRegular;
-        font-weight: lighter;
-    }
     .formularioProducto{
         display:flex;
         flex-direction: column;
@@ -1001,7 +997,6 @@ h1.tituloFooter {
     }
     p.carritoVacio {
         font-weight: lighter;
-        font-size:25px;
     }
 
     table {
@@ -1021,7 +1016,7 @@ h1.tituloFooter {
     }
     
     tr {
-        border-top: 1px #9A9A9A solid;
+        border-bottom: 1px #9A9A9A solid;
         text-align: center;
     }
     

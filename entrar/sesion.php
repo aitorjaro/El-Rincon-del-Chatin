@@ -36,6 +36,8 @@ if (isset($_SESSION["usuario"])) {
             <h2 class="h2SeleccionPrincipal">CATEGORÍAS</h2>
             <a class="seleccionPrincipal" href="anadirCategoria.php">Añadir categoría</a>
             <a class="seleccionPrincipal" href="listarCategorias.php">Modificar categorías</a>
+            <h2 class="h2SeleccionPrincipal">PEDIDOS</h2>
+            <a class="seleccionPrincipal" href="listarPedidos.php">Lista de pedidos</a>
         </section>
     </section>
 </body>

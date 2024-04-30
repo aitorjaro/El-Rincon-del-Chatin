@@ -2,70 +2,126 @@
 require_once "modelo.php";
 include 'plantilla.php';
 
-/*if (!isset($_SESSION['pedido_realizado'])) {
+if (!isset($_SESSION['pedido_realizado'])) {
     if (!isset($_SESSION['nombre'])) {
         header('Location: /index.php');
-    } else {*/
+    } else {
 
-/*Importar el fichero principal de la librería, tal y como se muestra
-a continuación. El comercio debe decidir si la importación desea hacerla con la
-función “include” o “required”, según los desarrollos realizados.*/
-include "redsysHMAC256_API_PHP_7.0.0/apiRedsys.php";  
+        include "redsysHMAC256_API_PHP_7.0.0/apiRedsys.php";
 
-/*Definir un objeto de la clase principal de la librería, tal y como se
-muestra a continuación:*/
-  $miObj = new RedsysAPI; 
-  
-/*Capturar los parámetros de la notificación on-line:*/
-  $version = $_POST["Ds_SignatureVersion"]; 
-  $params = $_POST["Ds_MerchantParameters"]; 
-  $signatureRecibida = $_POST["Ds_Signature"]; 
+        // Se crea Objeto
+        $miObj = new RedsysAPI;
 
-/*Decodificar el parámetro Ds_MerchantParameters. Para llevar
-a cabo la decodificación de este parámetro, se debe llamar a la
-función de la librería “decodeMerchantParameters()”, tal y como
-se muestra a continuación:*/
-  $decodec = $miObj->decodeMerchantParameters($params); 
 
-/*Una vez se ha realizado la llamada a la función
-“decodeMerchantParameters()”, se puede obtener el valor de
-cualquier parámetro que sea susceptible de incluirse en la
-notificación on-line. Para llevar a cabo la obtención del valor de un
-parámetro se debe llamar a la función “getParameter()” de la
-librería con el nombre de parámetro, tal y como se muestra a
-continuación para obtener el código de respuesta:*/
-  $codigoRespuesta = $miObj->getParameters("Ds_Response"); 
+        if (!empty($_POST)) {//URL DE RESP. ONLINE
 
-/** NOTA IMPORTANTE: Es importante llevar a cabo la
-validación de todos los parámetros que se envían en la
-comunicación. Para actualizar el estado del pedido de
-forma on-line NO debe usarse esta comunicación, sino la
-notificación on-line descrita en los otros apartados, ya que
-el retorno de la navegación depende de las acciones del
-cliente en su navegador.*/
+            $version = $_POST["Ds_SignatureVersion"];
+            $datos = $_POST["Ds_MerchantParameters"];
+            $signatureRecibida = $_POST["Ds_Signature"];
 
-/*Validar el parámetro Ds_Signature. Para llevar a cabo la
-validación de este parámetro se debe calcular la firma y
-compararla con el parámetro Ds_Signature capturado. Para ello
-se debe llamar a la función de la librería
-“createMerchantSignatureNotif()” con la clave obtenida del
-módulo de administración y el parámetro
-Ds_MerchantParameters capturado, tal y como se muestra a
-continuación:*/
-  $claveModuloAdmin = 'sq7HjrUOBfKmC576ILgskD5srU870gJ7'; 
-  $signatureCalculada = $miObj->createMerchantSignatureNotif($claveModuloAdmin, $params); 
 
-/*Una vez hecho esto, ya se puede validar si el valor de la firma
-enviada coincide con el valor de la firma calculada, tal y como se
-muestra a continuación:*/
-  if ($signatureCalculada === $signatureRecibida) { 
-  die("FIRMA OK. Realizar tareas en el servidor");
-  } else { 
-  die("FIRMA KO. Error, firma inválida"); 
-  }
-/*
+            $decodec = $miObj->decodeMerchantParameters($datos);
+            $kc = 'sq7HjrUOBfKmC576ILgskD5srU870gJ7'; //Clave recuperada de CANALES
+            $firma = $miObj->createMerchantSignatureNotif($kc, $datos);
+
+            echo PHP_VERSION . "<br/>";
+            echo $firma . "<br/>";
+            echo $signatureRecibida . "<br/>";
+            if ($firma === $signatureRecibida) {
+                echo "FIRMA OK";
+                $dsResponse = $miObj->getParameter('Ds_Response');
+                $numeroPedido = $miObj->getParameter('Ds_Order');
+
+                // Comprobar el estado del pago
+                // Los códigos de respuesta menores a 100 indican un pago aceptado
+                if ((int) $dsResponse < 100) {
+                    echo "El pago ha sido aceptado. Código de respuesta: $dsResponse";
+                    
+                } else {
+                    echo "El pago no ha sido aceptado. Código de respuesta: $dsResponse";
+                }
+            } else {
+                echo "FIRMA KO";
+            }
+        } else {
+            if (!empty($_GET)) {//URL DE RESP. ONLINE
+
+                $version = $_GET["Ds_SignatureVersion"];
+                $datos = $_GET["Ds_MerchantParameters"];
+                $signatureRecibida = $_GET["Ds_Signature"];
+
+
+                $decodec = $miObj->decodeMerchantParameters($datos);
+                $kc = 'sq7HjrUOBfKmC576ILgskD5srU870gJ7'; //Clave recuperada de CANALES
+                $firma = $miObj->createMerchantSignatureNotif($kc, $datos);
+
+                if ($firma === $signatureRecibida) {
+                    echo "FIRMA OK";
+                    $dsResponse = $miObj->getParameter('Ds_Response');
+                    $numeroPedido = $miObj->getParameter('Ds_Order');
+
+                    // Comprobar el estado del pago
+                    // Los códigos de respuesta menores a 100 indican un pago aceptado
+                    if ((int) $dsResponse < 100) { //Pago aceptado
+                        echo "El pago ha sido aceptado. Código de respuesta: $dsResponse";
+                        $fecha_actual = date('Y-m-d H:i:s');
+                        $nombre = $_SESSION["nombre"];
+                        $apellidos = $_SESSION["apellidos"];
+                        $telefono = $_SESSION["telefono"];
+                        $email = $_SESSION["email"];
+                        $direccion = $_SESSION["direccion"];
+                        $localidad = $_SESSION["localidad"];
+                        $codigoPostal = $_SESSION["codigopostal"];
+                        $total = $_SESSION["totalSinEnvio"];
+                        $totalConEnvio = $_SESSION["totalConEnvio"];
+
+                        //Inserción en la BD
+                        $conexion = conexion();
+                        $consulta = "INSERT INTO pedidos (referencia, fecha, nombre, apellidos, telefono, email, direccion, localidad, codigoPostal, total,
+totalConEnvio) VALUES ('$numeroPedido', '$fecha_actual', '$nombre', '$apellidos', '$telefono', '$email', '$direccion', '$localidad',
+'$codigoPostal', '$total', '$totalConEnvio')";
+
+                        $resultado = mysqli_query($conexion, $consulta);
+                        //$referencia = mysqli_insert_id($conexion);
+                        for ($i = 0; $i <= count($carrito_mio) - 1; $i++) {
+                            $articulo_id = $carrito_mio[$i]['id'];
+                            $articulo_cantidad = $carrito_mio[$i]["cantidad"];
+                            $articulo_precio = $carrito_mio[$i]["precio"];
+                            $consulta2 = "INSERT INTO pedido_producto (pedido_id, producto_id, cantidad, precio) VALUES ('$numeroPedido', '$articulo_id', '$articulo_cantidad', '$articulo_precio')"
+                            ;
+                            $resultado2 = mysqli_query($conexion, $consulta2);
+                        }
+                        $conexion->close();
+
+
+                        // Marcar el pedido como realizado
+                        $_SESSION['pedido_realizado'] = true;
+                        $_SESSION['referencia_pedido'] = $numeroPedido;
+
+
+                        //Enviar el mail al dueño y al destinatario del pedido
+                        $cabeceras = "MIME-Version: 1.0" . "\r\n";
+                        $cabeceras .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                        $para = 'aitorjaro11@hotmail.com';
+                        $asunto = 'Nuevo pedido ' . $numeroPedido;
+                        $cuerpo = "Tienes un nuevo pedido <b>$numeroPedido</b> de <b>$nombre $apellidos</b>.<br><br><b>Nombre:</b>
+    $nombre<br><b>Apellidos:</b> $apellidos<br><b>Teléfono:</b> $telefono<br><b>Email:</b> $email<br><b>Dirección:</b>
+    $direccion<br><b>Localidad:</b> $localidad<br><b>Código postal:</b> $codigoPostal<br><br>";
+
+                        mail($para, $asunto, $cuerpo, $cabeceras);
+                    } else { //Pago denegado
+                        echo "El pago no ha sido aceptado. Código de respuesta: $dsResponse";
+                    }
+                } else {
+                    echo "FIRMA KO";
+                }
+            } else {
+                die("No se recibió respuesta");
+            }
+        }
+
     }
-}*/
+}
 ?>
 
 <?php startblock('titulo'); ?>

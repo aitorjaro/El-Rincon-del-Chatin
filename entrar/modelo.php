@@ -78,6 +78,40 @@ function cargar_categoria_id($id){
     }
     return $categorias;
 }
+function listar_pedidos(){
+    $pedidos = array();
+    $con = conexion(); 
+    if ($con) {
+        $busqueda = mysqli_query($con, "SELECT * from pedidos");
+        while ($pedido = mysqli_fetch_assoc($busqueda)) {
+            $pedidos[] = $pedido;
+        }
+        $con->close(); 
+    }
+    return $pedidos;
+}
+function listar_pedido_id($id){
+    $pedido = array();
+    $con = conexion(); 
+    if ($con) {
+        $busqueda = mysqli_query($con, "SELECT * from pedidos WHERE referencia = '$id'");
+        $pedido = mysqli_fetch_assoc($busqueda);
+        $con->close(); 
+    }
+    return $pedido;
+}
+function listar_productos_idPedido($idPedido){
+    $productos = array();
+    $con = conexion(); 
+    if ($con) {
+        $busqueda = mysqli_query($con, "SELECT * from pedido_producto WHERE pedido_id = $idPedido");
+        while ($producto = mysqli_fetch_assoc($busqueda)) {
+            $productos[] = $producto;
+        }
+        $con->close(); 
+    }
+    return $productos;
+}
 /**
  * Función listar_articulos
  * Devuelve el array de artículos cargado
@@ -104,5 +138,6 @@ function listar_categorias()
     $categorias = cargar_categorias();
     return $categorias;
 }
+
 
 ?>
