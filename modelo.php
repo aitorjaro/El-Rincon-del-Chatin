@@ -104,7 +104,7 @@ function detalle_articulos($id)
     return $articulos;
 }
 
-/*function crearParametrosPago(){
+function crearParametrosPago(){
     if (isset($_POST['submitPayment'])) {
     
         $amount = $_SESSION["totalConEnvio"];
@@ -159,6 +159,6 @@ function detalle_articulos($id)
         </script>
         <?php
 }
-}*/
+}
 
 ?>

@@ -7,10 +7,6 @@
 crearParametrosPago();
 ?>
 
-
-
-
-
 <?php startblock('titulo'); ?>
 <title>
     Carrito - El Rincón del Chatín (Hervás)
