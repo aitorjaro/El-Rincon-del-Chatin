@@ -50,11 +50,6 @@ unset($_SESSION['pedido_realizado']); ?>
                             </p>
                             <form class="formularioProducto" action="/index.php/carrito" method="post">
                                 <input name="idArticulo" type="hidden" value="<?php echo $articulo['id'] ?>" />
-                                <!--<input name="nombreArticulo" type="hidden" value="<?php echo $articulo['nombre'] ?>"/>
-                                <input name="precioArticulo" type="hidden" value="<?php echo $articulo['precio'] ?>"/>
-                                
-                                <input name="descripcionArticulo" type="hidden" value="<?php echo $articulo['descripcion'] ?>"/>
-                                -->
                                 <input name="cantidadArticulo" type="hidden" value="1" />
 
                                 <button type="submit" class="carrito">Añadir al carrito</button>

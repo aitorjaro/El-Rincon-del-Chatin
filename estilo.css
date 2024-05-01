@@ -26,6 +26,13 @@ body {
     overflow-x: hidden;
 }
 
+.body-no-scroll {
+    overflow: hidden;
+    position: fixed;
+    /* Opcional: para dispositivos iOS */
+    width: 100%;
+}
+
 section.negro {
     background: black;
 }
@@ -34,7 +41,8 @@ header {
     width: 100%;
     position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap:100px;
     align-items: center;
 }
 
@@ -55,26 +63,23 @@ header {
     display:none;
 }
 /* */
-
+/*
 h1.titulo {
     font-size: 60px;
     color: white;
     position: absolute;
-    /* Posicionamiento absoluto */
     top: 50%;
-    /* Centra verticalmente */
     left: 50%;
-    /* Centra horizontalmente */
     transform: translate(-50%, -50%);
-    /* Ajusta la posición exacta del centro */
     margin: 0px;
 }
 
 h1.tituloOculto {
     font-size: 60px;
     color: #CFB377;
-}
+}*/
 
+/* Seccion buscar e imagen carrito menú*/
 section.imagenCarro {
     display: flex;
     align-items: center;
@@ -83,6 +88,71 @@ section.imagenCarro {
 img.imagenCarrito {
     width: 20px;
 }
+#imagenLupa:hover{
+    cursor: pointer;
+}
+
+.mostrarBuscar {
+    top: 0%;
+    position: absolute;
+    background: white;
+    width: 50%;
+    height: 100vh;
+    animation: 1s deslizarDerecha forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+@keyframes deslizarDerecha {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+.quitarBuscar {
+    top: 0%;
+    position: absolute;
+    background: white;
+    width: 50%;
+    height: 100vh;
+    animation: 1s quitarDerecha forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+@keyframes quitarDerecha {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+.imgX{
+    position:absolute;
+    left:50%;
+    top:15%;
+    transform: translate(-50%, -50%);
+}
+
+ input.inptBuscar{
+    font-family:SourceSans;
+    font-size:25px;
+    border-radius: 0px;
+    border:0px;
+    border-bottom:1px solid;
+}
+
+
+/*Fin sección buscar*/
 
 img.imagenCarroFija {
     position: fixed;
@@ -793,6 +863,7 @@ h1.tituloFooter {
         justify-content: space-evenly;
         align-items: flex-start;
         flex-direction: column;
+        gap:0px;
     }
 
     h1.tituloOculto {
@@ -910,12 +981,7 @@ h1.tituloFooter {
         transform: rotate(-45deg) translate(-4px, 2px);
     }
 
-    .body-no-scroll {
-        overflow: hidden;
-        position: fixed;
-        /* Opcional: para dispositivos iOS */
-        width: 100%;
-    }
+    
 
     .mostrarBuscar {
         top: 0%;
@@ -971,7 +1037,7 @@ h1.tituloFooter {
      input.inptBuscar{
         font-family:SourceSans;
         font-size:25px;
-        
+        border-radius: 0px;
         border:0px;
         border-bottom:1px solid;
     }

@@ -85,6 +85,7 @@ function mostrarMenu() {
 
 //Menu lupa
 document.querySelector(".divLupa").addEventListener("click", mostrarMenuLupa);
+document.querySelector("#imagenLupa").addEventListener("click", mostrarMenuLupa);
 
 function mostrarMenuLupa() {
   var menuLupa = document.getElementById("menuLupa");

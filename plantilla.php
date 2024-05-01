@@ -33,14 +33,14 @@ if (isset($_SESSION["carrito"])) {
 
         <nav class="navMenu">
             <ul>
-            
-                <li><a class="menu" href="/index.php">Inicio</a></li>
-                <li><a class="menu" href="/sugerencias">Regalos</a></li>
-                <li>
+            <li>
                     <section class="imagenCarro">
-                        <img class="imagenCarrito" src="/imagenes/lupa.svg" />
+                        <img class="imagenCarrito" id="imagenLupa" src="/imagenes/lupa.svg" />
                     </section>
                 </li>
+                <li><a class="menu" href="/index.php">Inicio</a></li>
+                <li><a class="menu" href="/sugerencias">Regalos</a></li>
+                
             </ul>
         </nav>
         <section class="logoPrincipal">
