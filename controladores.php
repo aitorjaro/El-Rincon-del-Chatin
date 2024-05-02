@@ -31,6 +31,7 @@
  */
     function cesta() {
         require 'vista_carrito.php';
+        crearParametrosPago();
     }
     function carrito() {
         require 'carrito.php';

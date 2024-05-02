@@ -103,7 +103,7 @@ totalConEnvio) VALUES ('$numeroPedido', '$fecha_actual', '$nombre', '$apellidos'
                         $cabeceras = "MIME-Version: 1.0" . "\r\n";
                         $cabeceras .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                         $para = 'aitorjaro11@hotmail.com';
-                        $asunto = 'Nuevo pedido ' . $numeroPedido;
+                        $asunto = '¡Nuevo pedido ' . $numeroPedido . '!';
                         $cuerpo = "Tienes un nuevo pedido <b>$numeroPedido</b> de <b>$nombre $apellidos</b>.<br><br><b>Nombre:</b>
     $nombre<br><b>Apellidos:</b> $apellidos<br><b>Teléfono:</b> $telefono<br><b>Email:</b> $email<br><b>Dirección:</b>
     $direccion<br><b>Localidad:</b> $localidad<br><b>Código postal:</b> $codigoPostal<br><br>";
