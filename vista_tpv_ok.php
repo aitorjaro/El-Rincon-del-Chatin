@@ -1,13 +1,16 @@
 <?php
 require_once "modelo.php";
 include 'plantilla.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 if (!isset($_SESSION['pedido_realizado'])) {
     if (!isset($_SESSION['nombre'])) {
         header('Location: /index.php');
     } else {
 
-        include "redsysHMAC256_API_PHP_7.0.0/apiRedsys.php";
+        include "/redsysHMAC256_API_PHP_7.0.0/apiRedsys.php";
 
         // Se crea Objeto
         $miObj = new RedsysAPI;
