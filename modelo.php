@@ -30,29 +30,24 @@ $contrasena = "";
         return null;
     }
 }
-function cargar_articulos()
-{
-    $articulos = array();
-    $con = conexion(); 
-    if ($con) {
-        $busqueda = mysqli_query($con, "SELECT * from productos");
-        while ($articulo = mysqli_fetch_assoc($busqueda)) {
-            $articulos[] = $articulo;
-        }
-        $con->close(); 
-    }
-    return $articulos;
-}
 function cargar_articulo_id($id){
-    $articulos = array();
+    $articulo = null;
     $con = conexion();
     if ($con) {
-        $busqueda = mysqli_query($con, "SELECT * from productos WHERE id = $id");
-        $articulos = mysqli_fetch_assoc($busqueda);
+        
+        $stmt = $con->prepare("SELECT * FROM productos WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        if ($resultado) {
+            $articulo = $resultado->fetch_assoc();
+        }
+        $stmt->close();
         $con->close(); 
     }
-    return $articulos;
+    return $articulo;
 }
+
 function cargar_categorias(){
     $categorias = array();
     $con = conexion(); 
@@ -71,17 +66,22 @@ function insertar_pedido(){
 function busqueda_articulos($termino){
     $articulos = array();
     $con = conexion(); 
-    $termino = $con->real_escape_string($termino);
-    $query = "SELECT * FROM productos WHERE nombre LIKE '%$termino%'";
-    $resultado = $con->query($query);
-    if ($resultado->num_rows > 0) {
-        while($articulo = $resultado->fetch_assoc()) {
-          $articulos[] = $articulo;
+    if ($con) {
+        $stmt = $con->prepare("SELECT * FROM productos WHERE nombre LIKE CONCAT('%', ?, '%')");
+        $stmt->bind_param("s", $termino);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        if ($resultado->num_rows > 0) {
+            while($articulo = $resultado->fetch_assoc()) {
+                $articulos[] = $articulo;
+            }
         }
-      } 
-      $con->close();
-      return $articulos;
+        $stmt->close();
+        $con->close();
+    }
+    return $articulos;
 }
+
 /**
  * Función listar_articulos
  * Devuelve el array de artículos cargado
