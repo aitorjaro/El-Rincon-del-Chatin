@@ -103,34 +103,15 @@ totalConEnvio) VALUES ('$numeroPedido', '$fecha_actual', '$nombre', '$apellidos'
                         $_SESSION['pedido_realizado'] = true;
                         $_SESSION['referencia_pedido'] = $numeroPedido;
 
-                        //Enviar el mail al dueño de la tienda con la confirmación del pedido
-                        //Capturar la salida para poder capturar el bucle
-                        ob_start();
-                        for ($i = 0; $i <= count($carrito_mio) - 1; $i++) {
-                            echo $carrito_mio[$i]['nombre'] . '<br/>Cantidad: ' . $carrito_mio[$i]["cantidad"] . '<br/>Precio: ' . " (" . $carrito_mio[$i]["precio"] . "€)<br/><br/> ";
-                        }
-                        $lista_productos_email = ob_get_clean();
-                        $total_email = $_SESSION["totalSinEnvio"];
-                        $total_email_envio = $_SESSION["totalConEnvio"];
-                        
+
+                        //Enviar el mail al dueño y al destinatario del pedido
                         $cabeceras = "MIME-Version: 1.0" . "\r\n";
                         $cabeceras .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                         $para = 'aitorjaro11@hotmail.com';
                         $asunto = '¡Nuevo pedido ' . $numeroPedido . '!';
                         $cuerpo = "Tienes un nuevo pedido <b>$numeroPedido</b> de <b>$nombre $apellidos</b>.<br><br><b>Nombre:</b>
     $nombre<br><b>Apellidos:</b> $apellidos<br><b>Teléfono:</b> $telefono<br><b>Email:</b> $email<br><b>Dirección:</b>
-    $direccion<br><b>Localidad:</b> $localidad<br><b>Código postal:</b> $codigoPostal<br><br> <b>PRODUCTOS:</b><br><br> $lista_productos_email <br><br><b>TOTAL:</b> $total_email € <br><br><b>TOTAL CON ENVÍO:</b> $total_email_envio €";
-
-                        mail($para, $asunto, $cuerpo, $cabeceras);
-
-                        //Enviar mail al comprador
-                        $cabeceras = "MIME-Version: 1.0" . "\r\n";
-                        $cabeceras .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                        $para = $_SESSION["email"];
-                        $asunto = 'Confirmación de pedido ' . $numeroPedido . ' en El Rincón del Chatín';
-                        $cuerpo = "Muchas gracias por comprar en El Rincón del Chatín, <b>$nombre $apellidos</b>. Tu pedido <b>$numeroPedido</b> ha sido confirmado.<br><br><b>Tu nombre:</b>
-    $nombre<br><b>Apellidos:</b> $apellidos<br><b>Teléfono:</b> $telefono<br><b>Email:</b> $email<br><b>Dirección:</b>
-    $direccion<br><b>Localidad:</b> $localidad<br><b>Código postal:</b> $codigoPostal<br><br> <b>PRODUCTOS ADQUIRIDOS:</b><br><br> $lista_productos_email <br><br><b>TOTAL:</b> $total_email € <br><br><b>TOTAL CON ENVÍO:</b> $total_email_envio €";
+    $direccion<br><b>Localidad:</b> $localidad<br><b>Código postal:</b> $codigoPostal<br><br>";
 
                         mail($para, $asunto, $cuerpo, $cabeceras);
                     } else { //Pago denegado
