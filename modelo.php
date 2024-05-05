@@ -30,6 +30,24 @@ $contrasena = "";
         return null;
     }
 }
+
+function cargar_articulos()
+{
+    $articulos = array();
+    $con = conexion(); 
+    if ($con) {
+        $stmt = $con->prepare("SELECT * FROM productos");
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        while ($articulo = $resultado->fetch_assoc()) {
+            $articulos[] = $articulo;
+        }
+        $stmt->close();
+        $con->close(); 
+    }
+    return $articulos;
+}
+
 function cargar_articulo_id($id){
     $articulo = null;
     $con = conexion();
@@ -122,7 +140,7 @@ function crearParametrosPago(){
         $terminal="1";
         $moneda="978";
         $trans="0";
-        $url="https://www.elrincondelchatin.com/";
+        $url="http://www.elrincondelchatin.com/";
         $urlOK="https://www.elrincondelchatin.com/index.php/tpv_ok";
         $urlKO="https://www.elrincondelchatin.com/tpv_ko.php";
         $id=time();
