@@ -15,9 +15,7 @@ $(document).ready(function () {
       });
     });
   });
-});
-//Carrito con Ajax
-$(document).ready(function () {
+  //Carrito con Ajax
   $('.formularioProducto').submit(function (e) {
     e.preventDefault();
     $.ajax({
