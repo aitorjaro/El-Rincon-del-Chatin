@@ -22,7 +22,7 @@ if (isset($_SESSION["carrito"])) {
     <?php startblock('estilo'); ?>
     <?php endblock() ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
+    <script src="/script.js"></script>
 </head>
 
 <body>
@@ -90,7 +90,7 @@ if (isset($_SESSION["carrito"])) {
             </form>
         </div>
 
-        <script src="/script.js"></script>
+        
     </header>
 
 

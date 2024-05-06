@@ -49,9 +49,7 @@ $(document).ready(function () {
       $('.imagenCarroFija').attr('src', '/imagenes/carro-de-la-compra.png');
     }, 1000);
   });
-});
-
-//Menú desplegable
+  //Menú desplegable
 document.querySelector(".bars__menu").addEventListener("click", mostrarMenu);
 var line1__bars = document.querySelector(".line1__bars-menu");
 var line2__bars = document.querySelector(".line2__bars-menu");
@@ -99,3 +97,5 @@ function ocultarMenuLupa() {
   menuLupa2.classList.remove("mostrarBuscar");
   document.body.classList.remove('body-no-scroll');
 }
+});
+
