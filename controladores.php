@@ -42,6 +42,9 @@
     function contacto(){
         require 'vista_contacto.php';
     }
+    function redireccion(){
+        require 'vista_redireccion.php';
+    }
     function tpv_ok(){
         require 'vista_tpv_ok.php';
     }

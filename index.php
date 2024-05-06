@@ -25,6 +25,10 @@
         
         contacto();
     }
+    elseif ($uri == '/index.php/redireccion') {
+        
+        redireccion();
+    }
     elseif ($uri == '/index.php/tpv_ok') {
         
         tpv_ok();
