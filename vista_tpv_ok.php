@@ -7,7 +7,9 @@ error_reporting(E_ALL);
 
 if (!isset($_SESSION['pedido_realizado'])) {
     if (!isset($_SESSION['nombre'])) {
-        header('Location: /index.php');
+        echo '<script type="text/javascript">';
+        echo 'window.location.href="/index.php";';
+        echo '</script>';
     } else {
 
         include "redsysHMAC256_API_PHP_7.0.0/apiRedsys.php";
@@ -39,7 +41,7 @@ if (!isset($_SESSION['pedido_realizado'])) {
                 // Los códigos de respuesta menores a 100 indican un pago aceptado
                 if ((int) $dsResponse < 100) {
                     echo "El pago ha sido aceptado. Código de respuesta: $dsResponse";
-                    
+
                 } else {
                     echo "El pago no ha sido aceptado. Código de respuesta: $dsResponse";
                 }
@@ -112,7 +114,7 @@ totalConEnvio) VALUES ('$numeroPedido', '$fecha_actual', '$nombre', '$apellidos'
                         $lista_productos_email = ob_get_clean();
                         $total_email = $_SESSION["totalSinEnvio"];
                         $total_email_envio = $_SESSION["totalConEnvio"];
-                        
+
                         $cabeceras = "MIME-Version: 1.0" . "\r\n";
                         $cabeceras .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                         $para = 'aitorjaro11@hotmail.com';
@@ -164,7 +166,7 @@ totalConEnvio) VALUES ('$numeroPedido', '$fecha_actual', '$nombre', '$apellidos'
 
     <section class="centrarCarrito">
         <h1 class="h1carrito">
-            PEDIDO CONFIRMADO CON Nº <?php echo $_SESSION['referencia_pedido'] . $_SESSION['nombre']; ?>
+            PEDIDO CONFIRMADO CON Nº <?php echo $_SESSION['referencia_pedido'] ?>
         </h1>
         <?php if (isset($_SESSION['nombre'])) { ?>
             <section class="sctDatosEnvio">
