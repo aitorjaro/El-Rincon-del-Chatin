@@ -18,7 +18,7 @@ unset($_SESSION['pedido_realizado']); ?>
 <?php startblock('contenido') ?>
 <div class="englobarCesta">
     <img src="imagenes/cestaproductos.png" />
-    <h2>Productos típicos de Extremadura</h2>
+    <h2>Cestas preparadas</h2>
 </div>
 <div class="englobarProductos">
     <div class="centrarProductos">

@@ -25,6 +25,7 @@ unset($_SESSION['pedido_realizado']); ?>
             </section>
             
         </div>
+        <script src="/scriptCarrito.js"></script>
         <section class="articulos">
             <!-- Mostramos una lista de los artículos -->
             <?php foreach ($articulos as $articulo) { ?>

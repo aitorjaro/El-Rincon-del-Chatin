@@ -12,6 +12,7 @@ document.querySelectorAll('.botonCategorias').forEach(btn => {
           prod.style.display = 'none';
         }
       });
+      if (window.matchMedia("(max-width: 767px)").matches) {
   
       // Calcula la posición actual en la página
       let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -30,6 +31,7 @@ document.querySelectorAll('.botonCategorias').forEach(btn => {
         top: scrollPosition + scrollValue,
         behavior: 'smooth'
       });
+    }
     });
   });
   
