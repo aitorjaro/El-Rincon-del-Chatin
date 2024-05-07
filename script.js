@@ -1,4 +1,5 @@
 //Animaciones categorías
+/*
 document.addEventListener('DOMContentLoaded', (event) =>{
   document.querySelectorAll('.botonCategorias').forEach(btn => {
     btn.addEventListener('click', function () {
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) =>{
       });
     });
   });
-  /*
+});
   //Carrito con Ajax
   $('.formularioProducto').submit(function (e) {
     e.preventDefault();
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', (event) =>{
       $('.imagenCarroFija').attr('src', '/imagenes/carro-de-la-compra.png');
     }, 1000);
   });*/
-});
+
   //Menú desplegable
 document.querySelector(".bars__menu").addEventListener("click", mostrarMenu);
 /*var line1__bars = document.querySelector(".line1__bars-menu");

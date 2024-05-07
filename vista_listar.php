@@ -34,6 +34,8 @@ unset($_SESSION['pedido_realizado']); ?>
                 <?php } ?>
             </section>
         </div>
+        <!--Añadimos estos scripts para que se ejecuten antes de que se cargue la página, por si hay baja conectividad-->
+        <script src="/scriptCategorias.js"></script>
         <script src="/scriptCarrito.js"></script>
         <section class="articulos">
             <!-- Mostramos una lista de los artículos -->

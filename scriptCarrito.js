@@ -1,4 +1,4 @@
-
+//Carrito con Ajax
     // Delegación de eventos para manejar el submit de cualquier formulario con la clase 'formularioProducto'
     $(document).on('submit', '.formularioProducto', function(e) {
         e.preventDefault();
@@ -14,6 +14,7 @@
         });
     });
 
+    //Animaciones carrito
     // Delegación de eventos para manejar el click en cualquier botón con la clase 'carrito'
     $(document).on('click', '.carrito', function() {
         var boton = $(this); // Guarda la referencia al botón
