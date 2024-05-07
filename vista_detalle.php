@@ -52,6 +52,7 @@ unset($_SESSION['pedido_realizado']); ?>
             </form>
         </section>
     </section>
+    <script src="/scriptCarrito.js"></script>
 
 </section>
 

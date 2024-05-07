@@ -51,7 +51,7 @@ if (isset($_SESSION["carrito"])) {
                 <li><a class="menu" href="/index.php/contacto">Contacto</a></li>
                 <li>
                     <section class="imagenCarro">
-                        <img class="imagenCarrito" src="/imagenes/carro.svg" />
+                        <a href="/index.php/cesta"><img class="imagenCarrito" src="/imagenes/carro.svg" /></a>
                     </section>
                 </li>
             </ul>
@@ -70,7 +70,7 @@ if (isset($_SESSION["carrito"])) {
         </div>
         <nav class="navMoviles" id="menuPrincipal">
             <ul>
-            <img class="imgX" src="/imagenes/x.png"/>
+            <img class="imgX" src="/imagenes/x.png" id="imgXMenu"/>
                 <li><a class="menu" href="/index.php">Inicio</a></li>
                 <li><a class="menu" href="/sugerencias">Regalos</a></li>
                 <li><a class="menu" href="/registro">Hervás</a></li>
