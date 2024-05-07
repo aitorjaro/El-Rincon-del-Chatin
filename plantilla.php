@@ -22,7 +22,6 @@ if (isset($_SESSION["carrito"])) {
     <?php startblock('estilo'); ?>
     <?php endblock() ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="/script.js"></script>
 </head>
 
 <body>
@@ -71,6 +70,7 @@ if (isset($_SESSION["carrito"])) {
         </div>
         <nav class="navMoviles" id="menuPrincipal">
             <ul>
+            <img class="imgX" src="/imagenes/x.png"/>
                 <li><a class="menu" href="/index.php">Inicio</a></li>
                 <li><a class="menu" href="/sugerencias">Regalos</a></li>
                 <li><a class="menu" href="/registro">Hervás</a></li>
@@ -84,7 +84,7 @@ if (isset($_SESSION["carrito"])) {
         </nav>
         <div class="menuBuscar" id="menuLupa">
             
-            <img class="imgX" src="/imagenes/x.png"/>
+            <img class="imgX" src="/imagenes/x.png" id="imgXBuscar"/>
             <form action="/index.php/busqueda" method="get">
                 <input class="inptBuscar" type="text" name="termino_busqueda" placeholder="Buscar..." />
             </form>
@@ -92,6 +92,7 @@ if (isset($_SESSION["carrito"])) {
 
         
     </header>
+    <script src="/script.js"></script>
 
 
 

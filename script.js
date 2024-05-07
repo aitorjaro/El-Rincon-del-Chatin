@@ -1,5 +1,5 @@
 //Animaciones categorías
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', (event) =>{
   document.querySelectorAll('.botonCategorias').forEach(btn => {
     btn.addEventListener('click', function () {
       let categoria = this.getAttribute('data-categoria');
@@ -49,19 +49,20 @@ $(document).ready(function () {
       $('.imagenCarroFija').attr('src', '/imagenes/carro-de-la-compra.png');
     }, 1000);
   });
+});
   //Menú desplegable
 document.querySelector(".bars__menu").addEventListener("click", mostrarMenu);
-var line1__bars = document.querySelector(".line1__bars-menu");
+/*var line1__bars = document.querySelector(".line1__bars-menu");
 var line2__bars = document.querySelector(".line2__bars-menu");
-var line3__bars = document.querySelector(".line3__bars-menu");
+var line3__bars = document.querySelector(".line3__bars-menu");*/
 
 var menuEntero = document.getElementById("menuPrincipal");
 var links = document.getElementsByClassName("menu");
 
 function mostrarMenu() {
-  line1__bars.classList.toggle("activeline1__bars-menu");
+ /* line1__bars.classList.toggle("activeline1__bars-menu");
   line2__bars.classList.toggle("activeline2__bars-menu");
-  line3__bars.classList.toggle("activeline3__bars-menu");
+  line3__bars.classList.toggle("activeline3__bars-menu");*/
   menuEntero.classList.toggle("navMoviles");
   menuEntero.classList.toggle("mostrarMenu");
   document.body.classList.toggle('body-no-scroll');
@@ -70,9 +71,9 @@ function mostrarMenu() {
   for (var i = 0; i < links.length; i++) {
     links[i].addEventListener("click", function () {
       // Ocultar el menú
-      line1__bars.classList.toggle("activeline1__bars-menu");
+      /*line1__bars.classList.toggle("activeline1__bars-menu");
       line2__bars.classList.toggle("activeline2__bars-menu");
-      line3__bars.classList.toggle("activeline3__bars-menu");
+      line3__bars.classList.toggle("activeline3__bars-menu");*/
       menuEntero.classList.toggle("navMoviles");
       menuEntero.classList.toggle("mostrarMenu");
     });
@@ -90,12 +91,12 @@ function mostrarMenuLupa() {
   document.body.classList.add('body-no-scroll');
 }
 
-document.querySelector(".imgX").addEventListener("click", ocultarMenuLupa);
+document.querySelector("#imgXBuscar").addEventListener("click", ocultarMenuLupa);
 function ocultarMenuLupa() {
   var menuLupa2 = document.getElementById("menuLupa");
   menuLupa2.classList.add("quitarBuscar");
   menuLupa2.classList.remove("mostrarBuscar");
   document.body.classList.remove('body-no-scroll');
 }
-});
+
 

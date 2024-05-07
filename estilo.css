@@ -952,7 +952,7 @@ h1.tituloFooter {
         
         transform: scale(1.2);
         cursor: pointer;
-        z-index: 4;
+        /*z-index: 4;*/
     }
 
     .bars__menu span {
@@ -965,7 +965,7 @@ h1.tituloFooter {
         transition: all 300ms;
     }
 
-    .activeline1__bars-menu {
+   /* .activeline1__bars-menu {
         background: black !important;
         transform: rotate(45deg) translate(-2px, 1px);
     }
@@ -979,7 +979,7 @@ h1.tituloFooter {
     .activeline3__bars-menu {
         background: black !important;
         transform: rotate(-45deg) translate(-4px, 2px);
-    }
+    }*/
 
     
 

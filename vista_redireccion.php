@@ -17,7 +17,7 @@ if (isset($_POST['submitPayment'])) {
     $moneda="978";
     $trans="0";
     $url="http://www.elrincondelchatin.com/";
-    $urlOK="http://localhost/index.php/tpv_ok";
+    $urlOK="https://www.elrincondelchatin.com/index.php/tpv_ok";
     $urlKO="https://www.elrincondelchatin.com/tpv_ko.php";
     $id=time();
     $amount=$amount * 100;	

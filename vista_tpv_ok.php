@@ -164,7 +164,7 @@ totalConEnvio) VALUES ('$numeroPedido', '$fecha_actual', '$nombre', '$apellidos'
 
     <section class="centrarCarrito">
         <h1 class="h1carrito">
-            PEDIDO CONFIRMADO CON Nº <?php echo $_SESSION['referencia_pedido']; ?>
+            PEDIDO CONFIRMADO CON Nº <?php echo $_SESSION['referencia_pedido'] . $_SESSION['nombre']; ?>
         </h1>
         <?php if (isset($_SESSION['nombre'])) { ?>
             <section class="sctDatosEnvio">
