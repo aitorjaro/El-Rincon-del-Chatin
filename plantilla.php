@@ -28,6 +28,7 @@ if (isset($_SESSION["carrito"])) {
 </head>
 
 <body>
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="Ir arriba">↑</button>
     <header>
 
         <nav class="navMenu">

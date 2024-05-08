@@ -85,7 +85,6 @@ totalConEnvio) VALUES ('$numeroPedido', '$fecha_actual', '$nombre', '$apellidos'
 '$codigoPostal', '$total', '$totalConEnvio')";
 
                         $resultado = mysqli_query($conexion, $consulta);
-                        echo $resultado;
                         //$referencia = mysqli_insert_id($conexion);
                         for ($i = 0; $i <= count($carrito_mio) - 1; $i++) {
                             $articulo_id = $carrito_mio[$i]['id'];
@@ -96,7 +95,6 @@ totalConEnvio) VALUES ('$numeroPedido', '$fecha_actual', '$nombre', '$apellidos'
                             $resultado2 = mysqli_query($conexion, $consulta2);
                         }
                         $conexion->close();
-                        echo $resultado2;
 
 
                         // Marcar el pedido como realizado
