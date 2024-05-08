@@ -59,16 +59,14 @@ if (!isset($_SESSION['pedido_realizado'])) {
                 $decodec = $miObj->decodeMerchantParameters($datos);
                 $kc = 'sq7HjrUOBfKmC576ILgskD5srU870gJ7'; //Clave recuperada de CANALES
                 $firma = $miObj->createMerchantSignatureNotif($kc, $datos);
-
+                
                 if ($firma === $signatureRecibida) {
-                    echo "FIRMA OK";
                     $dsResponse = $miObj->getParameter('Ds_Response');
                     $numeroPedido = $miObj->getParameter('Ds_Order');
 
                     // Comprobar el estado del pago
                     // Los códigos de respuesta menores a 100 indican un pago aceptado
                     if ((int) $dsResponse < 100) { //Pago aceptado
-                        echo "El pago ha sido aceptado. Código de respuesta: $dsResponse";
                         $fecha_actual = date('Y-m-d H:i:s');
                         $nombre = $_SESSION["nombre"];
                         $apellidos = $_SESSION["apellidos"];

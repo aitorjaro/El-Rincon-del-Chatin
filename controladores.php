@@ -25,25 +25,19 @@
         $articulo = detalle_articulos($id);
         require 'vista_detalle.php';
     }
-/**
- * Función sugerencias
- * Muestra la página sugerencias mediante la vista "vista_sugerencias.php"
- */
     function cesta() {
         require 'vista_carrito.php';
     }
     function carrito() {
         require 'carrito.php';
     }
-/**
- * Función registro
- * Muestra un registro mediante la vista "vista_registro.php"
- */
+
     function contacto(){
         require 'vista_contacto.php';
     }
     function redireccion(){
         require 'vista_redireccion.php';
+        crearParametrosPago();
     }
     function tpv_ok(){
         require 'vista_tpv_ok.php';
