@@ -130,6 +130,11 @@ function crearParametrosPago()
 {
     if (isset($_POST['submitPayment'])) {
 
+        $protocolo = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+
+        // Construye la URL completa
+        $url_completa = $protocolo . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
         $amount = $_SESSION["totalConEnvio"];
         $_SESSION["nombre"] = $_POST["nombre"];
         $_SESSION["apellidos"] = $_POST["apellidos"];
@@ -146,7 +151,16 @@ function crearParametrosPago()
         $moneda = "978";
         $trans = "0";
         $url = "https://elrincondelchatin.com/";
-        $urlOK = "https://elrincondelchatin.com/index.php/tpv_ok";
+        if ($url_completa == "https://elrincondelchatin.com/index.php/redireccion") {
+            $urlOK = "https://elrincondelchatin.com/index.php/tpv_ok";
+        } elseif ($url_completa == "https://www.elrincondelchatin.com/index.php/redireccion") {
+            $urlOK = "https://www.elrincondelchatin.com/index.php/tpv_ok";
+        } elseif ($url_completa == "http://www.elrincondelchatin.com/index.php/redireccion") {
+            $urlOK = "http://www.elrincondelchatin.com/index.php/tpv_ok";
+        } elseif ($url_completa == "http://elrincondelchatin.com/index.php/redireccion") {
+            $urlOK = "http://elrincondelchatin.com/index.php/tpv_ok";
+        }
+        
         $urlKO = "https://elrincondelchatin.com/tpv_ko.php";
         $id = time();
         $amount = $amount * 100;
