@@ -59,7 +59,7 @@ if (!isset($_SESSION['pedido_realizado'])) {
                 $decodec = $miObj->decodeMerchantParameters($datos);
                 $kc = 'sq7HjrUOBfKmC576ILgskD5srU870gJ7'; //Clave recuperada de CANALES
                 $firma = $miObj->createMerchantSignatureNotif($kc, $datos);
-                
+
                 if ($firma === $signatureRecibida) {
                     $dsResponse = $miObj->getParameter('Ds_Response');
                     $numeroPedido = $miObj->getParameter('Ds_Order');
@@ -80,20 +80,22 @@ if (!isset($_SESSION['pedido_realizado'])) {
 
                         //Inserción en la BD
                         $conexion = conexion();
-                        $consulta = "INSERT INTO pedidos (referencia, fecha, nombre, apellidos, telefono, email, direccion, localidad, codigoPostal, total,
-totalConEnvio) VALUES ('$numeroPedido', '$fecha_actual', '$nombre', '$apellidos', '$telefono', '$email', '$direccion', '$localidad',
-'$codigoPostal', '$total', '$totalConEnvio')";
+                        $stmt = $conexion->prepare("INSERT INTO pedidos (referencia, fecha, nombre, apellidos, telefono, email, direccion, localidad, codigoPostal, total, totalConEnvio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                        $stmt->bind_param("sssssssssss", $numeroPedido, $fecha_actual, $nombre, $apellidos, $telefono, $email, $direccion, $localidad, $codigoPostal, $total, $totalConEnvio);
+                        $stmt->execute();
 
-                        $resultado = mysqli_query($conexion, $consulta);
-                        //$referencia = mysqli_insert_id($conexion);
                         for ($i = 0; $i <= count($carrito_mio) - 1; $i++) {
                             $articulo_id = $carrito_mio[$i]['id'];
                             $articulo_cantidad = $carrito_mio[$i]["cantidad"];
                             $articulo_precio = $carrito_mio[$i]["precio"];
-                            $consulta2 = "INSERT INTO pedido_producto (pedido_id, producto_id, cantidad, precio) VALUES ('$numeroPedido', '$articulo_id', '$articulo_cantidad', '$articulo_precio')"
-                            ;
-                            $resultado2 = mysqli_query($conexion, $consulta2);
+
+                            $stmt2 = $conexion->prepare("INSERT INTO pedido_producto (pedido_id, producto_id, cantidad, precio) VALUES (?, ?, ?, ?)");
+                            $stmt2->bind_param("ssss", $numeroPedido, $articulo_id, $articulo_cantidad, $articulo_precio);
+                            $stmt2->execute();
                         }
+
+                        $stmt->close();
+                        $stmt2->close();
                         $conexion->close();
 
 

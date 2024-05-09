@@ -4,7 +4,7 @@ session_start();
 $mensaje = "";
 
 if (isset($_POST["usuario"])) {
-    if ($_POST["usuario"] == "maribel") {
+    if ($_POST["usuario"] == "rinconchatin") {
         if ($_POST["contrasena"] == "1234") {
             $_SESSION["usuario"] = $_POST["usuario"];
             header("Location: sesion.php");
