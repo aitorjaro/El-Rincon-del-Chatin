@@ -20,7 +20,7 @@ if (isset($_SESSION["carrito"])) {
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="imagenes/cerezas.png" />
+    <link rel="icon" type="image/png" href="/imagenes/cerezas.png" />
     <?php startblock('titulo'); ?>
     <?php endblock() ?>
     <?php startblock('estilo'); ?>
@@ -40,7 +40,7 @@ if (isset($_SESSION["carrito"])) {
                     </section>
                 </li>
                 <li><a class="menu" href="/index.php">Inicio</a></li>
-                <li><a class="menu" href="/sugerencias">Regalos</a></li>
+                <li><a class="menu" href="/index.php/cestas">Cestas</a></li>
                 
             </ul>
         </nav>
@@ -77,7 +77,7 @@ if (isset($_SESSION["carrito"])) {
             <ul>
             <img class="imgX" src="/imagenes/x.png" id="imgXMenu"/>
                 <li><a class="menu" href="/index.php">Inicio</a></li>
-                <li><a class="menu" href="/sugerencias">Regalos</a></li>
+                <li><a class="menu" href="/sugerencias">Cestas</a></li>
                 <li><a class="menu" href="/registro">Hervás</a></li>
                 <li><a class="menu" href="/index.php/contacto">Contacto</a></li>
                 <li>

@@ -21,6 +21,10 @@
         
         carrito();
     }
+    elseif ($uri == '/index.php/cestas') {
+        
+        cestas();
+    }
     elseif ($uri == '/index.php/contacto') {
         
         contacto();

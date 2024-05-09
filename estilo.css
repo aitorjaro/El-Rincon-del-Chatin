@@ -289,7 +289,7 @@ div.englobarCesta {
 }
 p.verCestas{
     position: absolute;
-    bottom:50px;
+    bottom:25px;
     font-size: 15px;
     color: #cfb377;
     background: white;
@@ -824,8 +824,6 @@ h1.contacto {
     text-align: center;
 }
 
-div.formularioContacto {}
-
 h2.formularioContacto {
     margin-top: 0px;
     margin-bottom: 50px;
@@ -1007,6 +1005,7 @@ h1.tituloFooter {
     }
 
     a.menu {
+        font-family: SourceSansRegular;
         color: black;
         font-size: 40px;
     }
@@ -1103,6 +1102,7 @@ h1.tituloFooter {
 
      input.inptBuscar{
         font-family:SourceSans;
+        width:200px;
         font-size:25px;
         border-radius: 0px;
         border:0px;

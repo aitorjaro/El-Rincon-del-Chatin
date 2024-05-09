@@ -31,6 +31,10 @@
     function carrito() {
         require 'carrito.php';
     }
+    function cestas() {
+        $articulos = cargar_cestas();
+        require 'vista_cestas.php';
+    }
 
     function contacto(){
         require 'vista_contacto.php';

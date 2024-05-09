@@ -103,6 +103,21 @@ function busqueda_articulos($termino)
     }
     return $articulos;
 }
+function cargar_cestas(){
+    $articulos = array();
+    $con = conexion();
+    if ($con) {
+        $stmt = $con->prepare("SELECT * FROM productos WHERE categoria = 'cestas'");
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        while ($articulo = $resultado->fetch_assoc()) {
+            $articulos[] = $articulo;
+        }
+        $stmt->close();
+        $con->close();
+    }
+    return $articulos;
+}
 
 /**
  * Función listar_articulos
