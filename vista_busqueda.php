@@ -26,6 +26,9 @@ unset($_SESSION['pedido_realizado']); ?>
             
         </div>
         <script src="/scriptCarrito.js"></script>
+        <?php if ($articulos == null){?>
+            <p class="busquedaVacia">No existen resultados con esa búsqueda</p>
+       <?php } ?>
         <section class="articulos">
             <!-- Mostramos una lista de los artículos -->
             <?php foreach ($articulos as $articulo) { ?>
