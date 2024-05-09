@@ -21,7 +21,7 @@ unset($_SESSION['pedido_realizado']); ?>
     <div class="centrarProductos">
         <div class="filtrar">
             <section>
-                <h1 class="parrafos">BÚSQUEDA</h1>
+                <h1 class="parrafos">BÚSQUEDA - <?php echo $_GET["termino_busqueda"] ?></h1>
             </section>
             
         </div>

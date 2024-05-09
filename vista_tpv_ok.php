@@ -93,7 +93,7 @@ if (!isset($_SESSION['pedido_realizado'])) {
                             $stmt2->bind_param("ssss", $numeroPedido, $articulo_id, $articulo_cantidad, $articulo_precio);
                             $stmt2->execute();
                         }
-
+                        
                         $stmt->close();
                         $stmt2->close();
                         $conexion->close();
