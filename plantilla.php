@@ -36,7 +36,7 @@ if (isset($_SESSION["carrito"])) {
             <ul>
             <li>
                     <section class="imagenCarro">
-                        <img class="imagenCarrito" id="imagenLupa" src="/imagenes/lupa.svg" />
+                        <img class="imagenCarrito" id="imagenLupa" src="/imagenes/lupanegra.svg" />
                     </section>
                 </li>
                 <li><a class="menu" href="/index.php">Inicio</a></li>
@@ -56,7 +56,7 @@ if (isset($_SESSION["carrito"])) {
                 <li><a class="menu" href="/index.php/contacto">Contacto</a></li>
                 <li>
                     <section class="imagenCarro">
-                        <a href="/index.php/cesta"><img class="imagenCarrito" src="/imagenes/carro.svg" /></a>
+                        <a href="/index.php/cesta"><img class="imagenCarrito" src="/imagenes/carronegro.svg" /></a>
                     </section>
                 </li>
             </ul>
