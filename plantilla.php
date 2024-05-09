@@ -90,8 +90,9 @@ if (isset($_SESSION["carrito"])) {
         <div class="menuBuscar" id="menuLupa">
             
             <img class="imgX" src="/imagenes/x.png" id="imgXBuscar"/>
-            <form action="/index.php/busqueda" method="get">
-                <input class="inptBuscar" type="text" name="termino_busqueda" placeholder="Buscar..." />
+            <form class="formBuscar" action="/index.php/busqueda" method="get">
+                <input class="inptBuscar" type="text" name="termino_busqueda" placeholder="Buscar..." required/>
+                <input class="submitBuscar" type="image" src="/imagenes/lupanegra.svg"/>
             </form>
         </div>
 
