@@ -6,6 +6,7 @@ if (isset($_SESSION["usuario"])) {
     $mensaje = "";
 } else {
     header("Location: index.php");
+    die();
 }
 
 // Verificar si se envió el formulario

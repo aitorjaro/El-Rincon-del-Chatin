@@ -5,6 +5,7 @@ if (isset($_SESSION["usuario"])) {
     echo "<section> <h1 class='h1Anadir'>Bienvenid@ " . $_SESSION["usuario"] . "</h1></section>";
 } else {
     header("Location: index.php");
+    die();
 }
 
 //Asociamos los datos introducidos en el formulario a la sesión activa

@@ -6,6 +6,7 @@ if (isset($_SESSION["usuario"])) {
 
 } else {
     header("Location: index.php");
+    die();
 }
 //Método GET
 $nombreCategoria = $_GET['id'];

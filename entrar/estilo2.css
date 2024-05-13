@@ -168,3 +168,84 @@ a.aBorrarProductos{
     font-family: SourceSansRegular;
     font-size:20px;
 }
+
+@media (min-device-width: 320px) and (max-device-width: 736px) {
+    h1.h1Acceso{
+        margin:auto;
+        text-align: center;
+        margin-top:50px;
+        font-size:60px;
+        background: #E7272D;
+        color:white;
+        padding:30px;
+        border-radius:20px;
+        font-weight: lighter;
+    }
+    form.formularioEntrada{
+        text-transform:uppercase;
+        margin:auto;
+        margin-top:50px;
+        padding:50px;
+        width:auto;
+        background-color:white;
+        border-radius:20px;
+        text-align: center;
+        font-weight: lighter;    
+    }
+    #valor{
+        width:80%;
+    }
+    h1.h1Anadir{
+        text-align: center;
+        margin-top:50px;
+        margin-bottom:0px;
+        font-size:60px;
+        background: #E7272D;
+        color:white;
+        padding:30px;
+        border-radius:20px;
+        font-weight: lighter;
+    }
+    section.cuerpoSesion{
+        background: white;
+        padding-bottom:50px;
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius:20px;
+    }
+    .h2SeleccionPrincipal{
+        font-weight: lighter;
+    }
+    form.dos{
+        text-transform:uppercase;
+        padding:0px;
+        padding-bottom:40px;
+        width:100%;
+        background-color:white;
+        border-radius:20px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: lighter;
+    }
+    label{
+        margin:auto;
+        text-align: center;
+        margin-top:50px;
+        margin-bottom:15px;
+        font-size:40px;
+        font-weight: lighter;
+    }
+    .dos input{
+        width:80%;
+        font-weight: lighter;
+    }
+    .txtAreaDescripcion{
+        width:90%;
+        height:200px;
+    }
+    
+
+}

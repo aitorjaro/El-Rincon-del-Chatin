@@ -52,7 +52,7 @@ if (isset($_SESSION["carrito"])) {
         <h1 class="tituloOculto">EL RINCÓN DEL CHATÍN</h1>-->
         <nav class="navMenu">
             <ul>
-                <li><a class="menu" href="/registro">Hervás</a></li>
+                <li><a class="menu" href="/hervas.php">Hervás</a></li>
                 <li><a class="menu" href="/index.php/contacto">Contacto</a></li>
                 <li>
                     <section class="imagenCarro">
@@ -77,8 +77,8 @@ if (isset($_SESSION["carrito"])) {
             <ul>
             <img class="imgX" src="/imagenes/x.png" id="imgXMenu"/>
                 <li><a class="menu" href="/index.php">Inicio</a></li>
-                <li><a class="menu" href="/sugerencias">Cestas</a></li>
-                <li><a class="menu" href="/registro">Hervás</a></li>
+                <li><a class="menu" href="/index.php/cestas">Cestas</a></li>
+                <li><a class="menu" href="/hervas.php">Hervás</a></li>
                 <li><a class="menu" href="/index.php/contacto">Contacto</a></li>
                 <li>
                     <section class="imagenCarro">

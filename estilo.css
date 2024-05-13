@@ -795,6 +795,64 @@ textarea.formularioContacto {
     background-color: #cfb988;
     transform: translateY(4px);
 }
+/* ---------------- HERVAS --------------------*/
+.divFotoHervas{
+    width:100%;
+    height:500px;
+}
+.divFotoHervas img{
+    width:100%;
+    height: 100%;
+    object-fit:cover;
+}
+.divHervas{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:350px;
+    background-color: white;
+}
+
+.h1Hervas{
+    margin-top:0px;
+    font-size:50px;
+}
+.divHervas p{
+    font-family: SourceSans;
+    font-size:20px;
+    width:800px;
+    text-align: center;
+}
+
+.articuloHervas{
+    width:100%;
+    display:flex;
+    background-color: #F4F4F4;
+}
+.sctImagenArticulos{
+    width:50%;
+}
+.sctImagenArticulos img{
+    width:100%;
+}
+.sctParrafosHervas{
+    margin-top:50px;
+    width:50%;
+}
+.articuloHervas p {
+    margin-left:50px;
+    margin-right:50px;
+    font-family: SourceSans;
+    font-size:20px;
+}
+.h2TituloArticulos{
+    margin-left:50px;
+    font-family: SourceSans;
+    font-weight: lighter;
+    font-size:30px;
+}
 
 /*----------------- CONTACTO------------------*/
 section.englobandoContacto {
