@@ -1160,7 +1160,7 @@ h1.tituloFooter {
     .imgX{
         position:absolute;
         left:50%;
-        top:15%;
+        top:25%;
         transform: translate(-50%, -50%);
     }
 
@@ -1448,8 +1448,48 @@ h1.tituloFooter {
         margin-top:40px;
         font-weight: lighter;
     }
-
-    /*CONTACTO */
+    /* HERVAS */
+    .divFotoHervas{
+        margin-top:20px;
+        width:100%;
+        height:auto;
+    }
+    .divFotoHervas img{
+        width:100%;
+        height: auto;
+        object-fit:contain;
+    }
+    .h1Hervas{
+        font-weight: lighter;
+    }
+    .divHervas p {
+        margin:0px 15px;
+        width:auto;
+    }
+    .articuloHervas{
+        flex-direction: column;
+    }
+    .articuloHervas:nth-child(odd) {
+        flex-direction: column-reverse;
+      }
+      .h2TituloArticulos{
+        margin-left:25px;
+        margin-right:25px;
+        text-align: center;
+      }
+      .articuloHervas p{
+        margin-left:25px;
+        margin-right:25px;
+        margin-bottom:50px;
+        text-align: center;
+    }
+    .sctImagenArticulos{
+        width:100%;
+    }
+    .sctParrafosHervas{
+        width:100%;
+    }
+    /* CONTACTO */
     section.englobandoContacto {
         background: white;
     }
