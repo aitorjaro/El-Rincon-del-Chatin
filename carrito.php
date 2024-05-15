@@ -13,6 +13,7 @@ if (isset($_SESSION["carrito"]) || isset($_POST["idArticulo"])) {
         $imagen = $articulo["imagen"];
         $nombre = $articulo["nombre"];
         $precio = $articulo["precio"];
+        $contenido = $articulo["contenido"];
         $cantidad = $_POST["cantidadArticulo"];
 
         // Buscar el artículo en el carrito
@@ -28,6 +29,7 @@ if (isset($_SESSION["carrito"]) || isset($_POST["idArticulo"])) {
                 "imagen" => $imagen,
                 "nombre" => $nombre,
                 "precio" => $precio,
+                "contenido" => $contenido,
                 "cantidad" => $cantidad
             );
         }
