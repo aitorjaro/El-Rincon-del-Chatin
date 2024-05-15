@@ -33,15 +33,15 @@ if (isset($_SESSION["usuario"])) {
            <img src="/imagenes/logout.png"/></a>
     </section>
     <section class="cuerpo">
-        <form class="dos" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post"
+        <form class="dos" id="cuerpo110" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post"
             enctype="multipart/form-data">
             <label>LISTA DE PEDIDOS </label>
             <table>
-                    <th>Fecha</th><th>Referencia</th><th>Nombre</th><th>Apellidos</th><th>Teléfono</th>
+                    <th>Fecha</th><th>Ref</th><th>Nombre</th><th>Apellidos</th><th class="telefono">Teléfono</th>
                 
             <?php $pedidos = listar_pedidos();
             foreach ($pedidos as $pedido) { ?>
-                <tr><td><?php echo $pedido["fecha"]?></td><td><a class="aPedido" href="mostrarPedido.php?id=<?php echo $pedido['referencia']; ?>"><?php echo $pedido['referencia']; ?></a></td><td><?php echo $pedido["nombre"]?></td><td><?php echo $pedido["apellidos"]?></td><td><?php echo $pedido["telefono"]?></td></tr>
+                <tr><td><?php echo date('d/m/Y', strtotime($pedido["fecha"])); ?></td><td><a class="aPedido" href="mostrarPedido.php?id=<?php echo $pedido['referencia']; ?>"><?php echo $pedido['referencia']; ?></a></td><td><?php echo $pedido["nombre"]?></td><td><?php echo $pedido["apellidos"]?></td><td class="telefono"><?php echo $pedido["telefono"]?></td></tr>
                 <?php
             }
             ?>

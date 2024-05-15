@@ -1,12 +1,12 @@
 <?php if (!defined("CON_CONTROLADOR")) {
-    die ("<h2>No se puede llamar a este fichero directamente</h2>");
+    die("<h2>No se puede llamar a este fichero directamente</h2>");
 }
 
 ?>
 <?php include 'plantilla.php' ?>
 
 <?php startblock('titulo'); ?>
-<title>El Rincón del Chatín - Productos típicos de Extremadura  (Hervás)</title>
+<title>El Rincón del Chatín - Productos típicos de Extremadura (Hervás)</title>
 <?php endblock() ?>
 <?php startblock('estilo'); ?>
 <style>
@@ -26,11 +26,19 @@
                 <h1 class="parrafos">PRODUCTOS</h1>
             </section>
             <section class="sctCategorias">
-                <?php foreach ($categorias as $categoria) { ?>
-                    <button class="botonCategorias" data-categoria="<?php echo $categoria['categoria'] ?>">
-                        <?php echo $categoria["categoria"] ?>
-                    </button>
-                <?php } ?>
+                <?php
+                foreach ($categorias as $categoria) {
+                    if ($categoria['categoria'] !== 'Otros') {
+                        echo '<button class="botonCategorias" data-categoria="' . $categoria['categoria'] . '">';
+                        echo $categoria["categoria"];
+                        echo '</button>';
+                    }
+                }
+                // Ahora agregamos el botón de "otros" al final
+                if (in_array('Otros', array_column($categorias, 'categoria'))) {
+                    echo '<button class="botonCategorias" data-categoria="Otros">Otros</button>';
+                }
+                ?>
             </section>
         </div>
         <!--Añadimos estos scripts para que se ejecuten antes de que se cargue la página, por si hay baja conectividad-->
@@ -46,24 +54,24 @@
                                 src="data:image/jpeg;base64,<?php echo base64_encode($articulo['imagen']); ?>">
                         </a>
                     </section>
-                    
+
                     </br>
                     <section class="englobarTextoArticulo">
                         <section class="englobarTextoArticulo2">
                             <section class="seccionCentrarTextoLista">
-                            <a class="titulo" href="index.php/articulo?id=<?php echo $articulo['id'] ?>">
-                                <?php echo $articulo['nombre'] ?>
-                            </a>
-            
-                            <p class="precio">
-                                <?php echo $articulo['precio'] ?>€
-                                <span class="iva">&nbsp;IVA incluido</span>
-                            </p>
-                            <form class="formularioProducto" action="/index.php/carrito" method="post">
-                                <input name="idArticulo" type="hidden" value="<?php echo $articulo['id'] ?>" />
-                                <input name="cantidadArticulo" type="hidden" value="1" />
-                                <button type="submit" class="carrito">Añadir al carrito</button>
-                            </form>
+                                <a class="titulo" href="index.php/articulo?id=<?php echo $articulo['id'] ?>">
+                                    <?php echo $articulo['nombre'] ?>
+                                </a>
+
+                                <p class="precio">
+                                    <?php echo $articulo['precio'] ?>€
+                                    <span class="iva">&nbsp;IVA incluido</span>
+                                </p>
+                                <form class="formularioProducto" action="/index.php/carrito" method="post">
+                                    <input name="idArticulo" type="hidden" value="<?php echo $articulo['id'] ?>" />
+                                    <input name="cantidadArticulo" type="hidden" value="1" />
+                                    <button type="submit" class="carrito">Añadir al carrito</button>
+                                </form>
                             </section>
                         </section>
                     </section>

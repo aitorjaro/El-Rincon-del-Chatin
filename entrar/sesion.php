@@ -2,7 +2,7 @@
 session_start();
 //Comprobamos que se ha logeado anteriormente el usuario, y si no, lo devolvemos a la página de login
 if (isset($_SESSION["usuario"])) {
-    echo "<section> <h1 class='h1Anadir'>Bienvenid@ " . $_SESSION["usuario"] . "</h1></section>";
+    echo "<section> <h1 class='h1Anadir'>Bienvenid@ " . "</h1></section>";
 } else {
     header("Location: index.php");
     die();

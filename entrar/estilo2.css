@@ -9,6 +9,7 @@
 body{
     font-family:Barlow;
     background: #cfb377;
+    overflow-x: hidden;
 }
 /* LOGIN */
 section.sectionTituloAcceso{
@@ -28,7 +29,7 @@ h1.h1Acceso{
     margin:auto;
     margin-top:100px;
     font-size:80px;
-    background: #E7272D;
+    background: #8FAD8A;
     color:white;
     padding:30px;
     border-radius:20px;
@@ -67,7 +68,7 @@ h1.h1Anadir{
     margin-top:50px;
     margin-bottom:0px;
     font-size:80px;
-    background: #E7272D;
+    background: #8FAD8A;
     color:white;
     padding:30px;
     border-radius:20px;
@@ -168,6 +169,9 @@ a.aBorrarProductos{
     font-family: SourceSansRegular;
     font-size:20px;
 }
+td{
+    text-align: center;
+}
 
 @media (min-device-width: 320px) and (max-device-width: 736px) {
     h1.h1Acceso{
@@ -175,7 +179,7 @@ a.aBorrarProductos{
         text-align: center;
         margin-top:50px;
         font-size:60px;
-        background: #E7272D;
+        background: #8FAD8A;
         color:white;
         padding:30px;
         border-radius:20px;
@@ -200,7 +204,7 @@ a.aBorrarProductos{
         margin-top:50px;
         margin-bottom:0px;
         font-size:60px;
-        background: #E7272D;
+        background: #8FAD8A;
         color:white;
         padding:30px;
         border-radius:20px;
@@ -230,6 +234,13 @@ a.aBorrarProductos{
         align-items: center;
         font-weight: lighter;
     }
+    .dos a{
+        text-align: center;
+        margin-bottom:10px;
+    }
+    #cuerpo110{
+        width:110%;
+    }
     label{
         margin:auto;
         text-align: center;
@@ -250,6 +261,9 @@ a.aBorrarProductos{
     .txtAreaDescripcion{
         width:90%;
         height:200px;
+    }
+    .telefono{
+        display:none;
     }
     
 
