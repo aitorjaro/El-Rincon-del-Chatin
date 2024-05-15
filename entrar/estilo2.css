@@ -238,6 +238,11 @@ a.aBorrarProductos{
         font-size:40px;
         font-weight: lighter;
     }
+    input{
+        font-size:25px;
+        border:1px solid;
+        border-radius:0.5em;
+    }
     .dos input{
         width:80%;
         font-weight: lighter;

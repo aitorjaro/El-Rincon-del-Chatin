@@ -22,7 +22,7 @@ body {
     font-family: Barlow;
     padding: 0;
     margin: 0;
-    background: #cfb377;
+    background-image: url("/imagenes/logomenu.jpg");
     overflow-x: hidden;
 }
 
@@ -92,8 +92,9 @@ nav ul li {
 }
 
 a.menu {
-    font-family: Barlow;
-    font-size: 25px;
+    font-family: SourceSans;
+    font-weight: bold;
+    font-size: 20px;
     display: block;
     text-decoration: none;
     color: black;
@@ -119,22 +120,6 @@ a.menu:hover {
 .menuBuscar{
     display:none;
 }
-/* */
-/*
-h1.titulo {
-    font-size: 60px;
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0px;
-}
-
-h1.tituloOculto {
-    font-size: 60px;
-    color: #CFB377;
-}*/
 
 /* Seccion buscar e imagen carrito menú*/
 section.imagenCarro {
@@ -953,11 +938,14 @@ h1.tituloFooter {
     margin-bottom:60px;
 }
 
+/* ------- MOVILES ------- */
 @media (min-device-width: 320px) and (max-device-width: 736px) {
 
     body,
     html {
         overflow-x: hidden;
+        background-image: none;
+        background: #cfb377;
     }
 
     header {
@@ -1072,6 +1060,7 @@ h1.tituloFooter {
         font-family: SourceSansRegular;
         color: black;
         font-size: 40px;
+        font-weight: lighter;
     }
 
     .bars__menu {
@@ -1249,6 +1238,9 @@ h1.tituloFooter {
     }
 
     /*DESCRIPCION ARTICULOS */
+    section.englobarDescripcion {
+        margin-top: 30px;
+    }
     section.articuloDescripcion {
         display: flex;
         flex-direction: column;
@@ -1295,6 +1287,9 @@ h1.tituloFooter {
     }
 
     /* CARRITO */
+    section.englobandoCarrito {
+        margin-top: 30px;
+    }
     section.centrarCarrito {
         width:100%;
     }
@@ -1491,6 +1486,7 @@ h1.tituloFooter {
     }
     /* CONTACTO */
     section.englobandoContacto {
+        margin-top:20px;
         background: white;
     }
 
@@ -1535,4 +1531,11 @@ h1.tituloFooter {
         margin-bottom:20px;
     }
 
+}
+
+/* ------- TABLETS ------- */
+@media (min-device-width: 768px)
+and (max-device-width: 1180px){
+    
+    
 }

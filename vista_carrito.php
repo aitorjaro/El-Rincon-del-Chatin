@@ -4,6 +4,10 @@
 ?>
 <?php include 'plantilla.php'; ?>
 
+<!--Vaciamos las sesiones por si se ha realizado un pedido anterior-->
+<?php unset($_SESSION['nombre']);
+unset($_SESSION['pedido_realizado']); ?>
+
 <?php startblock('titulo'); ?>
 <title>
     Carrito - El Rincón del Chatín (Hervás)
@@ -95,7 +99,7 @@
                                 <?php echo number_format($total, 2, ',', '.') ?>€
                             </p>
                             <p class="totalProductosCarrito">
-                                Envío: 5€
+                                Envío: 5€ (solo península)
                             </p>
                             <p class="totalPrecioCarrito">Total con envío:
                                 <?php $totalConEnvio = $total + 5;

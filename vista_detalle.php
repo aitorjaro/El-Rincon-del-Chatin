@@ -3,9 +3,6 @@
 }
 ?>
 <?php include 'plantilla.php' ?>
-<!--Vaciamos las sesiones por si se ha realizado un pedido anterior-->
-<?php unset($_SESSION['nombre']);
-unset($_SESSION['pedido_realizado']); ?>
 <?php startblock('titulo'); ?>
 <title>
     <?php echo $articulo['nombre'] ?> - El Rincón del Chatín (Hervás)
