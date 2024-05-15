@@ -131,6 +131,8 @@ unset($_SESSION['pedido_realizado']); ?>
                                 $envio = 25.27;
                             } else if ($onlyNumbers > 25000 && $onlyNumbers <= 30000) {
                                 $envio = 30.16;
+                            } else if ($onlyNumbers > 30000) {
+                                $envio = 30.16;
                             }
                             $_SESSION["envio"] = $envio;
                             ?>
