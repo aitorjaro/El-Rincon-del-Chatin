@@ -44,6 +44,7 @@
         crearParametrosPago();
     }
     function tpv_ok(){
+        crearPedido();
         require 'vista_tpv_ok.php';
     }
     function busqueda(){
