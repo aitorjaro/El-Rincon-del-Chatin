@@ -96,10 +96,13 @@ function ocultarMenuLupa() {
   document.body.classList.remove('body-no-scroll');
 }
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+  console.log(scrollPosition);
+  
+  if (scrollPosition > 20) {
     document.getElementById("scrollToTopBtn").style.display = "block";
   } else {
     document.getElementById("scrollToTopBtn").style.display = "none";
@@ -108,6 +111,5 @@ function scrollFunction() {
 
 // Función para realizar el scroll hacia arriba
 function scrollToTop() {
-  document.body.scrollTop = 0; // Para Safari
-  document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }

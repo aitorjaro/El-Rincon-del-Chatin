@@ -18,6 +18,11 @@
     src: url("fuentes/SourceSansPro-Semibold.ttf");
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
     font-family: Barlow;
     padding: 0;
@@ -944,9 +949,8 @@ h1.tituloFooter {
 
     body,
     html {
-        overflow-x: hidden;
         background-image: none;
-        background: #cfb377;
+        background-color: #cfb377;
     }
 
     header {
