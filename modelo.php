@@ -263,5 +263,15 @@ function listar_productos_idPedido($idPedido){
     }
     return $productos;
 }
+function obtener_hash($nombreUsuario){
+    $con = conexion();
+    $sql =  "SELECT clave from usuarios WHERE nombre = '$nombreUsuario'";
+    $resultado = $con->query($sql);
+    if ($resultado) {
+        $fila = $resultado->fetch_assoc();
+        $contrasena = $fila['clave'];
+    }
+    return $contrasena;
+}
 
 ?>

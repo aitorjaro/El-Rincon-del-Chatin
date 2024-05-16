@@ -5,9 +5,12 @@ require "../modelo.php";
 
 $mensaje = "";
 
+$contrasena_hasheada = obtener_hash("rinconchatin");
+
 if (isset($_POST["usuario"])) {
     if ($_POST["usuario"] == "rinconchatin") {
-        if ($_POST["contrasena"] == "1234") {
+        $contrasena_ingresada = $_POST["contrasena"];
+        if (password_verify($contrasena_ingresada, $contrasena_hasheada)) {
             $_SESSION["usuario"] = $_POST["usuario"];
             header("Location: sesion.php");
         } else {
