@@ -1,5 +1,7 @@
 <?php
 session_start();
+define('CON_CONTROLADOR', true);
+require "../modelo.php";
 
 $mensaje = "";
 

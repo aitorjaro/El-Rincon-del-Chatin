@@ -1,6 +1,7 @@
 <?php
 session_start();
-require "modelo.php";
+define('CON_CONTROLADOR', true);
+require "../modelo.php";
 
 if (isset($_SESSION["usuario"])) {
     $mensaje = "";
