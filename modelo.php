@@ -350,7 +350,7 @@ function crearPedido(){
                             $cabeceras .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                             $para = $_SESSION["email"];
                             $asunto = 'Confirmación de pedido ' . $numeroPedido . ' en El Rincón del Chatín';
-                            $cuerpo = "Muchas gracias por comprar en El Rincón del Chatín, <b>$nombre $apellidos</b>. Tu pedido <b>$numeroPedido</b> ha sido confirmado.<br><br><b>Tu nombre:</b>
+                            $cuerpo = "Muchas gracias por comprar en El Rincón del Chatín, <b>$nombre </b>. Tu pedido <b>$numeroPedido</b> ha sido confirmado.<br><br><b>Tu nombre:</b>
         $nombre<br><b>Apellidos:</b> $apellidos<br><b>Teléfono:</b> $telefono<br><b>Email:</b> $email<br><b>Dirección:</b>
         $direccion<br><b>Localidad:</b> $localidad<br><b>Código postal:</b> $codigoPostal<br><br> <b>PRODUCTOS ADQUIRIDOS:</b><br><br> $lista_productos_email <br><br><b>TOTAL:</b> $total_email € <br><br><b>TOTAL CON ENVÍO:</b> $total_email_envio €";
     

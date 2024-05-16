@@ -143,7 +143,7 @@ unset($_SESSION['pedido_realizado']); ?>
                                 <?php
 
                                 $totalConEnvio = $total + $envio;
-                                $_SESSION["totalConEnvio"] = $totalConEnvio;
+                                $_SESSION["totalConEnvio"] = number_format($totalConEnvio, 2, '.', '');
                                 echo number_format($totalConEnvio, 2, ',', '.') ?>€ (IVA inc)
                             </p>
                             <a class="vaciarCarrito" href="/vaciar_carrito.php">Vaciar carrito</a>
