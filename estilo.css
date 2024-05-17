@@ -499,6 +499,11 @@ section.articuloDescripcion {
     background: white;
     width: 90%;
 }
+.h2NoEncontrado{
+    width:100%;
+    text-align: center;
+    padding:40px 0px;
+}
 
 .seccionImagenDetalle {
     display: flex;
@@ -951,6 +956,9 @@ h1.tituloFooter {
     html {
         background-image: none;
         background-color: #cfb377;
+    }
+    #scrollToTopBtn:hover {
+        background-color: black;
     }
 
     header {

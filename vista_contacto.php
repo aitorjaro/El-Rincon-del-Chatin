@@ -70,9 +70,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <h3 class="h3Contacto">Dirección</h3>
             <p>C. Braulio Navas, 41 </p>
             <p>10700 Hervás (Cáceres).</p>
-            <h3 class="h3Contacto">Teléfono</h3>
+            <h3 class="h3Contacto">Teléfonos y WhatsApp</h3>
             <a class="aTelefono" href="tel:+34647481626"><p>(+34) 647 48 16 26 </p></a>
-            <h3 class="h3Contacto">Correo electrónico</h3>
+            <a class="aTelefono" href="tel:+34647481626"><p>(+34) 627 32 27 73 </p></a>
             <p> </p>
             </div>
         </section>
