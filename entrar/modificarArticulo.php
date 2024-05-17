@@ -45,13 +45,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($resultado) {
             $mensajeCodificado = urlencode("Producto modificado correctamente.");
+            mysqli_close($conexion);
             header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $idArticulo . "&mensaje=" . $mensajeCodificado);
             exit;
         } else {
             $mensajeCodificado = urlencode('"<center>Error al modificar el producto: " . mysqli_error($conexion) . "</center></br> </br>"');
+            mysqli_close($conexion);
             header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $idArticulo . "&mensaje=" . $mensajeCodificado);
             exit;
         }
+        
     } else {
         $consulta = "UPDATE productos SET nombre = '$nombreProducto', descripcion = '$descripcionProducto', precio = '$precioProducto', contenido = '$contenidoProducto', categoria = '$categoriaProducto' WHERE id = '$idArticulo'";
 
@@ -59,13 +62,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($resultado) {
             $mensajeCodificado = urlencode("Producto modificado correctamente.");
+            mysqli_close($conexion);
             header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $idArticulo . "&mensaje=" . $mensajeCodificado);
             exit;
         } else {
             $mensajeCodificado = urlencode('"<center>Error al modificar el producto: " . mysqli_error($conexion) . "</center></br> </br>"');
+            mysqli_close($conexion);
             header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $idArticulo . "&mensaje=" . $mensajeCodificado);
             exit;
         }
+        
     }
 }
 
@@ -118,6 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $selected = ($categoria['categoria'] == $articulo['categoria']) ? 'selected' : '';
                     echo "<option value='{$categoria['categoria']}' $selected>{$categoria['categoria']}</option>";
                 }
+                mysqli_close($conexion);
                 ?>
             </select>
             <label>Imagen </label>

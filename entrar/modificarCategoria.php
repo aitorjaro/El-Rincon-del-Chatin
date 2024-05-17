@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $nombreCategoria . "&mensaje=" . $mensajeCodificado);
         exit;
     }
+    mysqli_close($conexion);
 
 }
 

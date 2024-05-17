@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $mensaje = "<center>Error al insertar el producto: " . mysqli_error($conexion) . "</center></br> </br>";
     }
+    mysqli_close($conexion);
 }
 
 ?>
@@ -87,6 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 while ($categoria = mysqli_fetch_assoc($busqueda)) {
                     echo "<option value='{$categoria['categoria']}'>{$categoria['categoria']}</option>";
                 }
+                mysqli_close($conexion);
                 ?>
             </select>
             <label>Imagen </label>
