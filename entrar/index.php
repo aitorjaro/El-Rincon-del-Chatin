@@ -50,14 +50,16 @@ if (isset($_POST["usuario"])) {
             </br>
             <article class="articleLogin">
                 <label>Contraseña: </label>
-            </article class="articleLogin">
+                
+            </article>
+            </br>
             <input id="valor" type="password" name="contrasena" size="7"></input>
             </br>
             </br>
             </br>
 
             <article class="articleLogin">
-                <input type="submit" value="ENTRAR" />
+                <input class="submitEntrar" type="submit" value="ENTRAR" />
             </article>
             <?php
             echo $mensaje;

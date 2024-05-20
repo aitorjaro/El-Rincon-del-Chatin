@@ -42,7 +42,7 @@ if (isset($_SESSION["usuario"])) {
                 
             <?php $pedidos = listar_pedidos();
             foreach ($pedidos as $pedido) { ?>
-                <tr><td><?php echo date('d/m/Y', strtotime($pedido["fecha"])); ?></td><td><a class="aPedido" href="mostrarPedido.php?id=<?php echo $pedido['referencia']; ?>"><?php echo $pedido['referencia']; ?></a></td><td><?php echo $pedido["nombre"]?></td><td><?php echo $pedido["apellidos"]?></td><td class="telefono"><?php echo $pedido["telefono"]?></td></tr>
+                <tr><td><?php echo date('d/m/Y', strtotime($pedido["fecha"])); ?></td><td><a class="aPedido" href="mostrarPedido.php?id=<?php echo $pedido['referencia']; ?>"><?php echo $pedido['referencia']; ?></a></td><td class="tdNombre"><?php echo $pedido["nombre"]?></td><td><?php echo $pedido["apellidos"]?></td><td class="telefono"><?php echo $pedido["telefono"]?></td></tr>
                 <?php
             }
             ?>

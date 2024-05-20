@@ -59,7 +59,7 @@ if (isset($_SESSION["carrito"])) {
             </ul>
         </nav>
 
-        <!-- Menu desplegable para móviles -->
+        <!-- Menú para móviles -->
         <div class="englobaMenuYLupa">
             <div class="bars__menu">
                 <span class="line1__bars-menu"></span>

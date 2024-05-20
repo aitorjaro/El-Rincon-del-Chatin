@@ -188,13 +188,17 @@ td{
     form.formularioEntrada{
         text-transform:uppercase;
         margin:auto;
-        margin-top:50px;
+        margin-top:30px;
         padding:50px;
         width:auto;
         background-color:white;
         border-radius:20px;
         text-align: center;
         font-weight: lighter;    
+    }
+    .submitEntrar{
+        background-color: #F0F0F0;
+        color:black;
     }
     #valor{
         width:80%;
@@ -265,6 +269,15 @@ td{
     .telefono{
         display:none;
     }
-    
+    .tdNombre{
+        width:50px;
+    }
+    .pPedidos{
+        text-align: center;
+    }
+    .inptAnadirProductos{
+        background-color: #F0F0F0;
+        color:black;
+    }
 
 }
