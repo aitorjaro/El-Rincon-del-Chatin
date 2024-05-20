@@ -15,15 +15,16 @@
 <?php endblock() ?>
 <?php startblock('contenido') ?>
 <div class="englobarCesta">
-    <img src="imagenes/cestaproductos.png" />
-    <h2>Productos típicos de Extremadura</h2>
+    
+    <img class="imgEslogan" src="imagenes/eslogan.png" />
+    <img class="imgCestaListar" src="imagenes/cestaproductos.png" />
     <!--<p class="verCestas">Ver cestas</p>-->
 </div>
 <div class="englobarProductos">
     <div class="centrarProductos">
         <div class="filtrar">
             <section>
-                <h1 class="parrafos">PRODUCTOS</h1>
+                <h1 class="parrafos">ARTÍCULOS</h1>
             </section>
             <section class="sctCategorias">
                 <?php

@@ -258,22 +258,27 @@ div.englobarCesta {
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
 }
-
-.englobarCesta img {
-    width: 40%;
+.imgEslogan{
+    margin-top:20px;
+    width:600px;
+}
+.imgCestaListar {
+    width: 35%;
     height: 100%;
     /*position: relative;
     height: auto;*/
     z-index: 1;
-    margin-top: 40px;
+    margin-top: -120px;
 }
 
 .englobarCesta h2 {
     position: absolute;
     font-size: 60px;
-    color: #cfb377;
+    color: #CFB377;
     background: white;
     padding: 35px 50px;
 }
@@ -954,8 +959,7 @@ h1.tituloFooter {
 
     body,
     html {
-        background-image: none;
-        background-color: #cfb377;
+        
     }
     #scrollToTopBtn:hover {
         background-color: black;
@@ -969,7 +973,6 @@ h1.tituloFooter {
         align-items: flex-start;
         flex-direction: column;
         gap:0px;
-        background-image: none;
     }
 
     h1.tituloOculto {
@@ -1091,10 +1094,14 @@ h1.tituloFooter {
         display: block;
         width: 100%;
         height: 2px;
-        background: white;
+        background: black;
         margin-top: 6px;
         transform-origin: 0px 100%;
         transition: all 300ms;
+    }
+
+    .divLupa img{
+        content: url(/imagenes/lupanegra.svg);
     }
 
    /* .activeline1__bars-menu {
@@ -1186,13 +1193,18 @@ h1.tituloFooter {
         text-align: center;
     }
 
-    .englobarCesta img {
+    .imgCestaListar {
         width: 60%;
         height: 100%;
         /*position: relative;
         height: auto;*/
         z-index: 1;
-        margin-top: 120px;
+        margin-top: -30px;
+    }
+    .imgEslogan{
+        width: 70%;
+        height: 100%;
+        margin-top:20px;
     }
     p.verCestas{
         display:none;

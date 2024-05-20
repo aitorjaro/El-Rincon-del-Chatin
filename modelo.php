@@ -10,13 +10,17 @@ if (!defined('CON_CONTROLADOR')) {
  * @return array $articulos
  */
 
-
+ require_once __DIR__ . '/vendor/autoload.php';
+ 
+ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+ $dotenv->load();
+ 
 function conexion()
 {
-    $servidor = "localhost";
-    $bbdd = "rinconchatin";
-    $usuario = "root";
-    $contrasena = "";
+    $servidor =  $_ENV['DB_HOST'];
+    $bbdd = $_ENV['DB_DBNAME'];
+    $usuario = $_ENV['DB_USER'];
+    $contrasena = $_ENV['DB_PASS'];
     try {
         $conectado = new mysqli($servidor, $usuario, $contrasena, $bbdd);
 
