@@ -59,7 +59,7 @@
             historia sefardí de la localidad.</p>
     </section>
     <section class="sctImagenArticulos">
-        <img src="/imagenes/barriojudio.jpg" />
+        <img src="/imagenes/casabarriojudio.jpg" />
     </section>
 </div>
 <div class="articuloHervas">

@@ -109,7 +109,7 @@ if (isset($_SESSION["carrito"])) {
         <div class="footer">
             <h1 class="tituloFooter">EL RINCÓN DEL CHATÍN</h1>
             <section class="footerFlex">
-                <p class="pFooter">C. Braulio Navas, 41, 10700 Hervás (Cáceres).</p>
+                <p class="pFooter">C. Braulio Navas, 41, Local 41. 10700 Hervás (Cáceres).</p>
                 <p class="pFooterSans">Horario de atención al cliente: Lunes, Martes, Jueves y Viernes de 10:00 a 14:00</p>
                 <p class="pFooter">Teléfonos de contacto: 647 48 16 26 - 627 32 27 73</p>
                 <p class="pFooter">E-mail: tienda@elrincondelchatin.com</p>
