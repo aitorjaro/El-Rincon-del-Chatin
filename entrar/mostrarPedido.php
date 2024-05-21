@@ -54,9 +54,7 @@ $productos = listar_productos_idPedido($idPedido)
             <p class="pPedidos"><?php echo $pedido["direccion"] . ", " .  $pedido["localidad"] . ", " . $pedido["codigoPostal"];?></p>
             <label>Productos </label>
             <p class="pPedidos"><?php foreach($productos as $producto){
-                $productoID = $producto["producto_id"];
-                $articulo = cargar_articulo_id($productoID);
-                echo $articulo["nombre"] . "(" . $articulo["precio"] . "€)" .  ", ";
+                echo $producto["producto_nombre"] . "<br/>" . "Precio: (c/u) " . $producto["precio"] . "€<br/>" . "Cantidad: " . $producto["cantidad"] . "<br/><br/>";
                 }?></p>
             <label>Total </label>
             <p class="pPedidos"><?php echo $pedido["total"];?></p>

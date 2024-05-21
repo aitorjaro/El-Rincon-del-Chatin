@@ -311,12 +311,12 @@ function crearPedido(){
                             $stmt->execute();
     
                             for ($i = 0; $i <= count($carrito_mio) - 1; $i++) {
-                                $articulo_id = $carrito_mio[$i]['id'];
+                                $articulo_nombre = $carrito_mio[$i]['nombre'];
                                 $articulo_cantidad = $carrito_mio[$i]["cantidad"];
                                 $articulo_precio = $carrito_mio[$i]["precio"];
     
-                                $stmt2 = $conexion->prepare("INSERT INTO pedido_producto (pedido_id, producto_id, cantidad, precio) VALUES (?, ?, ?, ?)");
-                                $stmt2->bind_param("ssss", $numeroPedido, $articulo_id, $articulo_cantidad, $articulo_precio);
+                                $stmt2 = $conexion->prepare("INSERT INTO pedido_producto (pedido_id, producto_nombre, cantidad, precio) VALUES (?, ?, ?, ?)");
+                                $stmt2->bind_param("ssss", $numeroPedido, $articulo_nombre, $articulo_cantidad, $articulo_precio);
                                 $stmt2->execute();
                             }
     
@@ -333,7 +333,7 @@ function crearPedido(){
                             //Capturar la salida para poder capturar el bucle
                             ob_start();
                             for ($i = 0; $i <= count($carrito_mio) - 1; $i++) {
-                                echo $carrito_mio[$i]['nombre'] . '<br/>Cantidad: ' . $carrito_mio[$i]["cantidad"] . '<br/>Precio: ' . " (" . $carrito_mio[$i]["precio"] . "€)<br/><br/> ";
+                                echo $carrito_mio[$i]['nombre'] . '<br/>Cantidad: ' . $carrito_mio[$i]["cantidad"] . '<br/>Precio (c/u): ' . $carrito_mio[$i]["precio"] . "€<br/><br/> ";
                             }
                             $lista_productos_email = ob_get_clean();
                             $total_email = $_SESSION["totalSinEnvio"];

@@ -1,6 +1,6 @@
 <?php
 
-$contrasena = '1234'; 
+$contrasena = '003976'; 
 $opciones = [
     'cost' => 12, 
 ];
