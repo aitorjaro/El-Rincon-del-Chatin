@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST['email'];
     $mensaje = $_POST['mensaje'];
     
-    $para = 'aitorjaro11@hotmail.com';
+    $para = 'tienda@elrincondelchatin.com';
     $asunto = 'ElRinconDelChatin.com - Nuevo mensaje de '. $nombre;
     $cuerpo = "Tienes un nuevo mensaje del formulario de contacto de tu página web. \n\nNombre: $nombre\nEmail: $email\nMensaje:\n $mensaje";
     
