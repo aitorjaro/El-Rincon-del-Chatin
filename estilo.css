@@ -954,6 +954,23 @@ h1.tituloFooter {
 .divEspacio{
     margin-bottom:60px;
 }
+.pFooter a{
+    color:white;
+}
+
+/* -------- COOKIES Y LEGAL ---------- */
+.container {
+    max-width: 1170px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+    font-family: SourceSans;
+    text-align: center;
+}
+.bold {
+    font-weight: bold;
+}
+
 
 /* ------- MOVILES ------- */
 @media (min-device-width: 320px) and (max-device-width: 1180px) {
@@ -1552,6 +1569,20 @@ h1.tituloFooter {
     }
     .divEspacio{
         margin-bottom:20px;
+    }
+
+    /* Cookies y legal */
+    .container h1{
+        font-family:SourceSansRegular;
+        font-weight: lighter;
+    }
+    .container h2{
+        font-family:SourceSansRegular;
+        font-weight: lighter;
+    }
+    .bold{
+        font-family:SourceSansRegular;
+        font-weight: lighter;
     }
 
 }

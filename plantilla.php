@@ -113,6 +113,8 @@ if (isset($_SESSION["carrito"])) {
                 <p class="pFooterSans">Horario de atención al cliente: Lunes, Martes, Jueves y Viernes de 10:00 a 14:00</p>
                 <p class="pFooter">Teléfonos de contacto: 647 48 16 26 - 627 32 27 73</p>
                 <p class="pFooter">E-mail: tienda@elrincondelchatin.com</p>
+                <p class="pFooter"><a href="/avisolegal.php">Aviso Legal</a></p>
+                <p class="pFooter"><a href="/cookies.php">Política sin cookies</a></p>
             </section>
         </div>
     </footer>

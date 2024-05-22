@@ -19,8 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Recibir los datos del formulario
     $nombreProducto = $_POST["nombre"];
-    $descripcionSinSaltos = $_POST["descripcion"];
-    $descripcionProducto = nl2br($descripcionSinSaltos);
+    $descripcionProducto = $_POST["descripcion"];
     $precioProducto = $_POST["precio"];
     $contenidoProducto = $_POST["contenido"];
     $categoriaProducto = $_POST["categoria"];
