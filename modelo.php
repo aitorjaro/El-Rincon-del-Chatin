@@ -394,7 +394,7 @@ function listar_pedidos(){
     $pedidos = array();
     $con = conexion(); 
     if ($con) {
-        $busqueda = mysqli_query($con, "SELECT * from pedidos");
+        $busqueda = mysqli_query($con, "SELECT * from pedidos ORDER BY fecha DESC");
         while ($pedido = mysqli_fetch_assoc($busqueda)) {
             $pedidos[] = $pedido;
         }

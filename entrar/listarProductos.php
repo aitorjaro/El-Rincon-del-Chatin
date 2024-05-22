@@ -30,18 +30,27 @@ if (isset($_SESSION["usuario"])) {
     <section class="englobarMenu">
         <a class="flechaVolver" href="sesion.php">
             < Volver</a>
-            <a class="flechaVolver" href="salir.php">
-           <img src="/imagenes/logout.png"/></a>
+                <a class="flechaVolver" href="salir.php">
+                    <img src="/imagenes/logout.png" /></a>
     </section>
     <section class="cuerpo">
         <form class="dos" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post"
             enctype="multipart/form-data">
             <label>LISTA DE PRODUCTOS </label>
-            <?php $articulos = listar_articulos();
-            foreach ($articulos as $articulo) { ?>
-                <a href="modificarArticulo.php?id=<?php echo $articulo["id"] ?>"> <?php echo $articulo["nombre"] . "<br/>";
+            <?php
+            $articulos = listar_articulos();
+            usort($articulos, function ($a, $b) {
+                return strcmp($a["nombre"], $b["nombre"]);
+            });
+
+            foreach ($articulos as $articulo) {
+                ?>
+                <a href="modificarArticulo.php?id=<?php echo $articulo["id"] ?>">
+                    <?php echo $articulo["nombre"] . "<br/>";
             }
+
             ?>
+
         </form>
 
     </section>

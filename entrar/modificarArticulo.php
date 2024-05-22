@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1 class='h1Anadir'>Modificar productos</h1>
     </section>
     <section class="englobarMenu">
-        <a class="flechaVolver" href="sesion.php">
+        <a class="flechaVolver" href="listarProductos.php">
             < Volver</a>
             <a class="flechaVolver" href="salir.php">
             <img src="/imagenes/logout.png"/></a>
