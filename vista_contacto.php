@@ -19,14 +19,17 @@
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $nombre = $_POST['nombreYApellidos'];
     $email = $_POST['email'];
+    $numPedido = $_POST['numeroPedido'];
     $mensaje = $_POST['mensaje'];
     
+    $cabeceras = "MIME-Version: 1.0" . "\r\n";
+    $cabeceras .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $para = 'tienda@elrincondelchatin.com';
     $asunto = 'ElRinconDelChatin.com - Nuevo mensaje de '. $nombre;
-    $cuerpo = "Tienes un nuevo mensaje del formulario de contacto de tu página web. \n\nNombre: $nombre\nEmail: $email\nMensaje:\n $mensaje";
+    $cuerpo = "Tienes un nuevo mensaje del formulario de contacto de tu página web. <br/><br/><b>Nombre:</b> $nombre<br/><b>Email:</b> $email<br/><b>Nº pedido:</b> $numPedido<br/><br/><b>Mensaje:</b><br/> $mensaje";
     
     // Usar la función mail() de PHP para enviar el correo
-    if(mail($para, $asunto, $cuerpo)){
+    if(mail($para, $asunto, $cuerpo, $cabeceras)){
         $mensajeEnviado = "Mensaje enviado con éxito";
     } else {
         $mensajeEnviado= "Error al enviar el mensaje";
