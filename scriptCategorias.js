@@ -1,4 +1,5 @@
 //Animaciones categorías
+$(document).ready(function () {
 document.querySelectorAll('.botonCategorias').forEach(btn => {
     btn.addEventListener('click', function () {
       let categoria = this.getAttribute('data-categoria');
@@ -34,7 +35,7 @@ document.querySelectorAll('.botonCategorias').forEach(btn => {
     }
     });
   });
-  
+});
   
   
   
