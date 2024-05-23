@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', (event) =>{
     }, 1000);
   });*/
 
-  //Menú desplegable
+//Menú desplegable
 document.querySelector(".bars__menu").addEventListener("click", mostrarMenu);
 /*var line1__bars = document.querySelector(".line1__bars-menu");
 var line2__bars = document.querySelector(".line2__bars-menu");
@@ -61,9 +61,9 @@ var line3__bars = document.querySelector(".line3__bars-menu");*/
 var menuEntero = document.getElementById("menuPrincipal");
 
 function mostrarMenu() {
- /* line1__bars.classList.toggle("activeline1__bars-menu");
-  line2__bars.classList.toggle("activeline2__bars-menu");
-  line3__bars.classList.toggle("activeline3__bars-menu");*/
+  /* line1__bars.classList.toggle("activeline1__bars-menu");
+   line2__bars.classList.toggle("activeline2__bars-menu");
+   line3__bars.classList.toggle("activeline3__bars-menu");*/
   menuEntero.classList.add("mostrarMenu");
   menuEntero.classList.remove("ocultarMenu");
   document.body.classList.toggle('body-no-scroll');
@@ -96,12 +96,12 @@ function ocultarMenuLupa() {
   document.body.classList.remove('body-no-scroll');
 }
 
-window.onscroll = function() { scrollFunction() };
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
   var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
   console.log(scrollPosition);
-  
+
   if (scrollPosition > 20) {
     document.getElementById("scrollToTopBtn").style.display = "block";
   } else {
@@ -113,3 +113,14 @@ function scrollFunction() {
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Flecha scroll en header
+$(document).ready(function () {
+  document.getElementById('arrow').addEventListener('click', function () {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  });
+});
+
