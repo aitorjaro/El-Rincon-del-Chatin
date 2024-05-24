@@ -15,11 +15,22 @@
 <?php endblock() ?>
 <?php startblock('contenido') ?>
 <div class="englobarCesta">
-    
+
     <img class="imgEslogan" src="imagenes/eslogan.png" />
     <img class="imgCestaListar" src="imagenes/cestaproductos.png" />
     <div class="arrow" id="arrow">&#x2193;</div>
     <!--<p class="verCestas">Ver cestas</p>-->
+    <script>
+        // Flecha scroll en header
+        $(document).ready(function () {
+            document.getElementById('arrow').addEventListener('click', function () {
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </div>
 <div class="englobarProductos">
     <div class="centrarProductos">

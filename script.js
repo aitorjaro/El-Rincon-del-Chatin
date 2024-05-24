@@ -114,13 +114,5 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Flecha scroll en header
-$(document).ready(function () {
-  document.getElementById('arrow').addEventListener('click', function () {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  });
-});
+
 
