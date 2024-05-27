@@ -256,6 +256,8 @@ div.englobarArticulos {
 }
 
 div.englobarCesta {
+    margin-top:10px;
+    margin-bottom:50px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -265,15 +267,15 @@ div.englobarCesta {
 }
 .imgEslogan{
     margin-top:20px;
-    width:600px;
+    width:500px;
 }
 .imgCestaListar {
-    width: 35%;
+    width: 25%;
     height: 100%;
     /*position: relative;
     height: auto;*/
     z-index: 1;
-    margin-top: -120px;
+    margin-top: 0px;
 }
 .arrow {
     position: absolute;
@@ -1215,7 +1217,9 @@ h1.tituloFooter {
         border-bottom:1px solid;
     }
 
-
+    div.englobarcesta{
+        margin-top:0px;
+    }
     .englobarCesta h2 {
         position: absolute;
         font-size: 40px;
@@ -1238,6 +1242,9 @@ h1.tituloFooter {
         width: 80%;
         height: 100%;
         margin-top:20px;
+    }
+    .imgCestaListar{
+        margin-top:5px;
     }
     .arrow {
         display: none;

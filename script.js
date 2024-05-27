@@ -100,7 +100,6 @@ window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
   var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-  console.log(scrollPosition);
 
   if (scrollPosition > 20) {
     document.getElementById("scrollToTopBtn").style.display = "block";
