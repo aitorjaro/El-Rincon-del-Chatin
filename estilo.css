@@ -902,6 +902,14 @@ h1.contacto {
     font-family: Barlow;
     text-align: center;
 }
+h2.mensajeEnviadoContacto{
+    font-family: SourceSans;
+    font-size:25px;
+    margin-top:0px;
+    margin-bottom:50px;
+    text-align: center;
+    font-weight: lighter;
+}
 
 h2.formularioContacto {
     margin-top: 0px;
