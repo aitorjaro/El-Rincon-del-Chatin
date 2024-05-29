@@ -35,9 +35,9 @@
 <div class="englobarProductos">
     <div class="centrarProductos">
         <div class="filtrar">
-            <section>
+            <!--<section>
                 <h1 class="parrafos">ARTÍCULOS</h1>
-            </section>
+            </section>-->
             <section class="sctCategorias">
                 <?php
                 foreach ($categorias as $categoria) {

@@ -24,7 +24,7 @@
             boton.text(textoOriginal);
         }, 1000);
         $('.imagenCarroFija').css('animation', '');
-        $('.imagenCarroFija').attr('src', '/imagenes/carro-de-la-compra-marron.png');
+        $('.imagenCarroFija').attr('src', '/imagenes/carro-de-la-compra-verde.png');
 
         setTimeout(function() {
             $('.imagenCarroFija').css('animation', 'moveToCart 1s');

@@ -3,4 +3,5 @@ dashboard/
 webalizer/
 xampp/
 .env
+favicon.ico
 hashearContrasenas.php

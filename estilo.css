@@ -28,7 +28,7 @@ body {
     padding: 0;
     margin: 0;
     background-image: url("/imagenes/logomenu.jpg");
-    background-color: #cfb377;
+    background-color: #F3EDE5;
     overflow-x: hidden;
 }
 
@@ -353,6 +353,7 @@ h1.parrafos {
 }
 
 .sctCategorias {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -364,7 +365,7 @@ button.botonCategorias {
     font-weight: bold;
     color: white;
     padding: 20px 80px;
-    background: #cfb377;
+    background: #829D75;
     cursor: pointer;
     border: none;
     margin-right: 10px;
@@ -372,7 +373,7 @@ button.botonCategorias {
 }
 
 button.botonCategorias:hover {
-    background: #d8b86c;
+    background: #a0bb94;
 }
 
 section.articulos {
@@ -403,7 +404,7 @@ section.articulo {
 }
 
 button.carrito {
-    background-color: #cfb377;
+    background-color: #829D75;
     font-family: SourceSans;
     color: white;
     padding: 15px 32px;
@@ -418,11 +419,11 @@ button.carrito {
 }
 
 button.carrito:hover {
-    background-color: #cfb988;
+    background-color: #a0bb94;
 }
 
 button.carrito:active {
-    background-color: #cfb988;
+    background-color: #a0bb94;
     transform: translateY(4px);
 }
 
@@ -794,7 +795,7 @@ textarea.formularioContacto {
 }
 
 .botonPago {
-    background-color: #cfb377;
+    background-color: #829D75;
     font-family: SourceSans;
     color: white;
     padding: 15px 32px;
@@ -1284,7 +1285,7 @@ h1.tituloFooter {
         font-weight: bold;
         color: white;
         padding: 20px 40px;
-        background: #cfb377;
+        background: #829D75;
         cursor: pointer;
         border: none;
         margin-right: 10px;
