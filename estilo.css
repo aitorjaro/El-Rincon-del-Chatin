@@ -511,6 +511,10 @@ span.iva {
     text-align: center;
     font-size: 16px;
 }
+.pAgotado{
+    font-family: SourceSansRegular;
+    font-weight: lighter;
+}
 
 /*----------------- DESCRIPCION ARTÍCULOS------------------*/
 

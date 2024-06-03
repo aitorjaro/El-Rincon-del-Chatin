@@ -48,13 +48,17 @@
                 </p>
                 <h2 class="descripcion">Cantidad
                 </h2>
-                <form class="formularioProducto" action="/index.php/carrito" method="post">
-                    <input name="idArticulo" type="hidden" value="<?php echo $articulo['id'] ?>" />
-                    <input name="cantidadArticulo" class="inputCantidadDetalle" type="number" value="1" min="1" />
+                <?php if ($articulo["agotado"] == 0) { ?>
+                    <form class="formularioProducto" action="/index.php/carrito" method="post">
+                        <input name="idArticulo" type="hidden" value="<?php echo $articulo['id'] ?>" />
+                        <input name="cantidadArticulo" class="inputCantidadDetalle" type="number" value="1" min="1" />
 
-                    <button type="submit" class="carrito">Añadir al carrito</button>
+                        <button type="submit" class="carrito">Añadir al carrito</button>
 
-                </form>
+                    </form>
+                <?php } else { ?>
+                    <p class="pAgotado">Producto agotado</p>
+                <?php } ?>
             </section>
         </section>
     <?php } ?>

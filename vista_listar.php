@@ -80,11 +80,15 @@
                                     <?php echo $articulo['precio'] ?>€
                                     <span class="iva">&nbsp;IVA incluido</span>
                                 </p>
+                                <?php if ($articulo["agotado"]==0){?>
                                 <form class="formularioProducto" action="/index.php/carrito" method="post">
                                     <input name="idArticulo" type="hidden" value="<?php echo $articulo['id'] ?>" />
                                     <input name="cantidadArticulo" type="hidden" value="1" />
                                     <button type="submit" class="carrito">Añadir al carrito</button>
                                 </form>
+                                <?php } else { ?>
+                                    <p class="pAgotado">Producto agotado</p>
+                                <?php } ?>
                             </section>
                         </section>
                     </section>
