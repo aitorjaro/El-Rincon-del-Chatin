@@ -13,6 +13,7 @@ if (isset($_SESSION["carrito"]) || isset($_POST["idArticulo"])) {
         $imagen = $articulo["imagen"];
         $nombre = $articulo["nombre"];
         $precio = $articulo["precio"];
+        $categoria = $articulo["categoria"];
         $contenido = $articulo["contenido"];
         $cantidad = $_POST["cantidadArticulo"];
 
@@ -30,7 +31,8 @@ if (isset($_SESSION["carrito"]) || isset($_POST["idArticulo"])) {
                 "nombre" => $nombre,
                 "precio" => $precio,
                 "contenido" => $contenido,
-                "cantidad" => $cantidad
+                "cantidad" => $cantidad,
+                "categoria" => $categoria
             );
         }
     }

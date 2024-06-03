@@ -45,7 +45,12 @@ unset($_SESSION['pedido_realizado']); ?>
 
                         <?php $total = 0;
                         $onlyNumbers = 0; ?>
-                        <?php for ($i = 0; $i <= count($carrito_mio) - 1; $i++) { ?>
+                        <?php for ($i = 0; $i <= count($carrito_mio) - 1; $i++) {
+                            //Comprobamos si existe algún producto con alcohol
+                            if ($carrito_mio[$i]['categoria'] == "Cervezas" || $carrito_mio[$i]['categoria'] == "Licores" || $carrito_mio[$i]['categoria'] == "Vinos" || $carrito_mio[$i]['categoria'] == "Cestas"){
+                                $mensajeAlcohol = "Por favor, confirma que eres mayor de 18 años para comprar alcohol antes de realizar el pedido. El abuso de alcohol es peligroso para la salud. Consume y disfruta de forma responsable.";
+                            }
+                            ?>
                             <tr>
                                 <td class="tdImagen">
                                     <section class="englobarImagenArticuloCarrito">
@@ -152,7 +157,7 @@ unset($_SESSION['pedido_realizado']); ?>
 
                     <!-- FORMULARIO DE ENVÍO -->
 
-                    <h1 class="datosEnvio">Datos de envío</h1>
+                    <h1 class="datosEnvio">DATOS DE ENVÍO</h1>
                     <form class="formDatosEnvio" action="/index.php/redireccion" method="post">
                         <div class="divEnglobarDatos">
                             <div>
@@ -183,6 +188,13 @@ unset($_SESSION['pedido_realizado']); ?>
                                 <input name="codigopostal" type="number" placeholder="Código Postal" required />
                             </div>
                         </div>
+                            <!--Comprobamos si hay algún producto con alcohol en el carrito-->
+                            <?php if (isset($mensajeAlcohol)){ ?>
+                                <div class="divEnglobarDatos" id="divAlcohol">
+                                <input type="checkbox" required/><label class="lblAlcohol">
+                                <?php echo $mensajeAlcohol;
+                                }?></label></div>
+                       
                         <div class="divEnglobarDatos">
                             <button type="submit" name="submitPayment" class="botonPago">Ir al pago</button>
                         </div>

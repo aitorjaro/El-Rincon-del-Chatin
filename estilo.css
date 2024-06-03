@@ -28,7 +28,7 @@ body {
     padding: 0;
     margin: 0;
     background-image: url("/imagenes/logomenu.jpg");
-    background-color: #F3EDE5;
+    background-color: #829D75;
     overflow-x: hidden;
 }
 
@@ -810,11 +810,11 @@ textarea.formularioContacto {
 }
 
 .botonPago:hover {
-    background-color: #cfb988;
+    background-color: #a0bb94;
 }
 
 .botonPago:active {
-    background-color: #cfb988;
+    background-color: #a0bb94;
     transform: translateY(4px);
 }
 /* ---------------- HERVAS --------------------*/
@@ -1515,6 +1515,13 @@ h1.tituloFooter {
         font-size: 20px;
         margin-right: 0px;
         margin: 5px 0px;
+    }
+    #divAlcohol{
+        margin-top:20px;
+    }
+    .lblAlcohol{
+        margin-top:10px;
+        text-align: center;
     }
     .botonPago {
         margin-top:40px;
