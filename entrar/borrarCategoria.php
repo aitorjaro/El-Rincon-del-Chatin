@@ -43,7 +43,7 @@ $categoria = cargar_categoria_id($nombreCategoria);
         <form class="dos" action="categoriaBorrada.php?id=<?php echo $nombreCategoria; ?>" method="post"
             enctype="multipart/form-data">
             <label>¿Seguro que quieres borrar la categoría <?php echo $categoria["categoria"] ?>?</label>
-            <p> Esto conlleva que se borren todos los productos que pertenecen a esta categoría. </p>
+            <p> Los productos que hay dentro NO se borrarán. Tendrás que asignarles una nueva categoría. </p>
 
             <input type="submit" class="inptAnadirProductos" value="Borrar categoría" />
 
