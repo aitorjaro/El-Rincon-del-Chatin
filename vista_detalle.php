@@ -57,7 +57,7 @@
 
                     </form>
                 <?php } else { ?>
-                    <p class="pAgotado">Producto agotado</p>
+                    <p>Producto agotado</p>
                 <?php } ?>
             </section>
         </section>

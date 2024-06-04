@@ -19,7 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $precioProducto = $_POST["precio"];
     $contenidoProducto = $_POST["contenido"];
     $categoriaProducto = $_POST["categoria"];
+    $agotadoProducto = $_POST["agotado"];
     $conexion = conexion();
+
+    if ($agotadoProducto == "No"){
+        $agotadoProducto=0;
+    }
+    else{
+        $agotadoProducto=1;
+    }
 
 
     // Recuperar los datos de la imagen
@@ -35,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Realizar la inserción en la base de datos
 
-    $consulta = "INSERT INTO productos (nombre, descripcion, precio, contenido, categoria, imagen) VALUES ('$nombreProducto', '$descripcionProducto', '$precioProducto', '$contenidoProducto', '$categoriaProducto', '$binariosImagen')";
+    $consulta = "INSERT INTO productos (nombre, descripcion, precio, contenido, categoria, imagen, agotado) VALUES ('$nombreProducto', '$descripcionProducto', '$precioProducto', '$contenidoProducto', '$categoriaProducto', '$binariosImagen', '$agotadoProducto')";
 
     $resultado = mysqli_query($conexion, $consulta);
 
@@ -94,6 +102,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
             <label>Imagen </label>
             <input name="imagen" type="file" id="imagen" />
+            <label>Producto Agotado </label>
+            <select name="agotado">
+                <option value="No">No</option>
+                <option value="Si">Si</option>
+            </select>
             <input type="submit" class="inptAnadirProductos" value="Añadir producto" />
         </form>
     </section>

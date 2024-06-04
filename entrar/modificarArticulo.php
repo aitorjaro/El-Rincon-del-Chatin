@@ -23,7 +23,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $precioProducto = $_POST["precio"];
     $contenidoProducto = $_POST["contenido"];
     $categoriaProducto = $_POST["categoria"];
+    $agotadoProducto = $_POST["agotado"];
     $conexion = conexion();
+
+    if ($agotadoProducto == "No"){
+        $agotadoProducto=0;
+    }
+    else{
+        $agotadoProducto=1;
+    }
 
     if (!empty($_FILES['imagen']['name'])) {
         // Recuperar los datos de la imagen
@@ -39,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Realizar la modificación en la base de datos
 
-        $consulta = "UPDATE productos SET nombre = '$nombreProducto', descripcion = '$descripcionProducto', precio = '$precioProducto', contenido = '$contenidoProducto', categoria = '$categoriaProducto', imagen = '$binariosImagen' WHERE id = '$idArticulo'";
+        $consulta = "UPDATE productos SET nombre = '$nombreProducto', descripcion = '$descripcionProducto', precio = '$precioProducto', contenido = '$contenidoProducto', categoria = '$categoriaProducto', imagen = '$binariosImagen', agotado = '$agotadoProducto' = WHERE id = '$idArticulo'";
 
         $resultado = mysqli_query($conexion, $consulta);
 
@@ -54,9 +62,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $idArticulo . "&mensaje=" . $mensajeCodificado);
             exit;
         }
-        
+
     } else {
-        $consulta = "UPDATE productos SET nombre = '$nombreProducto', descripcion = '$descripcionProducto', precio = '$precioProducto', contenido = '$contenidoProducto', categoria = '$categoriaProducto' WHERE id = '$idArticulo'";
+        $consulta = "UPDATE productos SET nombre = '$nombreProducto', descripcion = '$descripcionProducto', precio = '$precioProducto', contenido = '$contenidoProducto', categoria = '$categoriaProducto', agotado = '$agotadoProducto' WHERE id = '$idArticulo'";
 
         $resultado = mysqli_query($conexion, $consulta);
 
@@ -71,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: " . $_SERVER['PHP_SELF'] . "?id=" . $idArticulo . "&mensaje=" . $mensajeCodificado);
             exit;
         }
-        
+
     }
 }
 
@@ -94,8 +102,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section class="englobarMenu">
         <a class="flechaVolver" href="listarProductos.php">
             < Volver</a>
-            <a class="flechaVolver" href="salir.php">
-            <img src="/imagenes/logout.png"/></a>
+                <a class="flechaVolver" href="salir.php">
+                    <img src="/imagenes/logout.png" /></a>
     </section>
     <?php
     if (isset($_GET['mensaje'])) {
@@ -129,6 +137,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
             <label>Imagen </label>
             <input name="imagen" type="file" id="imagen" />
+            <label>Producto Agotado </label>
+            <select name="agotado">
+                <option value="No" <?php echo $articulo["agotado"] == 0 ? 'selected' : ''; ?>>No</option>
+                <option value="Si" <?php echo $articulo["agotado"] == 1 ? 'selected' : ''; ?>>Si</option>
+            </select>
             <input type="submit" class="inptAnadirProductos" value="Modificar producto" />
             <a class="aBorrarProductos" href="borrarArticulo.php?id=<?php echo $articulo["id"] ?>">Borrar Producto</a>
 
