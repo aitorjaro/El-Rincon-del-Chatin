@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Realizar la modificación en la base de datos
 
-        $consulta = "UPDATE productos SET nombre = '$nombreProducto', descripcion = '$descripcionProducto', precio = '$precioProducto', contenido = '$contenidoProducto', categoria = '$categoriaProducto', imagen = '$binariosImagen', agotado = '$agotadoProducto' = WHERE id = '$idArticulo'";
+        $consulta = "UPDATE productos SET nombre = '$nombreProducto', descripcion = '$descripcionProducto', precio = '$precioProducto', contenido = '$contenidoProducto', categoria = '$categoriaProducto', imagen = '$binariosImagen', agotado = '$agotadoProducto' WHERE id = '$idArticulo'";
 
         $resultado = mysqli_query($conexion, $consulta);
 
