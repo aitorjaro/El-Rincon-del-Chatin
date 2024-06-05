@@ -693,6 +693,15 @@ section.englobarImagenArticuloCarrito {
     justify-content: center;
 }
 
+.btnIncrease, .btnDecrease{
+    font-family: SourceSans;
+    border:0px;
+    background:none;
+    font-size:25px;
+    cursor:pointer;
+    color:black;
+}
+
 .imgRefresh {
     margin-left: 10px;
 }
@@ -707,6 +716,11 @@ input.inputCantidadCarrito {
     border-radius: 4px;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease-in-out;
+}
+input.inputCantidadCarrito::-webkit-inner-spin-button,
+input.inputCantidadCarrito::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 img.imagenArticuloCarrito {
@@ -1447,10 +1461,6 @@ h1.tituloFooter {
         justify-content: center;
     }
     
-    .imgRefresh {
-        margin-left: 0px;
-        width:20px;
-    }
     .imgDelete{
         width:15px;
     }

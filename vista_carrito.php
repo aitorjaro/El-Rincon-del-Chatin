@@ -20,6 +20,29 @@ unset($_SESSION['pedido_realizado']); ?>
 <?php endblock() ?>
 <?php startblock('contenido') ?>
 
+<script>
+    $(document).ready(function () {
+        $('.inputCantidadCarrito').blur(function () {
+            $(this).closest('.formularioCantidad').submit();
+        });
+        $('.btnDecrease').click(function () {
+            var input = $(this).next('.inputCantidadCarrito');
+            var currentValue = parseInt(input.val(), 10);
+            if (currentValue > 1) {
+                input.val(currentValue - 1);
+            }
+            $(this).closest('.formularioCantidad').submit();
+        });
+
+        // Evento clic para el botón de aumentar
+        $('.btnIncrease').click(function () {
+            var input = $(this).prev('.inputCantidadCarrito');
+            var currentValue = parseInt(input.val(), 10);
+            input.val(currentValue + 1);
+            $(this).closest('.formularioCantidad').submit();
+        });
+    });
+</script>
 <section class="englobandoCarrito">
 
     <section class="centrarCarrito">
@@ -47,7 +70,7 @@ unset($_SESSION['pedido_realizado']); ?>
                         $onlyNumbers = 0; ?>
                         <?php for ($i = 0; $i <= count($carrito_mio) - 1; $i++) {
                             //Comprobamos si existe algún producto con alcohol
-                            if ($carrito_mio[$i]['categoria'] == "Cervezas" || $carrito_mio[$i]['categoria'] == "Licores" || $carrito_mio[$i]['categoria'] == "Vinos" || $carrito_mio[$i]['categoria'] == "Cestas"){
+                            if ($carrito_mio[$i]['categoria'] == "Cervezas" || $carrito_mio[$i]['categoria'] == "Licores" || $carrito_mio[$i]['categoria'] == "Vinos" || $carrito_mio[$i]['categoria'] == "Cestas") {
                                 $mensajeAlcohol = "Por favor, confirma que eres mayor de 18 años para comprar alcohol antes de realizar el pedido. El abuso de alcohol es peligroso para la salud. Consume y disfruta de forma responsable.";
                             }
                             ?>
@@ -61,12 +84,15 @@ unset($_SESSION['pedido_realizado']); ?>
                                     </section>
                                 </td>
                                 <td class="tdCantidad">
-                                    <form class="formularioCantidad" action="/index.php/carrito" method="post">
+                                    <form class="formularioCantidad" id="formCantidad<?php echo $i ?>"
+                                        action="/index.php/carrito" method="post">
                                         <input name="id" type="hidden" value="<?php echo $carrito_mio[$i]['id'] ?>" />
                                         <input name="actualizar" type="hidden" value="" />
+                                        <button type="button" class="btnDecrease">-</button>
                                         <input name="cantidad" type="number" class="inputCantidadCarrito"
                                             value="<?php echo $carrito_mio[$i]["cantidad"] ?>" size="10" min="1" />
-                                        <input type="image" class="imgRefresh" src="/imagenes/refresh.png" />
+                                        <button type="button" class="btnIncrease">+</button>
+                                        <!--<input type="image" class="imgRefresh" src="/imagenes/refresh.png" />-->
                                     </form>
                                 </td>
                                 <td class="tdNombre">
@@ -188,13 +214,14 @@ unset($_SESSION['pedido_realizado']); ?>
                                 <input name="codigopostal" type="number" placeholder="Código Postal" required />
                             </div>
                         </div>
-                            <!--Comprobamos si hay algún producto con alcohol en el carrito-->
-                            <?php if (isset($mensajeAlcohol)){ ?>
-                                <div class="divEnglobarDatos" id="divAlcohol">
-                                <input type="checkbox" required/><label class="lblAlcohol">
-                                <?php echo $mensajeAlcohol;
-                                }?></label></div>
-                       
+                        <!--Comprobamos si hay algún producto con alcohol en el carrito-->
+                        <?php if (isset($mensajeAlcohol)) { ?>
+                            <div class="divEnglobarDatos" id="divAlcohol">
+                                <input type="checkbox" required /><label class="lblAlcohol">
+                                    <?php echo $mensajeAlcohol;
+                        } ?></label>
+                        </div>
+
                         <div class="divEnglobarDatos">
                             <button type="submit" name="submitPayment" class="botonPago">Ir al pago</button>
                         </div>
