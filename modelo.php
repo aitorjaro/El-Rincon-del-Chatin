@@ -26,7 +26,6 @@ function conexion()
 
         if ($conectado->connect_errno) {
             exit("Conexión fallida: " . $conectado->connect_error);
-            return null;
         } else {
             return $conectado;
         }
